@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec-assignments" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="sec-assignments" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignments</title>
-  <subsection xml:id="assignments-day00">
+  <section xml:id="assignments-day00">
+    <title>Problems for Monday, Jan 8</title>
     <p>
       Make sure you can solve all of these problems. Similar ones will appear
       on the midterm. As always in courses at this level, <q>solve</q> means
@@ -203,5 +204,5 @@
         </task>
       </exercise>
     </exercises>
-  </subsection>
   </section>
+</chapter>
