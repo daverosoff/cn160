@@ -1,8 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Section Title</title>
+  <title>Binary and Exploding Dots</title>
 
-  <p> Text of section. </p>
-
+  <p>
+    Watch the video below before doing <xref ref="activity-1-2-first"/>.
+  </p>
+  <video youtube="vstIoER3idM"/>
+  <activity xml:id="activity-1-2-first">
+    <statement>
+      <p>
+        What is the <m>1 \to 2</m> machine's code for 23?
+      </p>
+      <ol marker="A.">
+        <li>11101</li>
+        <li>10111</li>
+        <li>11011</li>
+        <li>11111</li>
+      </ol>
+    </statement>
+  </activity>
+  <activity>
+    <statement>
+      <p>
+        How many is a single dot in the <m>k</m>th box <em>from the right</em> worth? 
+      </p>
+      <ol marker="A.">
+        <li><m>2(k - 1)</m></li>
+        <li><m>2k</m></li>
+        <li><m>2^{k-1}</m></li>
+        <li><m>2^k</m></li>
+      </ol>
+    </statement>
+  </activity>
+  <activity>
+    <statement>
+      <p>
+        What number does the <m>1 \to 2</m> code <m>1001~0110</m> represent?
+      </p>
+      <ol marker="A.">
+        <li>142</li>
+        <li>144</li>
+        <li>150</li>
+        <li>158</li>
+      </ol>
+    </statement>
+  </activity>
+  <activity xml:id="activity-1-2-last">
+    <statement>
+      <p>
+        What is the biggest number a <m>1 \to 2</m> machine with four slots can represent? Eight slots?
+      </p>
+    </statement>
+  </activity>
+  <p>
+    Watch the video below before doing <xref ref="activity-1-3"/>.
+  </p>
+  <video youtube="Ok1by1WmmUc"/>
+  <activity xml:id="activity-1-3">
+    <statement>
+      <p>
+        Do <xref first="activity-1-2-first" last="activity-1-2-last"/> for the <m>1 \to 3</m> machine
+        instead of the <m>1 \to 2</m> machine.
+      </p>
+    </statement>
+  </activity>
+  <p>
+    Watch the video below before doing <xref ref="activity-1-10"/>.
+  </p>
+  <video youtube="8t2BDaszWmc"/>
+  <activity xml:id="activity-1-10">
+    <statement>
+      <p>
+        Do <xref first="activity-1-2-first" last="activity-1-2-last"/> for the <m>1 \to 10</m> machine
+        instead of the <m>1 \to 2</m> machine.
+      </p>
+    </statement>
+  </activity>  
+  <activity>
+    <introduction>
+      <p>
+        To perform addition using a <m>1 \to 2</m> machine, simply put the codes into a machine
+        together, then perform the explosions. 
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Show how you add <m>4 + 6 = 10</m> in a <m>1 \to 2</m> machine.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Show how you add <m>19 + 17 = 36</m> in a <m>1 \to 2</m> machine.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Now let's switch to the <m>1 \to 10</m> machine. Use one to add
+          <m>385 + 719 = 1104</m>. Then perform the addition the traditional
+          way. What do you notice? Designate a reporter to give your idea to the big group.
+        </p>
+      </statement>
+    </task>
+  </activity>
 </section>
