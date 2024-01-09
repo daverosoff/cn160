@@ -2,7 +2,9 @@
 <section xml:id="sec-binary-boolean-operators">
     <title>Binary boolean operators</title>
     <p>
-        The set of <term>boolean values</term> is the set <m>\{T, F\}</m>. In this
+        The set of <term>boolean values</term> is the set <m>\{0, 1\}</m>.
+        Usually we think of <m>0</m> as the value <q>false</q> and <m>1</m>
+        as the value <q>true</q>. In this
         section, the word <em>function</em> is used in its mathematical sense.
         Such a function can be thought of as a black box that converts its inputs
         into an output. The inputs are also called <em>arguments</em> and the output
@@ -23,7 +25,7 @@
         between the two inputs <m>x</m> and <m>y</m> like this: <m>x \circ y</m> to represent the operator
         instead of using the functional notation <m>\circ(x, y)</m>.
     </p>
-    <p>   
+    <p>
         A binary boolean operator is <term>commutative</term>
         if the order of the inputs does not affect the output. In symbols, and representing
         the operator, <m>\circ</m>, we have
@@ -35,27 +37,221 @@
     <p>
         There are six binary boolean operators that are commutative. They are given
         in the tables below. Tables like these are called <term>truth tables</term>,
-        because they help us determin when a boolean expression (a combination of
+        because they help us determine when a boolean expression (a combination of
         boolean values and boolean operators) is true and when it is false.
     </p>
-    <table>
-        <title>Or (<m>\vee</m>)</title>
-        <tabular>
-            <row>
-                <cell><m>\vee</m></cell>
-                <cell><m>T</m></cell>
-                <cell><m>F</m></cell>
-            </row>
-            <row>
-                <cell><m>T</m></cell>
-                <cell><m>T</m></cell>
-                <cell><m>T</m></cell>
-            </row>
-            <row>
-                <cell><m>F</m></cell>
-                <cell><m>T</m></cell>
-                <cell><m>F</m></cell>
-            </row>
-        </tabular>
-    </table>
+    <sbsgroup widths="30% 30% 30%" margins="3%" valigns="top top top">
+        <sidebyside>
+            <table>
+                <title>Or (<m>\vee</m>)</title>
+                <tabular>
+                    <row>
+                        <cell><m>\vee</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                </tabular>
+            </table>
+            <table>
+                <title>And (<m>\wedge</m>)</title>
+                <tabular>
+                    <row>
+                        <cell><m>\wedge</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                </tabular>
+            </table>
+            <table>
+                <title>Xor (<m>\veebar</m>)</title>
+                <tabular>
+                    <row>
+                        <cell><m>\veebar</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                </tabular>
+            </table>
+        </sidebyside>
+        <sidebyside>
+            <table>
+                <title>Nor</title>
+                <tabular>
+                    <row>
+                        <cell>NOR</cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                </tabular>
+            </table>
+            <table>
+                <title>Nand</title>
+                <tabular>
+                    <row>
+                        <cell>NAND</cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                </tabular>
+            </table>
+            <table>
+                <title>Xnor</title>
+                <tabular>
+                    <row>
+                        <cell>XNOR</cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                </tabular>
+            </table>
+        </sidebyside>
+    </sbsgroup>
+    <p>
+        Instead of introducing symbols for the last three operators, we can
+        make use of symbols for a unary NOT operator as described in class.
+        We will write <m>\neg x</m> for <m>\text{NOT } x</m>, and we will
+        also use the overbar to negate a boolean expression. So, for example,
+        <me>
+            \overline{x \wedge y} = \neg (x \wedge y) = \text{NOT } (x \wedge y)
+        </me>
+        and all three expressions are synonymous.
+    </p>
+
+    <activity>
+        <title>Truth tables and De Morgan's Laws</title>
+        <introduction>
+            <p>
+                Make a truth table for each of the following expressions.
+                Each expression is a binary boolean expression, so it
+                has two boolean values as inputs and returns a boolean value.
+                It need not be commutative, so your truth table might
+                or might not
+                be one of the eight special ones above. For each expression,
+                decide whether it in fact represents one of our six named
+                operators (by looking at the truth table you made).
+            </p>
+        </introduction>
+        <task xml:id="task-demorgan-and">
+            <statement>
+                <p>
+                    <m>\overline{x} \vee \overline{y}</m>
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Make the truth table. Is it one of the six special ones?
+                </p>
+            </hint>
+        </task>
+        <task xml:id="task-demorgan-or">
+            <statement>
+                <p>
+                    <m>\overline{x} \wedge \overline{y}</m>
+                </p>
+            </statement>
+        </task>
+    </activity>
+    <p>
+        Let us now introduce symbols for NAND and NOR inspired by the
+        symbols we are already using. Since <m>x \text{ NAND } y =
+            \overline{x \wedge y}</m>, we write <m>\barwedge</m> for
+        NAND. Similarly, since <m>x \text{ NOR } y = \overline{x \vee y}</m>,
+        we write <m>\barvee</m> for NOR.
+    </p>
+    <warning>
+        <p>
+            The notations <m>\barwedge</m> and <m>\barvee</m> are not
+            standard. They are used here only to make the connection
+            between NAND and NOR and the other operators we have
+            introduced.
+        </p>
+    </warning>
+    <activity>
+        <title>Universal gates</title>
+        <task>
+            <statement>
+                <p>
+                    Use the result of <xref ref="task-demorgan-and"/> to
+                    express <m>x \wedge y</m> in terms of <m>\barvee</m>
+                    and <m>\neg</m> only.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Use the result of <xref ref="task-demorgan-or"/> to
+                    express <m>x \vee y</m> in terms of <m>\barwedge</m>
+                    and <m>\neg</m> only.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Find a way to
+                </p>
+            </statement>
+        </task>
+    </activity>
 </section>
