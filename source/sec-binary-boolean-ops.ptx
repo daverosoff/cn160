@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-binary-boolean-operators">
+    <title>Binary boolean operators</title>
+    <p>
+        The set of <term>boolean values</term> is the set <m>\{T, F\}</m>. In this
+        section, the word <em>function</em> is used in its mathematical sense.
+        Such a function can be thought of as a black box that converts its inputs
+        into an output. The inputs are also called <em>arguments</em> and the output
+        is called the <em>value</em> of the function. The set of all possible inputs
+        of a function <m>T</m> is called the <em>domain</em> of <m>T</m>. The set
+        of all possible outputs of <m>T</m> is called the <em>codomain</em> of <m>T</m>.
+    </p>
+    <p>
+        A <term>boolean function</term> is a function that returns a boolean value. A
+        <term>boolean operator</term> is a function that takes only boolean values
+        as inputs and
+        returns a boolean value.
+    </p>
+    <p>
+        A <term>binary boolean operator</term> is a boolean operator that takes two
+        boolean values as inputs. We usually use infix notation instead of functional
+        notation to represent them. This means a symbol like <m>\circ</m> is placed
+        between the two inputs <m>x</m> and <m>y</m> like this: <m>x \circ y</m> to represent the operator
+        instead of using the functional notation <m>\circ(x, y)</m>.
+    </p>
+    <p>   
+        A binary boolean operator is <term>commutative</term>
+        if the order of the inputs does not affect the output. In symbols, and representing
+        the operator, <m>\circ</m>, we have
+        <me>
+            x \circ y = y \circ x \quad \text{for all $x$, $y$ in the domain of $\circ$}
+        </me>
+        as the defining property of commutativity.
+    </p>
+    <p>
+        There are six binary boolean operators that are commutative. They are given
+        in the tables below. Tables like these are called <term>truth tables</term>,
+        because they help us determin when a boolean expression (a combination of
+        boolean values and boolean operators) is true and when it is false.
+    </p>
+    <table>
+        <title>Or (<m>\vee</m>)</title>
+        <tabular>
+            <row>
+                <cell><m>\vee</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+            </row>
+            <row>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>T</m></cell>
+            </row>
+            <row>
+                <cell><m>F</m></cell>
+                <cell><m>T</m></cell>
+                <cell><m>F</m></cell>
+            </row>
+        </tabular>
+    </table>
+</section>

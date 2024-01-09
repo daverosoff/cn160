@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-chapter-title" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Chapter Title</title>
+  <title>The Serpent and the Pico</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p>The first unit of our course is an introduction to the Raspberry
+    Pi Pico microcontroller and some basic concepts in binary arithmetic
+    and Boolean algebra.</p>
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+  <xi:include href="sec-binary-exploding-dots.ptx" />
+  <xi:include href="sec-binary-boolean-ops.ptx" />
 
 </chapter>
