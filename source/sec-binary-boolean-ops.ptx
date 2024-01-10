@@ -21,9 +21,10 @@
     <p>
         A <term>binary boolean operator</term> is a boolean operator that takes two
         boolean values as inputs. We usually use infix notation instead of functional
-        notation to represent them. This means a symbol like <m>\circ</m> is placed
-        between the two inputs <m>x</m> and <m>y</m> like this: <m>x \circ y</m> to represent the operator
-        instead of using the functional notation <m>\circ(x, y)</m>.
+        notation to represent them. This means a symbol like <m>T</m> is placed
+        between the two inputs <m>x</m> and <m>y</m> like this: <m>x T y</m> to represent the operator
+        instead of using the functional notation <m>T(x, y)</m>. For such operators, we often
+        use symbols that look more like arithmetic operators, e.g., <m>\circ</m>, than function names.
     </p>
     <p>
         A binary boolean operator is <term>commutative</term>
@@ -45,7 +46,7 @@
             <table>
                 <title>Or (<m>\vee</m>)</title>
                 <tabular>
-                    <row>
+                    <row header="yes" bottom="minor">
                         <cell><m>\vee</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
@@ -65,7 +66,7 @@
             <table>
                 <title>And (<m>\wedge</m>)</title>
                 <tabular>
-                    <row>
+                    <row header="yes" bottom="minor">
                         <cell><m>\wedge</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
@@ -85,7 +86,7 @@
             <table>
                 <title>Xor (<m>\veebar</m>)</title>
                 <tabular>
-                    <row>
+                    <row header="yes" bottom="minor">
                         <cell><m>\veebar</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
@@ -107,7 +108,7 @@
             <table>
                 <title>Nor</title>
                 <tabular>
-                    <row>
+                    <row header="yes" bottom="minor">
                         <cell>NOR</cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
@@ -127,7 +128,7 @@
             <table>
                 <title>Nand</title>
                 <tabular>
-                    <row>
+                    <row header="yes" bottom="minor">
                         <cell>NAND</cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
@@ -147,7 +148,7 @@
             <table>
                 <title>Xnor</title>
                 <tabular>
-                    <row>
+                    <row header="yes" bottom="minor">
                         <cell>XNOR</cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
@@ -232,7 +233,7 @@
             <statement>
                 <p>
                     Use the result of <xref ref="task-demorgan-and"/> to
-                    express <m>x \wedge y</m> in terms of <m>\barvee</m>
+                    express <m>x \wedge y</m> in terms of <m>\vee</m>
                     and <m>\neg</m> only.
                 </p>
             </statement>
