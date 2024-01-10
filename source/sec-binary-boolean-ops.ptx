@@ -41,18 +41,28 @@
         because they help us determine when a boolean expression (a combination of
         boolean values and boolean operators) is true and when it is false.
     </p>
-    <sbsgroup widths="30% 30% 30%" margins="3%" valigns="top top top">
+    <sbsgroup widths="46% 46%" margins="3%" valigns="top top">
         <sidebyside>
             <table>
-                <title>Or (<m>\vee</m>)</title>
-                <tabular>
+                <title>Or <m>\left(\vee\right)</m></title>
+                <tabular halign="center">
                     <row header="yes" bottom="minor">
-                        <cell><m>\vee</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>1</m></cell>
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>x \vee y</m></cell>
                     </row>
                     <row>
                         <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                     </row>
@@ -64,12 +74,12 @@
                 </tabular>
             </table>
             <table>
-                <title>And (<m>\wedge</m>)</title>
-                <tabular>
+                <title>And <m>\left(\wedge\right)</m></title>
+                <tabular halign="center">
                     <row header="yes" bottom="minor">
-                        <cell><m>\wedge</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>1</m></cell>
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>x \wedge y</m></cell>
                     </row>
                     <row>
                         <cell><m>0</m></cell>
@@ -77,22 +87,74 @@
                         <cell><m>0</m></cell>
                     </row>
                     <row>
+                        <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                         <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
                         <cell><m>1</m></cell>
                     </row>
                 </tabular>
             </table>
+        </sidebyside>
+        <sidebyside>
             <table>
-                <title>Xor (<m>\veebar</m>)</title>
-                <tabular>
+                <title>Nor</title>
+                <tabular halign="center">
                     <row header="yes" bottom="minor">
-                        <cell><m>\veebar</m></cell>
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>x \text{ NOR } y</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                     </row>
                     <row>
                         <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                </tabular>
+            </table>
+            <table>
+                <title>Nand</title>
+                <tabular halign="center">
+                    <row header="yes" bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>x \text{ NAND } y</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                     </row>
@@ -106,36 +168,26 @@
         </sidebyside>
         <sidebyside>
             <table>
-                <title>Nor</title>
-                <tabular>
+                <title>Xor <m>\left(\veebar\right)</m></title>
+                <tabular halign="center">
                     <row header="yes" bottom="minor">
-                        <cell>NOR</cell>
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>x \veebar y</m></cell>
+                    </row>
+                    <row>
                         <cell><m>0</m></cell>
-                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
                     </row>
                     <row>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
-                        <cell><m>0</m></cell>
-                    </row>
-                    <row>
-                        <cell><m>1</m></cell>
-                        <cell><m>0</m></cell>
-                        <cell><m>0</m></cell>
-                    </row>
-                </tabular>
-            </table>
-            <table>
-                <title>Nand</title>
-                <tabular>
-                    <row header="yes" bottom="minor">
-                        <cell>NAND</cell>
-                        <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                     </row>
                     <row>
-                        <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                     </row>
                     <row>
@@ -147,9 +199,14 @@
             </table>
             <table>
                 <title>Xnor</title>
-                <tabular>
+                <tabular halign="center">
                     <row header="yes" bottom="minor">
-                        <cell>XNOR</cell>
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>x \text{ XNOR } y</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
                         <cell><m>0</m></cell>
                         <cell><m>1</m></cell>
                     </row>
@@ -161,6 +218,11 @@
                     <row>
                         <cell><m>1</m></cell>
                         <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
                         <cell><m>1</m></cell>
                     </row>
                 </tabular>
@@ -168,10 +230,11 @@
         </sidebyside>
     </sbsgroup>
     <p>
-        Instead of introducing symbols for the last three operators, we can
+        Instead of introducing symbols for NOR, NAND, and XNOR, we can
         make use of symbols for a unary NOT operator as described in class.
         We will write <m>\neg x</m> for <m>\text{NOT } x</m>, and we will
         also use the overbar to negate a boolean expression. So, for example,
+        <m>\neg x = \overline{x}</m>, and
         <me>
             \overline{x \wedge y} = \neg (x \wedge y) = \text{NOT } (x \wedge y)
         </me>
