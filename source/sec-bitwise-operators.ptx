@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-bitwise-operators">
     <title>Bitwise operators</title>
+    <p>
+        Let us adopt the terminology <term>bit pattern</term> or
+        <term>word</term> for a sequence of bits of a fixed length.
+        This way we do not need to be specific about the length of the
+        bit pattern or think about what integer it might (or might not)
+        represent. All data handled by digital computers is ultimately
+        represented as bit patterns.
+    </p>
+    <p>
+        The bitwise operators are applied to bit patterns. They are
+        <term>binary operators</term>, meaning that they take two
+        operands. The operands must be of the same length, and the
+        result is a bit pattern of the same length. The bitwise
+        operators are:
+    </p>
+    <ol>
+        <li>
+            <p>
+                <term>Bitwise AND</term> &amp; is a binary
+                operator that takes two bit patterns of the same length
+                and returns a bit pattern of the same length. The
+                resulting bit pattern has a 1 bit in each position where
+                both operands have a 1 bit, and a 0 bit in all other
+                positions.
+            </p>
+        </li>
+        <li>
+            <p>
+                <term>Bitwise OR</term> | is a binary operator
+                that takes two bit patterns of the same length and
+                returns a bit pattern of the same length. The resulting
+                bit pattern has a 1 bit in each position where at least
+                one of the operands has a 1 bit, and a 0 bit in all other
+                positions.
+            </p>
+        </li>
+        <li>
+            <p>
+                <term>Bitwise XOR</term> ^ is a binary operator
+                that takes two bit patterns of the same length and
+                returns a bit pattern of the same length. The resulting
+                bit pattern has a 1 bit in each position where exactly
+                one of the operands has a 1 bit, and a 0 bit in all other
+                positions.
+            </p>
+        </li>
+    </ol>
     <warning>
         <p>
             In class, I previously used the symbols <m>\oplus</m> and
@@ -9,4 +56,52 @@
             &amp; for bitwise AND, | for bitwise OR, and ^ for bitwise XOR.
         </p>
     </warning>
+    <remark>
+        <p>
+            If you have previous experience in C, Java, or closely related
+            languages, you may have wondered why the logical operators
+            AND and OR are written &amp;&amp; and || in those languages.
+            It is because the single-character variants &amp; and | are
+            reserved for bitwise operations.
+        </p>
+    </remark>
+    <p>
+        Some other operators on bit patterns are the <term>logical
+        shift operators</term> &lt;&lt; and &gt;&gt;. These are also
+        binary operators, taking a bit pattern and an integer as
+        operands. The result is a bit pattern of the same length as the
+        first operand. The second operand must be non-negative.
+    </p>
+    <example>
+        <p>
+            The expression <code>0b1010 &lt;&lt; 1</code> evaluates to
+            <code>0b10100</code>, and the expression
+            <code>0b1010 &gt;&gt; 1</code> evaluates to
+            <code>0b101</code>.
+        </p>
+    </example>
+    <activity>
+        <statement>
+            <p>
+                <ol marker="A.">
+                    <li>
+                        <p>
+                            What operation from our previous discussion of binary-encoded
+                            integers is also represented by &lt;&lt; 1? That is, if the
+                            bit pattern <m>x</m> is interpreted as an integer, what
+                            integer is represented by <m>x</m> &lt;&lt; 1?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            What operation from our previous discussion of binary-encoded
+                            integers is also represented by &gt;&gt; 1? That is, if the
+                            bit pattern <m>x</m> is interpreted as an integer, what
+                            integer is represented by <m>x</m> &gt;&gt; 1?
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </activity>
 </section>
