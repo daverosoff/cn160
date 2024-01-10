@@ -36,11 +36,19 @@
         as the defining property of commutativity.
     </p>
     <p>
-        There are six binary boolean operators that are commutative. They are given
+        There are six nonconstant binary boolean operators that are commutative. They are given
         in the tables below. Tables like these are called <term>truth tables</term>,
         because they help us determine when a boolean expression (a combination of
         boolean values and boolean operators) is true and when it is false.
     </p>
+    <note>
+        <p>
+            We saw truth tables displayed in a slightly different format in class.
+            This new format is helpful when computing truth tables of complex expressions.
+            One can add columns for bigger and bigger subexpressions, working one's
+            way up to the full expression.
+        </p>
+    </note>
     <sbsgroup widths="46% 46%" margins="3%" valigns="top top">
         <sidebyside>
             <table>
@@ -275,7 +283,7 @@
             </statement>
         </task>
     </activity>
-    <p>
+    <!-- <p>
         Let us now introduce symbols for NAND and NOR inspired by the
         symbols we are already using. Since <m>x \text{ NAND } y =
             \overline{x \wedge y}</m>, we write <m>\barwedge</m> for
@@ -289,33 +297,89 @@
             between NAND and NOR and the other operators we have
             introduced.
         </p>
-    </warning>
-    <activity>
+    </warning> -->
+    <activity xml:id="activity-nor-is-universal">
         <title>Universal gates</title>
         <task>
             <statement>
                 <p>
+                    Use a single NOR operator to express <m>\neg x</m>.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    The NOR operator has two inputs, and you only have
+                    <m>x</m>. What can you do?
+                </p>
+            </hint>
+            <answer>
+                <p>
+                    <m>\neg x = x \text{ NOR } x</m>.
+                </p>
+            </answer>
+        </task>
+        <task xml:id="task-nor-and">
+            <statement>
+                <p>
                     Use the result of <xref ref="task-demorgan-and"/> to
-                    express <m>x \wedge y</m> in terms of <m>\vee</m>
-                    and <m>\neg</m> only.
+                    express <m>x \wedge y</m> using only the NOR operator.
+                    (You can use as many NORs as you need.)
                 </p>
             </statement>
         </task>
-        <task>
+        <task xml:id="task-nor-or">
             <statement>
                 <p>
                     Use the result of <xref ref="task-demorgan-or"/> to
-                    express <m>x \vee y</m> in terms of <m>\barwedge</m>
-                    and <m>\neg</m> only.
+                    express <m>x \vee y</m> using only the NOR operator.
+                    (You can use as many NORs as you need.)
                 </p>
             </statement>
         </task>
         <task>
             <statement>
                 <p>
-                    Find a way to
+                    Use NOR operators to express <m>x \veebar y</m>.
                 </p>
             </statement>
+            <hint>
+                <p>
+                    Use the results of <xref ref="task-nor-and"/> and
+                    <xref ref="task-nor-or"/>.
+                </p>
+            </hint>
         </task>
     </activity>
+    <remark xml:id="remark-nor-is-universal">
+        <p>
+            In doing <xref ref="activity-nor-is-universal"/>, you showed
+            that the NOR operator is a <term>universal gate</term>.
+            This means that any boolean function can be expressed using only NORs.
+            To spell it out, we used NORs to express <m>\neg x</m>, <m>x \wedge y</m>,
+            <m>x \vee y</m>, and <m>x \veebar y</m>. The remaining operators, NAND
+            and XNOR, can be expressed in terms of these four. This shows that
+            all six binary boolean operators are expressible in terms of NOR
+            alone.
+        </p>
+    </remark>
+    <p>
+        <xref ref="remark-nor-is-universal"/> is interesting from a hardware point
+        of view. We will soon begin to explore the manner in which digital computers
+        are constructed from logic gates. A logic gate is the basic building block
+        of a digital electronic circuit, much like a statement is the building block
+        of a Python program.
+    </p>
+    <p>
+        Because NOR is a universal gate, it is possible to build a computer using
+        only NOR gates. They are cheaper to manufacture than AND and OR gates,
+        and even NOT gates are expressible in terms of NOR. They also are faster:
+        every gate through which a signal passes adds a small delay to the circuit.
+        These are only measured in nanoseconds, but when you have millions of gates,
+        it adds up. NOR gates require less internal wiring than AND and OR gates,
+        so they are faster.
+    </p>
+    <p>
+        In Homework 1 you will show that NAND is similarly universal. The idea is
+        similar to the one above, but you will have to work out the details yourself.
+    </p>
 </section>
