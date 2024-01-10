@@ -51,7 +51,7 @@
     </note>
     <sbsgroup widths="46% 46%" margins="3%" valigns="top top">
         <sidebyside>
-            <table>
+            <table xml:id="table-or">
                 <title>Or <m>\left(\vee\right)</m></title>
                 <tabular halign="center">
                     <row header="yes" bottom="minor">
@@ -205,7 +205,7 @@
                     </row>
                 </tabular>
             </table>
-            <table>
+            <table xml:id="table-xnor">
                 <title>Xnor</title>
                 <tabular halign="center">
                     <row header="yes" bottom="minor">
@@ -274,6 +274,45 @@
                     Make the truth table. Is it one of the six special ones?
                 </p>
             </hint>
+            <answer>
+                <tabular halign="center">
+                    <row header="yes" bottom="minor">
+                        <cell><m>x</m></cell>
+                        <cell><m>y</m></cell>
+                        <cell><m>\bar{x}</m></cell>
+                        <cell><m>\bar{y}</m></cell>
+                        <cell><m>\bar{x} \vee \bar{y}</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>0</m></cell>
+                    </row>
+                </tabular>
+            </answer>
         </task>
         <task xml:id="task-demorgan-or">
             <statement>
@@ -300,7 +339,7 @@
     </warning> -->
     <activity xml:id="activity-nor-is-universal">
         <title>Universal gates</title>
-        <task>
+        <task xml:id="task-nor-not">
             <statement>
                 <p>
                     Use a single NOR operator to express <m>\neg x</m>.
@@ -321,18 +360,27 @@
         <task xml:id="task-nor-and">
             <statement>
                 <p>
-                    Use the result of <xref ref="task-demorgan-and"/> to
+                    Use the results of
+                    <xref ref="task-nor-not"/> and
+                    <xref ref="task-demorgan-and"/> to
                     express <m>x \wedge y</m> using only the NOR operator.
-                    (You can use as many NORs as you need.)
+                    (You can use as many NORs as you need, but not any other
+                    operators.)
                 </p>
             </statement>
+            <hint>
+                <p>
+                    <m>x \wedge y = \overline{x \text{ NAND } y}</m>.
+                </p>
+            </hint>
         </task>
         <task xml:id="task-nor-or">
             <statement>
                 <p>
-                    Use the result of <xref ref="task-demorgan-or"/> to
+                    Similarly, use the result of <xref ref="task-demorgan-or"/> to
                     express <m>x \vee y</m> using only the NOR operator.
-                    (You can use as many NORs as you need.)
+                    (You can use as many NORs as you need, but not any other
+                    operators.)
                 </p>
             </statement>
         </task>
@@ -358,7 +406,9 @@
             To spell it out, we used NORs to express <m>\neg x</m>, <m>x \wedge y</m>,
             <m>x \vee y</m>, and <m>x \veebar y</m>. The remaining operators, NAND
             and XNOR, can be expressed in terms of these four. This shows that
-            all six binary boolean operators are expressible in terms of NOR
+            all six binary boolean operators (that is, those represented in
+            <xref first="table-or" last="table-xnor"/>
+            ) are expressible in terms of NOR
             alone.
         </p>
     </remark>
@@ -367,7 +417,10 @@
         of view. We will soon begin to explore the manner in which digital computers
         are constructed from logic gates. A logic gate is the basic building block
         of a digital electronic circuit, much like a statement is the building block
-        of a Python program.
+        of a Python program. Logic gates operate on logical signals, which are
+        voltages representing boolean values. Their inputs are combined or modified
+        inside the gate to produce an output signal representing the value of the
+        operation as applied to the input signals.
     </p>
     <p>
         Because NOR is a universal gate, it is possible to build a computer using

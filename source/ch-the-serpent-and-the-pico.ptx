@@ -12,5 +12,5 @@
   <!-- include sections -->
   <xi:include href="sec-binary-exploding-dots.ptx" />
   <xi:include href="sec-binary-boolean-ops.ptx" />
-
+  <xi:include href="sec-logic-gates.ptx" />
 </chapter>
