@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-bitwise-operators">
+    <title>Bitwise operators</title>
+    <warning>
+        <p>
+            In class, I previously used the symbols <m>\oplus</m> and
+            <m>\odot</m> for bitwise OR and AND, respectively. In this
+            section, we use different symbols, to match Python's notation:
+            &amp; for bitwise AND, | for bitwise OR, and ^ for bitwise XOR.
+        </p>
+    </warning>
+</section>
