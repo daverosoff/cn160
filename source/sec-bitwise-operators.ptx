@@ -128,16 +128,14 @@
                         <cell><m>x</m></cell>
                         <cell><m>y</m></cell>
                         <cell><m>\neg x</m></cell>
-                        <cell><m>\neg y</m></cell>
                         <cell><m>x \&amp; y</m></cell>
                         <cell><m>x | y</m></cell>
-                        <cell><m>x \text{\^{}} y</m></cell>
+                        <cell><m>x \textrm{\^{}} y</m></cell>
                     </row>
                     <row>
                         <cell><m>1100</m></cell>
                         <cell><m>1010</m></cell>
                         <cell><m>0011</m></cell>
-                        <cell><m>0101</m></cell>
                         <cell><m>1000</m></cell>
                         <cell><m>1110</m></cell>
                         <cell><m>0110</m></cell>
@@ -147,7 +145,6 @@
                         <cell><m>1111</m></cell>
                         <cell><m>1111</m></cell>
                         <cell><m>0000</m></cell>
-                        <cell><m>0000</m></cell>
                         <cell><m>1111</m></cell>
                         <cell><m>1111</m></cell>
                     </row>
@@ -155,7 +152,6 @@
                         <cell><m>10111111</m></cell>
                         <cell><m>00000010</m></cell>
                         <cell><m>01000000</m></cell>
-                        <cell><m>11111101</m></cell>
                         <cell><m>00000010</m></cell>
                         <cell><m>10111111</m></cell>
                         <cell><m>10111101</m></cell>
