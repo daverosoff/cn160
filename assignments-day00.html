@@ -69,8 +69,8 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.8/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -78,35 +78,135 @@ window.MathJax = {
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/colors_green_blue.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/colors_green_blue.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.8/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body id="dwrcn160" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Notes on Architecture</span></a></h1>
 <p class="byline">Dave Rosoff</p>
 </div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
-</div>
-<h2 class="search-results-heading">Search Results: </h2>
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
 <div id="searchempty" class="searchempty"><span>No results.</span></div>
 <ol id="searchresults" class="searchresults"></ol>
 </div>
-</div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-assignments.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="sec-assignments.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-assignments.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="sec-assignments.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-assignment-day04.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button>
+</div></div>
+<span class="nav-runestone-controls"><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
    \newcommand{\Z}{\mathbb Z}
    \newcommand{\Q}{\mathbb Q}
    \newcommand{\R}{\mathbb R}
@@ -119,96 +219,122 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">The Serpent and the Pico</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Binary and Exploding Dots</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-binary-boolean-operators.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Binary boolean operators</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">The Serpent and the Pico</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Binary and Exploding Dots</span></a></div></li>
+<li><div class="toc-item"><a href="sec-binary-boolean-operators.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Binary boolean operators</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-bitwise-operators.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Bitwise operators</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-bitwise-operators.html#subsection-bitmasking" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Bitmasking</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="sec-assignments.html" class="internal"><span class="codenumber">2</span> <span class="title">Assignments</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="assignments-day00.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Problems for Monday, Jan 8</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="assignments-day00.html#exercises-day00" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li></ul>
+<li>
+<div class="toc-item"><a href="sec-assignments.html" class="internal"><span class="codenumber">2</span> <span class="title">Assignments</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="assignments-day00.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Problems for Monday, Jan 8</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="assignments-day00.html#exercises-day00" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-assignment-day04.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Problems for Thursday, January 11</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-assignment-day04.html#exercises-day04" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="assignments-day00"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Problems for Monday, Jan 8</span>
 </h2>
-<div class="para" id="p-37">Make sure you can solve all of these problems. Similar ones will appear on the midterm. As always in courses at this level, “solve” means to give complete supporting reasoning or justification, not just the answer. In this case you should include the details of your calculation, however you do it.</div>
+<div class="para" id="p-55">Make sure you can solve all of these problems. Similar ones will appear on the midterm. As always in courses at this level, “solve” means to give complete supporting reasoning or justification, not just the answer. In this case you should include the details of your calculation, however you do it.</div>
 <section class="exercises" id="exercises-day00"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="introduction" id="introduction-4"><div class="para" id="p-38">For each problem below, interpret the summands as binary-encoded integers and find the sum without converting the summands to decimal. Express all your answers in binary, and for each problem, show a complete record of your reasoning. This could be a collection of <span class="process-math">\(1 \to 2\)</span> machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.</div></div>
+<div class="introduction" id="introduction-5"><div class="para" id="p-56">For each problem below, interpret the summands as binary-encoded integers and find the sum without converting the summands to decimal. Express all your answers in binary, and for each problem, show a complete record of your reasoning. This could be a collection of <span class="process-math">\(1 \to 2\)</span> machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.</div></div>
 <article class="task exercise-like" id="task-10"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-39">Add the following binary numbers: <span class="process-math">\(1011 + 1101\)</span>
+<div class="para" id="p-57">Add the following binary numbers: <span class="process-math">\(1011 + 1101\)</span>
 </div>
-<div class="solutions"><details id="answer-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-40">11000.</div></div></details></div></article><article class="task exercise-like" id="task-11"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-41">Perform the binary addition: <span class="process-math">\(11100 + 1011\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><div class="para" id="p-58">11000.</div></div></div>
+</div></article><article class="task exercise-like" id="task-11"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-59">Perform the binary addition: <span class="process-math">\(11100 + 1011\)</span>
 </div>
-<div class="solutions"><details id="answer-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-42">100111.</div></div></details></div></article><article class="task exercise-like" id="task-12"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="p-43">Add the binary numbers: <span class="process-math">\(10010 + 1101\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><div class="para" id="p-60">100111.</div></div></div>
+</div></article><article class="task exercise-like" id="task-12"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-61">Add the binary numbers: <span class="process-math">\(10010 + 1101\)</span>
 </div>
-<div class="solutions"><details id="answer-4" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-44">11111.</div></div></details></div></article><article class="task exercise-like" id="task-13"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="p-45">Compute the sum: <span class="process-math">\(1111 + 101\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-5" id="answer-5"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><div class="para" id="p-62">11111.</div></div></div>
+</div></article><article class="task exercise-like" id="task-13"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="p-63">Compute the sum: <span class="process-math">\(1111 + 101\)</span>
 </div></article><article class="task exercise-like" id="task-14"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<div class="para" id="p-46">Perform binary addition: <span class="process-math">\(101010 + 11011\)</span>
+<div class="para" id="p-64">Perform binary addition: <span class="process-math">\(101010 + 11011\)</span>
 </div></article><article class="task exercise-like" id="task-15"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<div class="para" id="p-47">Add the binary values: <span class="process-math">\(1111 + 111\)</span>
+<div class="para" id="p-65">Add the binary values: <span class="process-math">\(1111 + 111\)</span>
 </div></article><article class="task exercise-like" id="task-16"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<div class="para" id="p-48">Compute the sum of: <span class="process-math">\(10101 + 110\)</span>
+<div class="para" id="p-66">Compute the sum of: <span class="process-math">\(10101 + 110\)</span>
 </div></article><article class="task exercise-like" id="task-17"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<div class="para" id="p-49">Add the binary numbers: <span class="process-math">\(110110 + 1011\)</span>
+<div class="para" id="p-67">Add the binary numbers: <span class="process-math">\(110110 + 1011\)</span>
 </div></article><article class="task exercise-like" id="task-18"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<div class="para" id="p-50">Perform binary addition: <span class="process-math">\(1111 + 1001\)</span>
+<div class="para" id="p-68">Perform binary addition: <span class="process-math">\(1111 + 1001\)</span>
 </div></article><article class="task exercise-like" id="task-19"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<div class="para" id="p-51">Add the binary values: <span class="process-math">\(101010 + 110\)</span>
+<div class="para" id="p-69">Add the binary values: <span class="process-math">\(101010 + 110\)</span>
 </div></article></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="introduction" id="introduction-5"><div class="para" id="p-52">For each problem below, interpret the summands as hexadecimal-encoded integers and find the sum without converting the summands to decimal. (You are allowed to convert them to binary, but I don’t necessarily recommend it.) Express all your answers in hex, and for each problem, show a complete record of your reasoning. This could be a collection of <span class="process-math">\(1 \to 2\)</span> or <span class="process-math">\(1 \to 16\)</span> machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.</div></div>
+<div class="introduction" id="introduction-6"><div class="para" id="p-70">For each problem below, interpret the summands as hexadecimal-encoded integers and find the sum without converting the summands to decimal. (You are allowed to convert them to binary, but I don’t necessarily recommend it.) Express all your answers in hex, and for each problem, show a complete record of your reasoning. This could be a collection of <span class="process-math">\(1 \to 2\)</span> or <span class="process-math">\(1 \to 16\)</span> machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.</div></div>
 <article class="task exercise-like" id="task-20"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-53">Add the hexadecimal values: <span class="process-math">\(C_{16} + 7_{16}\)</span>
+<div class="para" id="p-71">Add the hexadecimal values: <span class="process-math">\(C_{16} + 7_{16}\)</span>
 </div>
-<div class="solutions"><details id="answer-5" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-54"><span class="process-math">\(13_{16}\)</span></div></div></details></div></article><article class="task exercise-like" id="task-21"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-55">Perform the sum: <span class="process-math">\(F2_{16} + 4_{16}\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-6" id="answer-6"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like"><div class="para" id="p-72"><span class="process-math">\(13_{16}\)</span></div></div></div>
+</div></article><article class="task exercise-like" id="task-21"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-73">Perform the sum: <span class="process-math">\(F2_{16} + 4_{16}\)</span>
 </div>
-<div class="solutions"><details id="answer-6" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-56"><span class="process-math">\(F6_{16}\)</span></div></div></details></div></article><article class="task exercise-like" id="task-22"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="p-57">Compute the sum: <span class="process-math">\(1D_{16} + A_{16}\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-7" id="answer-7"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><div class="para" id="p-74"><span class="process-math">\(F6_{16}\)</span></div></div></div>
+</div></article><article class="task exercise-like" id="task-22"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-75">Compute the sum: <span class="process-math">\(1D_{16} + A_{16}\)</span>
 </div>
-<div class="solutions"><details id="answer-7" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-58"><span class="process-math">\(27_{16}\)</span></div></div></details></div></article><article class="task exercise-like" id="task-23"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="p-59">Perform the sum: <span class="process-math">\(1F_{16} + A_{16}\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-8" id="answer-8"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like"><div class="para" id="p-76"><span class="process-math">\(27_{16}\)</span></div></div></div>
+</div></article><article class="task exercise-like" id="task-23"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="p-77">Perform the sum: <span class="process-math">\(1F_{16} + A_{16}\)</span>
 </div></article><article class="task exercise-like" id="task-24"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<div class="para" id="p-60">Add the hexadecimal numbers: <span class="process-math">\(1A_{16} + 2F_{16}\)</span>
+<div class="para" id="p-78">Add the hexadecimal numbers: <span class="process-math">\(1A_{16} + 2F_{16}\)</span>
 </div>
-<div class="solutions"><details id="answer-8" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-61"><span class="process-math">\(49_{16}\)</span></div></div></details></div></article><article class="task exercise-like" id="task-25"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<div class="para" id="p-62">Compute the sum: <span class="process-math">\(3B_{16} + 4D_{16}\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-9" id="answer-9"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-9"><div class="answer solution-like"><div class="para" id="p-79"><span class="process-math">\(49_{16}\)</span></div></div></div>
+</div></article><article class="task exercise-like" id="task-25"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="p-80">Compute the sum: <span class="process-math">\(3B_{16} + 4D_{16}\)</span>
 </div></article><article class="task exercise-like" id="task-26"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<div class="para" id="p-63">Add the hexadecimal values: <span class="process-math">\(A1_{16} + B2_{16}\)</span>
+<div class="para" id="p-81">Add the hexadecimal values: <span class="process-math">\(A1_{16} + B2_{16}\)</span>
 </div>
-<div class="solutions"><details id="answer-9" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-64"><span class="process-math">\(153_{16}\)</span></div></div></details></div></article><article class="task exercise-like" id="task-27"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<div class="para" id="p-65">Add the hexadecimal numbers: <span class="process-math">\(2C_{16} + 13_{16}\)</span>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-10" id="answer-10"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><div class="para" id="p-82"><span class="process-math">\(153_{16}\)</span></div></div></div>
+</div></article><article class="task exercise-like" id="task-27"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<div class="para" id="p-83">Add the hexadecimal numbers: <span class="process-math">\(2C_{16} + 13_{16}\)</span>
 </div></article><article class="task exercise-like" id="task-28"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<div class="para" id="p-66">Compute the sum: <span class="process-math">\(1AB_{16} + 2F_{16}\)</span>
+<div class="para" id="p-84">Compute the sum: <span class="process-math">\(1AB_{16} + 2F_{16}\)</span>
 </div></article><article class="task exercise-like" id="task-29"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<div class="para" id="p-67">Add the hexadecimal numbers: <span class="process-math">\(3E_{16} + 25_{16}\)</span>
+<div class="para" id="p-85">Add the hexadecimal numbers: <span class="process-math">\(3E_{16} + 25_{16}\)</span>
 </div></article><article class="task exercise-like" id="task-30"><h5 class="heading"><span class="codenumber">(k)</span></h5>
-<div class="para" id="p-68">Add the hexadecimal numbers: <span class="process-math">\(A7 + F9\)</span>
+<div class="para" id="p-86">Add the hexadecimal numbers: <span class="process-math">\(A7 + F9\)</span>
 </div></article><article class="task exercise-like" id="task-31"><h5 class="heading"><span class="codenumber">(l)</span></h5>
-<div class="para" id="p-69">Add the hexadecimal numbers: <span class="process-math">\(C5 + 13B\)</span>
+<div class="para" id="p-87">Add the hexadecimal numbers: <span class="process-math">\(C5 + 13B\)</span>
 </div></article><article class="task exercise-like" id="task-32"><h5 class="heading"><span class="codenumber">(m)</span></h5>
-<div class="para" id="p-70">Add the hexadecimal numbers: <span class="process-math">\(124 + 17C\)</span>
+<div class="para" id="p-88">Add the hexadecimal numbers: <span class="process-math">\(124 + 17C\)</span>
 </div></article><article class="task exercise-like" id="task-33"><h5 class="heading"><span class="codenumber">(n)</span></h5>
-<div class="para" id="p-71">Add the hexadecimal numbers: <span class="process-math">\(1F3 + 1A7\)</span>
+<div class="para" id="p-89">Add the hexadecimal numbers: <span class="process-math">\(1F3 + 1A7\)</span>
 </div></article><article class="task exercise-like" id="task-34"><h5 class="heading"><span class="codenumber">(o)</span></h5>
-<div class="para" id="p-72">Add the hexadecimal numbers: <span class="process-math">\(266 + 1C2\)</span>
+<div class="para" id="p-90">Add the hexadecimal numbers: <span class="process-math">\(266 + 1C2\)</span>
 </div></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-assignments.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-assignments.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-assignment-day04.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
