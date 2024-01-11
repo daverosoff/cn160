@@ -205,4 +205,78 @@
       </exercise>
     </exercises>
   </section>
+  <section xml:id="sec-assignment-day04">
+    <title>Problems for Thursday, January 11</title>
+    <p>
+      Work on these problems in groups of 2<ndash/>3
+      while the instructor catches up on grading
+      projects 00 and 01. For Python coding problems, you can save
+      more files on your Pico (make sure not to overwrite <c>code.py</c>).
+      Use the Serial console in Mu editor to
+      see the output of your programs.
+    </p>
+    <exercises xml:id="exercises-day04">
+      <exercise>
+        <statement>
+          <p>
+            Write a function <c>is_even(x)</c> that takes a single integer
+            argument <c>x</c> and returns <c>True</c> if the argument is even and
+            <c>False</c> otherwise. You may assume that the argument is
+            a nonnegative integer (do <em>not</em> validate within your
+            function). You may <em>not</em> use the <c>%</c> operator.
+            Only use bitwise operators and equality comparison.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write a function <c>bit_is_set(x, n)</c> that takes two integer
+            arguments <c>x</c> and <c>n</c> and returns <c>True</c> if the
+            <c>n</c>th bit of <c>x</c> is set and <c>False</c> otherwise.
+            You may assume that the arguments are nonnegative integers
+            (do <em>not</em> validate within your function). You may <em>not</em>
+            use the <c>%</c> operator. Only use bitwise operators and
+            equality comparison.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write a function <c>set_bit(x, n)</c> that takes two integer
+            arguments <c>x</c> and <c>n</c> and returns the value of <c>x</c>
+            with the <c>n</c>th bit set. You may assume that the arguments are
+            nonnegative integers (do <em>not</em> validate within your function).
+            You may <em>not</em> use the <c>%</c> operator. Only use bitwise
+            operators and equality comparison.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write a function <c>clear_bit(x, n)</c> that takes two integer
+            arguments <c>x</c> and <c>n</c> and returns the value of <c>x</c>
+            with the <c>n</c>th bit cleared. You may assume that the arguments
+            are nonnegative integers (do <em>not</em> validate within your
+            function). You may <em>not</em> use the <c>%</c> operator. Only use
+            bitwise operators and equality comparison.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write a function <c>toggle_bit(x, n)</c> that takes two integer
+            arguments <c>x</c> and <c>n</c> and returns the value of <c>x</c>
+            with the <c>n</c>th bit toggled. You may assume that the arguments
+            are nonnegative integers (do <em>not</em> validate within your
+            function). You may <em>not</em> use the <c>%</c> operator. Only use
+            bitwise operators and equality comparison.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
 </chapter>

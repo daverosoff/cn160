@@ -16,44 +16,44 @@
             operands. The operands must be of the same length, and the
             result is a bit pattern of the same length. The bitwise
             operators are:
+            <ol>
+                <li>
+                    <p>
+                        <term>Bitwise AND</term> &amp; is a binary
+                        operator that takes two bit patterns of the same length
+                        and returns a bit pattern of the same length. The
+                        resulting bit pattern has a 1 bit in each position where
+                        both operands have a 1 bit, and a 0 bit in all other
+                        positions.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Bitwise OR</term> | is a binary operator
+                        that takes two bit patterns of the same length and
+                        returns a bit pattern of the same length. The resulting
+                        bit pattern has a 1 bit in each position where at least
+                        one of the operands has a 1 bit, and a 0 bit in all other
+                        positions.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Bitwise XOR</term> ^ is a binary operator
+                        that takes two bit patterns of the same length and
+                        returns a bit pattern of the same length. The resulting
+                        bit pattern has a 1 bit in each position where exactly
+                        one of the operands has a 1 bit, and a 0 bit in all other
+                        positions.
+                    </p>
+                </li>
+            </ol>
         </p>
-        <ol>
-            <li>
-                <p>
-                    <term>Bitwise AND</term> &amp; is a binary
-                    operator that takes two bit patterns of the same length
-                    and returns a bit pattern of the same length. The
-                    resulting bit pattern has a 1 bit in each position where
-                    both operands have a 1 bit, and a 0 bit in all other
-                    positions.
-                </p>
-            </li>
-            <li>
-                <p>
-                    <term>Bitwise OR</term> | is a binary operator
-                    that takes two bit patterns of the same length and
-                    returns a bit pattern of the same length. The resulting
-                    bit pattern has a 1 bit in each position where at least
-                    one of the operands has a 1 bit, and a 0 bit in all other
-                    positions.
-                </p>
-            </li>
-            <li>
-                <p>
-                    <term>Bitwise XOR</term> ^ is a binary operator
-                    that takes two bit patterns of the same length and
-                    returns a bit pattern of the same length. The resulting
-                    bit pattern has a 1 bit in each position where exactly
-                    one of the operands has a 1 bit, and a 0 bit in all other
-                    positions.
-                </p>
-            </li>
-        </ol>
-        <notation>
+        <remark>
             <p>
                 In class, I previously used the symbols <m>\oplus</m> and
                 <m>\odot</m> for bitwise OR and AND, respectively. In this
-                section, we use different symbols, to match Python's notation:
+                section, we use different symbols, to match Python's remark:
                 &amp; for bitwise AND, | for bitwise OR, and ^ for bitwise XOR.
                 Bitwise versions of NAND, NOR, and XNOR do not appear in these
                 notes.
@@ -63,7 +63,7 @@
                 meaning that it takes a single operand. The operand must be a
                 bit pattern, and the result is a bit pattern of the same length.
             </p>
-        </notation>
+        </remark>
         <remark>
             <p>
                 If you have previous experience in C, Java, or closely related
@@ -82,10 +82,10 @@
         </p>
         <example>
             <p>
-                The expression <code>0b1010 &lt;&lt; 1</code> evaluates to
-                <code>0b10100</code>, and the expression
-                <code>0b1010 &gt;&gt; 1</code> evaluates to
-                <code>0b101</code>.
+                The expression <c>0b1010 &lt;&lt; 1</c> evaluates to
+                <c>0b10100</c>, and the expression
+                <c>0b1010 &gt;&gt; 1</c> evaluates to
+                <c>0b101</c>.
             </p>
         </example>
     </introduction>
@@ -166,7 +166,26 @@
         <activity>
             <statement>
                 <p>
-                    Pass
+                    What is the effect of applying bitwise AND to a bit pattern
+                    <m>x</m> and the word <m>111\ldots0</m> of the same length?
+                </p>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    What is the effect of applying bitwise OR to a bit pattern
+                    <m>x</m> and the word <m>000\ldots1</m> of the same length?
+                </p>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    How would you use a similar idea to toggle the last bit
+                    of <m>x</m>? That is, how would you use a bitwise operation
+                    to change the last bit of <m>x</m> from 0 to 1 or from 1 to 0?
+                    You cannot use a conditional statement.
                 </p>
             </statement>
         </activity>
