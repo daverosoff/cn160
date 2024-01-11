@@ -236,7 +236,8 @@
             <c>n</c>th bit of <c>x</c> is set and <c>False</c> otherwise.
             You may assume that the arguments are nonnegative integers
             (do <em>not</em> validate within your function). You may <em>not</em>
-            use the <c>%</c> operator. Only use bitwise operators and
+            use the <c>%</c> operator or any loops or conditionals.
+            Only use bitwise operators and
             equality comparison.
           </p>
         </statement>
@@ -248,7 +249,8 @@
             arguments <c>x</c> and <c>n</c> and returns the value of <c>x</c>
             with the <c>n</c>th bit set. You may assume that the arguments are
             nonnegative integers (do <em>not</em> validate within your function).
-            You may <em>not</em> use the <c>%</c> operator. Only use bitwise
+            You may <em>not</em> use the <c>%</c> operator or any loops or
+            conditionals. Only use bitwise
             operators and equality comparison.
           </p>
         </statement>
@@ -260,7 +262,8 @@
             arguments <c>x</c> and <c>n</c> and returns the value of <c>x</c>
             with the <c>n</c>th bit cleared. You may assume that the arguments
             are nonnegative integers (do <em>not</em> validate within your
-            function). You may <em>not</em> use the <c>%</c> operator. Only use
+            function). You may <em>not</em> use the <c>%</c> operator or
+            any loops or conditionals. Only use
             bitwise operators and equality comparison.
           </p>
         </statement>
@@ -272,7 +275,8 @@
             arguments <c>x</c> and <c>n</c> and returns the value of <c>x</c>
             with the <c>n</c>th bit toggled. You may assume that the arguments
             are nonnegative integers (do <em>not</em> validate within your
-            function). You may <em>not</em> use the <c>%</c> operator. Only use
+            function). You may <em>not</em> use the <c>%</c> operator or any
+            loops or conditionals. Only use
             bitwise operators and equality comparison.
           </p>
         </statement>
