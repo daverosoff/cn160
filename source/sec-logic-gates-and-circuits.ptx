@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-logic-gates-and-circuits">
+    <title>Logic gates and circuits</title>
+    <introduction>
+        <p>
+            In this section we will begin to represent logic diagrammatically
+            with gates. This will allow us to build circuits that perform
+            complex logical operations.
+        </p>
+    </introduction>
+    <subsection xml:id="subsec-the-basic-gates">
+        <title>The Basic Gates</title>
+        <p>
+            There are seven basic gates available in Logisim Evolution.
+            They are the AND, NAND, OR, NOR, XOR, XNOR, and NOT gates,
+            pictured in
+        </p>
+        <sbsgroup widths="35% 35%" margins="5% 5%" valign="top">
+            <sidebyside>
+                <image source="and_gate" width="100%">
+                    <description>
+                        The AND gate is shaped like a capital
+                        letter D. The inputs are on the left side of
+                        the gate and the output is on the right curved side.
+                    </description>
+                </image>
+                <image source="nand_gate" width="100%">
+                    <description>
+                        The NAND gate resembles the AND gate, but has
+                        a small circle on the output side. This circle
+                        indicates that the output is inverted.
+                    </description>
+                </image>
+            </sidebyside>
+            <sidebyside>
+                <image source="or_gate" width="100%">
+                    <description>
+                        The OR gate is shaped like a boomerang, oriented
+                        with its tips at the top and bottom, and concave
+                        side on the left. The inputs are on the concave side
+                        of the gate and
+                        the output is on the convex side.
+                    </description>
+                </image>
+                <image source="nor_gate" width="100%">
+                    <description>
+                        The NOR gate resembles the OR gate, but has
+                        a small circle on the output side. This circle
+                        indicates that the output is inverted.
+                    </description>
+                </image>
+            </sidebyside>
+            <sidebyside>
+                <image source="xor_gate" width="100%">
+                    <description>
+                        The XOR gate is shaped like the OR gate,
+                        but with an extra line parallel and adjacent to
+                        the concave side. The inputs are on the concave side
+                        of the gate and the output is on the convex side.
+                    </description>
+                </image>
+                <image source="xnor_gate" width="100%">
+                    <description>
+                        The XNOR gate resembles the XOR gate, but has
+                        a small circle on the output side. This circle
+                        indicates that the output is inverted.
+                    </description>
+                </image>
+            </sidebyside>
+        </sbsgroup>
+        <image source="not_gate" width="%">
+            <description>
+                The NOT gate is shaped like a triangle with a small circle
+                on the output side. This circle indicates that the output
+                is inverted.
+            </description>
+        </image>
+    </subsection>
+</section>
