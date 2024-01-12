@@ -18,62 +18,62 @@
         <sbsgroup widths="35% 35%" margins="5% 5%" valign="top">
             <sidebyside>
                 <image source="and_gate" width="100%">
-                    <description>
+                    <shortdescription>
                         The AND gate is shaped like a capital
                         letter D. The inputs are on the left side of
                         the gate and the output is on the right curved side.
-                    </description>
+                    </shortdescription>
                 </image>
                 <image source="nand_gate" width="100%">
-                    <description>
+                    <shortdescription>
                         The NAND gate resembles the AND gate, but has
                         a small circle on the output side. This circle
                         indicates that the output is inverted.
-                    </description>
+                    </shortdescription>
                 </image>
             </sidebyside>
             <sidebyside>
                 <image source="or_gate" width="100%">
-                    <description>
+                    <shortdescription>
                         The OR gate is shaped like a boomerang, oriented
                         with its tips at the top and bottom, and concave
                         side on the left. The inputs are on the concave side
                         of the gate and
                         the output is on the convex side.
-                    </description>
+                    </shortdescription>
                 </image>
                 <image source="nor_gate" width="100%">
-                    <description>
+                    <shortdescription>
                         The NOR gate resembles the OR gate, but has
                         a small circle on the output side. This circle
                         indicates that the output is inverted.
-                    </description>
+                    </shortdescription>
                 </image>
             </sidebyside>
             <sidebyside>
                 <image source="xor_gate" width="100%">
-                    <description>
+                    <shortdescription>
                         The XOR gate is shaped like the OR gate,
                         but with an extra line parallel and adjacent to
                         the concave side. The inputs are on the concave side
                         of the gate and the output is on the convex side.
-                    </description>
+                    </shortdescription>
                 </image>
                 <image source="xnor_gate" width="100%">
-                    <description>
+                    <shortdescription>
                         The XNOR gate resembles the XOR gate, but has
                         a small circle on the output side. This circle
                         indicates that the output is inverted.
-                    </description>
+                    </shortdescription>
                 </image>
             </sidebyside>
         </sbsgroup>
         <image source="not_gate" width="%">
-            <description>
+            <shortdescription>
                 The NOT gate is shaped like a triangle with a small circle
                 on the output side. This circle indicates that the output
                 is inverted.
-            </description>
+            </shortdescription>
         </image>
     </subsection>
 </section>
