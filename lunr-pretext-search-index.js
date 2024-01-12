@@ -232,7 +232,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Bitwise operators",
-  "body": " Bitwise operators   Let us adopt the terminology bit pattern or word for a sequence of bits of a fixed length. This way we do not need to be specific about the length of the bit pattern or think about what integer it might (or might not) represent. All data handled by digital computers is ultimately represented as bit patterns.  The bitwise operators are applied to bit patterns. They are binary operators , meaning that they take two operands. The operands must be of the same length, and the result is a bit pattern of the same length. The bitwise operators are:    Bitwise AND & is a binary operator that takes two bit patterns of the same length and returns a bit pattern of the same length. The resulting bit pattern has a 1 bit in each position where both operands have a 1 bit, and a 0 bit in all other positions.     Bitwise OR | is a binary operator that takes two bit patterns of the same length and returns a bit pattern of the same length. The resulting bit pattern has a 1 bit in each position where at least one of the operands has a 1 bit, and a 0 bit in all other positions.     Bitwise XOR ^ is a binary operator that takes two bit patterns of the same length and returns a bit pattern of the same length. The resulting bit pattern has a 1 bit in each position where exactly one of the operands has a 1 bit, and a 0 bit in all other positions.      In class, I previously used the symbols and for bitwise OR and AND, respectively. In this section, we use different symbols, to match Python's remark: & for bitwise AND, | for bitwise OR, and ^ for bitwise XOR. Bitwise versions of NAND, NOR, and XNOR do not appear in these notes.  The bitwise NOT operator is written . It is a unary operator, meaning that it takes a single operand. The operand must be a bit pattern, and the result is a bit pattern of the same length.    If you have previous experience in C, Java, or closely related languages, you may have wondered why the logical operators AND and OR are written && and || in those languages. It is because the single-character variants & and | are reserved for bitwise operations.   Some other operators on bit patterns are the logical shift operators << and >>. These are also binary operators, taking a bit pattern and an integer as operands. The result is a bit pattern of the same length as the first operand. The second operand must be non-negative.   The expression 0b1010 << 1 evaluates to 0b10100 , and the expression 0b1010 >> 1 evaluates to 0b101 .     Bitmasking       What operation from our previous discussion of binary-encoded integers is also represented by << 1? That is, if the bit pattern is interpreted as an integer, what integer is represented by << 1?    What operation from our previous discussion of binary-encoded integers is also represented by >> 1? That is, if the bit pattern is interpreted as an integer, what integer is represented by >> 1?       Recall that bitwise operators return values of the same length as their operands. Therefore, the bitwise operators behave in the following way for a few 4-bit patterns:    The fixed-width nature of bitwise operators                                            What is the effect of applying bitwise AND to a bit pattern and the word of the same length?      What is the effect of applying bitwise OR to a bit pattern and the word of the same length?      How would you use a similar idea to toggle the last bit of ? That is, how would you use a bitwise operation to change the last bit of from 0 to 1 or from 1 to 0? You cannot use a conditional statement.     "
+  "body": " Bitwise operators   Let us adopt the terminology bit pattern or word for a sequence of bits of a fixed length. This way we do not need to be specific about the length of the bit pattern or think about what integer it might (or might not) represent. All data handled by digital computers is ultimately represented as bit patterns.  The bitwise operators are applied to bit patterns. They are binary operators , meaning that they take two operands. The operands must be of the same length, and the result is a bit pattern of the same length. The bitwise operators are:    Bitwise AND & is a binary operator that takes two bit patterns of the same length and returns a bit pattern of the same length. The resulting bit pattern has a 1 bit in each position where both operands have a 1 bit, and a 0 bit in all other positions.     Bitwise OR | is a binary operator that takes two bit patterns of the same length and returns a bit pattern of the same length. The resulting bit pattern has a 1 bit in each position where at least one of the operands has a 1 bit, and a 0 bit in all other positions.     Bitwise XOR ^ is a binary operator that takes two bit patterns of the same length and returns a bit pattern of the same length. The resulting bit pattern has a 1 bit in each position where exactly one of the operands has a 1 bit, and a 0 bit in all other positions.      In class, I previously used the symbols and for bitwise OR and AND, respectively. In this section, we use different symbols, to match Python's remark: & for bitwise AND, | for bitwise OR, and ^ for bitwise XOR. Bitwise versions of NAND, NOR, and XNOR do not appear in these notes.  The bitwise NOT operator is written . It is a unary operator, meaning that it takes a single operand. The operand must be a bit pattern, and the result is a bit pattern of the same length.    If you have previous experience in C, Java, or closely related languages, you may have wondered why the logical operators AND and OR are written && and || in those languages. It is because the single-character variants & and | are reserved for bitwise operations.   Some other operators on bit patterns are the logical shift operators << and >>. These are also binary operators, taking a bit pattern and an integer as operands. The result is a bit pattern of the same length as the first operand. The second operand must be non-negative.   The expression 0b1010 << 1 evaluates to 0b10100 , and the expression 0b1010 >> 1 evaluates to 0b101 .     Bitmasking       What operation from our previous discussion of binary-encoded integers is also represented by << 1? That is, if the bit pattern is interpreted as an integer, what integer is represented by << 1?    What operation from our previous discussion of binary-encoded integers is also represented by >> 1? That is, if the bit pattern is interpreted as an integer, what integer is represented by >> 1?       Recall that bitwise operators return values of the same length as their operands. Therefore, the bitwise operators behave in the following way for a few 4-bit patterns:    The fixed-width nature of bitwise operators                                        What is the effect of applying bitwise AND to a bit pattern and the word of the same length?      What is the effect of applying bitwise OR to a bit pattern and the word of the same length?      How would you use a similar idea to toggle the last bit of ? That is, how would you use a bitwise operation to change the last bit of from 0 to 1 or from 1 to 0? You cannot use a conditional statement.     "
 },
 {
   "id": "p-38",
@@ -304,7 +304,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.3.4",
   "title": "",
-  "body": "  The fixed-width nature of bitwise operators                                         "
+  "body": "  The fixed-width nature of bitwise operators                                     "
 },
 {
   "id": "activity-11",
@@ -332,6 +332,141 @@ var ptx_lunr_docs = [
   "number": "1.3.4",
   "title": "",
   "body": "  How would you use a similar idea to toggle the last bit of ? That is, how would you use a bitwise operation to change the last bit of from 0 to 1 or from 1 to 0? You cannot use a conditional statement.   "
+},
+{
+  "id": "sec-logic-gates-and-circuits",
+  "level": "1",
+  "url": "sec-logic-gates-and-circuits.html",
+  "type": "Section",
+  "number": "1.4",
+  "title": "Logic gates and circuits",
+  "body": " Logic gates and circuits   In this section we will begin to represent logic diagrammatically with gates. This will allow us to build circuits that perform complex logical operations.    The Basic Gates  There are seven basic gates available in Logisim Evolution. They are the AND, NAND, OR, NOR, XOR, XNOR, and NOT gates, pictured in .     The AND gate.   The AND gate is shaped like a capital letter D. The inputs are on the left side of the gate and the output is on the right curved side.     The NAND gate.   The NAND gate resembles the AND gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The OR gate.   The OR gate is shaped like a boomerang, oriented with its tips at the top and bottom, and concave side on the left. The inputs are on the concave side of the gate and the output is on the convex side.     The NOR gate.   The NOR gate resembles the OR gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The XOR gate.   The XOR gate is shaped like the OR gate, but with an extra line parallel and adjacent to the concave side. The inputs are on the concave side of the gate and the output is on the convex side.     The XNOR gate.   The XNOR gate resembles the XOR gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The NOT gate.   The NOT gate is shaped like a triangle with a small circle on the output side. This circle indicates that the output is inverted.    There is only one rule of using these gates. All gate inputs must be connected. The possible values to which they can be connected are the logic values 0 and 1. The output of a gate is determined by its operator applied to its inputs.  In a physical circuit, the logic value is usually represented by a low voltage like volts and the logic value is usually represented by a higher voltage like volts. In Logisim Evolution, the logic value is represented by dark green and the logic value is represented by light green.    Install Logisim Evolution on your computer. You can download it from . Windows users should choose the x86_64.msi file. Mac users should choose the dmg file. You will need to install Java if you do not already have it installed.      Open Logisim Evolution. You should see a window with a blank canvas.   The quick panel above the canvas contains the basic gates. Click the AND gate, let go, and mouse onto the canvas. You should see a gate with two inputs and one output. You can put it anywhere on the canvas. You can also move it around later, although that may goof up any wiring you have added.  Add an XOR gate to the canvas. You should see a gate with two inputs and one output. Put it below and to the right of your AND gate.  If you click the output of the AND gate, you will see a wire attached to your mouse. If you move your mouse to the input of the XOR gate, you will see the wire attached to the input. You can only add one right-angle turn per click. If you click, the wire will stay where it is. Click the free end of the wire to continue the wiring path to an input of the XOR gate.  Use the arrow (selection tool) and the delete key to delete the wire you just added.  In the left panel, open the Wiring folder and add two inputs. Connect each input to one of the inputs of the AND gate. Branch off these connections so that each input is also connected to the XOR gate.  In the Input\/Output folder, add two LEDS. Connect one to the output of the AND gate, and the other to the output of the XOR gate. As connections are completed, the red error wires should turn dark green. The inputs are set to 0 at first, and this value is represented by dark green. The outputs should be dark green as well.   When you are done, the circuit should look like this.   The completed circuit.   The completed circuit. The outputs each connect to both gates, one at each input. The outputs are to the right, each connected to the output of one gate.        Now you will add some labels. Labels are used to name inputs and outputs, as well as gates.    Double-click an input and label it x . Label the other input y .    Double-click the AND gate and label it AND1 . Label the XOR gate XOR1 .    Double-click the output of the AND gate and label it s . Label the output of the XOR gate c .    When you are done, the circuit should look like this.   The completed circuit with labels.   The completed circuit with labels. The labels are shown in blue. The labels are x and y for the inputs, AND1 and XOR1 for the gates, and s and c for the outputs.        Use the Poke tool in the quick panel (the hand icon) to poke the inputs. Click the x input. It should turn light green. Click the y input. It should turn light green. As you play with the inputs, observe that the wires change color to reflect the logic value the carry.  Make a truth table with four columns for , , , and . The first two columns should have the values and in alternating order, as we have seen in class. Use the Poke tool to determine the values of and for each combination of and . Record your results in the table.   Truth table for the circuit.    x  y  s  c    0  0      0  1      1  0      1  1       This circuit is called a half adder . The output (for sum ) is the sum of the inputs (remember, the sum of 1-bit values is also a 1-bit value). Because in 1-bit arithmetic, the output is the XOR of the inputs. The output (for carry ) is called the carry bit. It is if the addition overflows, which is only the case when both inputs are . Thus, the output is the AND of the inputs.      Select your entire circuit using the selection tool (arrow icon). Copy and paste it. You should see a copy of your circuit appear on the canvas. Move it below and a little to the right of the original circuit. Change the labels of the new gates to AND2 and XOR2 .  Use the tools in the quick panel to construct this circuit.   The completed circuit.   The full adder circuit is composed of two linked half adders plus an OR gate.        Make a truth table for the circuit. The first three columns should be , , and . The last two columns should be and . Use the Poke tool to determine the values of and for each combination of , , and . Record your results in the table.      Thinking about the truth table, explain why this circuit is called a full adder .     "
+},
+{
+  "id": "figure-and-gate",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-and-gate",
+  "type": "Figure",
+  "number": "1.4.1",
+  "title": "",
+  "body": " The AND gate.   The AND gate is shaped like a capital letter D. The inputs are on the left side of the gate and the output is on the right curved side.   "
+},
+{
+  "id": "figure-2",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-2",
+  "type": "Figure",
+  "number": "1.4.2",
+  "title": "",
+  "body": " The NAND gate.   The NAND gate resembles the AND gate, but has a small circle on the output side. This circle indicates that the output is inverted.   "
+},
+{
+  "id": "figure-3",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-3",
+  "type": "Figure",
+  "number": "1.4.3",
+  "title": "",
+  "body": " The OR gate.   The OR gate is shaped like a boomerang, oriented with its tips at the top and bottom, and concave side on the left. The inputs are on the concave side of the gate and the output is on the convex side.   "
+},
+{
+  "id": "figure-4",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-4",
+  "type": "Figure",
+  "number": "1.4.4",
+  "title": "",
+  "body": " The NOR gate.   The NOR gate resembles the OR gate, but has a small circle on the output side. This circle indicates that the output is inverted.   "
+},
+{
+  "id": "figure-5",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-5",
+  "type": "Figure",
+  "number": "1.4.5",
+  "title": "",
+  "body": " The XOR gate.   The XOR gate is shaped like the OR gate, but with an extra line parallel and adjacent to the concave side. The inputs are on the concave side of the gate and the output is on the convex side.   "
+},
+{
+  "id": "figure-6",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-6",
+  "type": "Figure",
+  "number": "1.4.6",
+  "title": "",
+  "body": " The XNOR gate.   The XNOR gate resembles the XOR gate, but has a small circle on the output side. This circle indicates that the output is inverted.   "
+},
+{
+  "id": "figure-not-gate",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#figure-not-gate",
+  "type": "Figure",
+  "number": "1.4.7",
+  "title": "",
+  "body": " The NOT gate.   The NOT gate is shaped like a triangle with a small circle on the output side. This circle indicates that the output is inverted.   "
+},
+{
+  "id": "activity-14",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-14",
+  "type": "Activity",
+  "number": "1.4.1",
+  "title": "",
+  "body": "  Install Logisim Evolution on your computer. You can download it from . Windows users should choose the x86_64.msi file. Mac users should choose the dmg file. You will need to install Java if you do not already have it installed.   "
+},
+{
+  "id": "activity-15",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-15",
+  "type": "Activity",
+  "number": "1.4.2",
+  "title": "",
+  "body": "  Open Logisim Evolution. You should see a window with a blank canvas.   The quick panel above the canvas contains the basic gates. Click the AND gate, let go, and mouse onto the canvas. You should see a gate with two inputs and one output. You can put it anywhere on the canvas. You can also move it around later, although that may goof up any wiring you have added.  Add an XOR gate to the canvas. You should see a gate with two inputs and one output. Put it below and to the right of your AND gate.  If you click the output of the AND gate, you will see a wire attached to your mouse. If you move your mouse to the input of the XOR gate, you will see the wire attached to the input. You can only add one right-angle turn per click. If you click, the wire will stay where it is. Click the free end of the wire to continue the wiring path to an input of the XOR gate.  Use the arrow (selection tool) and the delete key to delete the wire you just added.  In the left panel, open the Wiring folder and add two inputs. Connect each input to one of the inputs of the AND gate. Branch off these connections so that each input is also connected to the XOR gate.  In the Input\/Output folder, add two LEDS. Connect one to the output of the AND gate, and the other to the output of the XOR gate. As connections are completed, the red error wires should turn dark green. The inputs are set to 0 at first, and this value is represented by dark green. The outputs should be dark green as well.   When you are done, the circuit should look like this.   The completed circuit.   The completed circuit. The outputs each connect to both gates, one at each input. The outputs are to the right, each connected to the output of one gate.     "
+},
+{
+  "id": "activity-16",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-16",
+  "type": "Activity",
+  "number": "1.4.3",
+  "title": "",
+  "body": "  Now you will add some labels. Labels are used to name inputs and outputs, as well as gates.    Double-click an input and label it x . Label the other input y .    Double-click the AND gate and label it AND1 . Label the XOR gate XOR1 .    Double-click the output of the AND gate and label it s . Label the output of the XOR gate c .    When you are done, the circuit should look like this.   The completed circuit with labels.   The completed circuit with labels. The labels are shown in blue. The labels are x and y for the inputs, AND1 and XOR1 for the gates, and s and c for the outputs.     "
+},
+{
+  "id": "activity-17",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-17",
+  "type": "Activity",
+  "number": "1.4.4",
+  "title": "",
+  "body": "  Use the Poke tool in the quick panel (the hand icon) to poke the inputs. Click the x input. It should turn light green. Click the y input. It should turn light green. As you play with the inputs, observe that the wires change color to reflect the logic value the carry.  Make a truth table with four columns for , , , and . The first two columns should have the values and in alternating order, as we have seen in class. Use the Poke tool to determine the values of and for each combination of and . Record your results in the table.   Truth table for the circuit.    x  y  s  c    0  0      0  1      1  0      1  1       This circuit is called a half adder . The output (for sum ) is the sum of the inputs (remember, the sum of 1-bit values is also a 1-bit value). Because in 1-bit arithmetic, the output is the XOR of the inputs. The output (for carry ) is called the carry bit. It is if the addition overflows, which is only the case when both inputs are . Thus, the output is the AND of the inputs.   "
+},
+{
+  "id": "activity-18",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-18",
+  "type": "Activity",
+  "number": "1.4.5",
+  "title": "",
+  "body": "  Select your entire circuit using the selection tool (arrow icon). Copy and paste it. You should see a copy of your circuit appear on the canvas. Move it below and a little to the right of the original circuit. Change the labels of the new gates to AND2 and XOR2 .  Use the tools in the quick panel to construct this circuit.   The completed circuit.   The full adder circuit is composed of two linked half adders plus an OR gate.     "
+},
+{
+  "id": "activity-19",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-19",
+  "type": "Activity",
+  "number": "1.4.6",
+  "title": "",
+  "body": "  Make a truth table for the circuit. The first three columns should be , , and . The last two columns should be and . Use the Poke tool to determine the values of and for each combination of , , and . Record your results in the table.   "
+},
+{
+  "id": "activity-20",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#activity-20",
+  "type": "Activity",
+  "number": "1.4.7",
+  "title": "",
+  "body": "  Thinking about the truth table, explain why this circuit is called a full adder .   "
 },
 {
   "id": "assignments-day00",
