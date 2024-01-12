@@ -114,9 +114,8 @@
                 <p>
                     Install Logisim Evolution on your computer. You can download it
                     from <url href="https://github.com/logisim-evolution/logisim-evolution/releases" />.
-                    Windows users should choose the <c>x86_64.msi</c> file. Mac users should
-                    choose the <c>dmg</c> file. You will need to install Java if you do not
-                    already have it installed.
+                    Windows users should choose the <c>x86.msi</c> file. Mac users should
+                    choose the <c>dmg</c> file.
                 </p>
             </statement>
         </activity>
@@ -159,9 +158,9 @@
             </task>
             <task>
                 <p>
-                    In the left panel, open the Wiring folder and add two inputs. Connect
-                    each input to one of the inputs of the AND gate. Branch off these
-                    connections so that each input is also connected to the XOR gate.
+                    In the left panel, open the Wiring folder and add two Pins. Connect
+                    each Pin to one of the inputs of the AND gate. Branch off these
+                    connections so that each Pin is also connected to the XOR gate.
                 </p>
             </task>
             <task>
@@ -244,7 +243,7 @@
                     <q>poke</q> the inputs. Click the <c>x</c> input. It should
                     turn light green. Click the <c>y</c> input. It should turn
                     light green. As you play with the inputs, observe that the
-                    wires change color to reflect the logic value the carry.
+                    wires change color to reflect the logic value they carry.
                 </p>
                 <p>
                     Make a truth table with four columns for <m>x</m>, <m>y</m>,
@@ -339,6 +338,90 @@
                 <p>
                     Thinking about the truth table, explain why this circuit is called
                     a <term>full adder</term>.
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    The full adder (made of two half adders plus an OR gate)
+                    actually adds 3 bits. The <m>C_{in}</m> input is the carry
+                    bit from the previous addition. The <m>C_{out}</m> output
+                    is the carry bit for the next addition. The <m>s</m> output
+                    is the (1-bit) sum of the three bits.
+                </p>
+            </answer>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Use the Project...Add Circuit menu item to add a subcircuit
+                    to your project. Name it <c>Adder1Bit</c>. Select your
+                    entire full adder circuit and
+                    cut it from the Main circuit. Double-click the name <c>Adder1Bit</c>
+                    in the left pane to open the subcircuit. Paste the full adder
+                    circuit into the newly opened blank canvas. At this point it is
+                    probably a good idea to save your project. Call it <c>adder.circ</c>.
+                </p>
+                <p>
+                    For your subcircuit to work properly, we need to remove the LED indicators
+                    and replace them with real outputs. You can use Pins for this purpose.
+                    You will need to alter their attributes in the left pane, so that they
+                    are output pins instead of input pins. Alternatively, you can use the
+                    quick panel to add outputs. Both input and output pins are represented
+                    on the quick panel. When you are done, the subcircuit should look
+                    like <xref ref="figure-full-adder-subcircuit"/> below.
+                </p>
+                <figure xml:id="figure-full-adder-subcircuit">
+                    <caption>The full adder as a subcircuit.</caption>
+                    <image width="80%" source="full_adder_subcircuit.png">
+                        <description>The full adder subcircuit has had its LEDs
+                            replaced with output pins from the quick panel.
+                        </description>
+                    </image>
+                </figure>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    If you return to the <c>Main</c> circuit, you should see that
+                    the canvas is blank again (if you followed the directions above).
+                    Click the <c>Adder1Bit</c> subcircuit in the left pane. You should
+                    be able to add a block diagram for the full adder to the canvas.
+                    That is, it has inputs on the left and outputs on the right,
+                    but the gates are not visible.
+                </p>
+                <p>
+                    Use the Poke tool to test the subcircuit. You should see that
+                    it works just like the full adder circuit you built earlier, as
+                    indicated in <xref ref="figure-full-adder-as-subcircuit.png"/>.
+                </p>
+                <figure xml:id="figure-full-adder-as-subcircuit.png">
+                    <caption>The full adder as a subcircuit.</caption>
+                    <image width="80%" source="full_adder_as_subcircuit.png">
+                        <description>The full adder subcircuit is represented
+                            as a black box in the main circuit. Its inputs and
+                            outputs are connected to pins from the quick panel.
+                        </description>
+                    </image>
+                </figure>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Use more subcircuits to build a 4-bit adder. You will need
+                    four <c>Adder1Bit</c> subcircuits. You will also need to
+                    add a <c>Pin</c> for each input and output. Label the inputs
+                    <m>x_0</m>, <m>x_1</m>, <m>x_2</m>, and <m>x_3</m>. Label the
+                    outputs <m>s_0</m>, <m>s_1</m>, <m>s_2</m>, and <m>s_3</m>.
+                    Wire the carry-in input of the 0th adder to a constant 0,
+                    and wire the carry-out output of the last adder to an LED.
+                </p>
+                <p>
+                    To finish the 4-bit adder, connect the carry-out output
+                    of each adder to the carry-in input of the next adder.
+                    This is called a <term>ripple carry</term> adder.
+                    When you are done, the circuit should look like this.
                 </p>
             </statement>
         </activity>
