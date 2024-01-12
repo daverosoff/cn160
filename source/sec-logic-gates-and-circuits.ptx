@@ -17,63 +17,330 @@
         </p>
         <sbsgroup widths="35% 35%" margins="5% 5%" valign="top">
             <sidebyside>
-                <image source="and_gate" width="100%">
-                    <shortdescription>
-                        The AND gate is shaped like a capital
-                        letter D. The inputs are on the left side of
-                        the gate and the output is on the right curved side.
-                    </shortdescription>
-                </image>
-                <image source="nand_gate" width="100%">
-                    <shortdescription>
-                        The NAND gate resembles the AND gate, but has
-                        a small circle on the output side. This circle
-                        indicates that the output is inverted.
-                    </shortdescription>
-                </image>
+                <figure>
+                    <caption>The AND gate.</caption>
+                    <image source="and_gate.png" width="100%">
+                        <shortdescription>
+                            The AND gate is shaped like a capital
+                            letter D. The inputs are on the left side of
+                            the gate and the output is on the right curved side.
+                        </shortdescription>
+                    </image>
+                </figure>
+                <figure>
+                    <caption>The NAND gate.</caption>
+                    <image source="nand_gate.png" width="100%">
+                        <shortdescription>
+                            The NAND gate resembles the AND gate, but has
+                            a small circle on the output side. This circle
+                            indicates that the output is inverted.
+                        </shortdescription>
+                    </image>
+                </figure>
             </sidebyside>
             <sidebyside>
-                <image source="or_gate" width="100%">
-                    <shortdescription>
-                        The OR gate is shaped like a boomerang, oriented
-                        with its tips at the top and bottom, and concave
-                        side on the left. The inputs are on the concave side
-                        of the gate and
-                        the output is on the convex side.
-                    </shortdescription>
-                </image>
-                <image source="nor_gate" width="100%">
-                    <shortdescription>
-                        The NOR gate resembles the OR gate, but has
-                        a small circle on the output side. This circle
-                        indicates that the output is inverted.
-                    </shortdescription>
-                </image>
+                <figure>
+                    <caption>The OR gate.</caption>
+                    <image source="or_gate.png" width="100%">
+                        <shortdescription>
+                            The OR gate is shaped like a boomerang, oriented
+                            with its tips at the top and bottom, and concave
+                            side on the left. The inputs are on the concave side
+                            of the gate and
+                            the output is on the convex side.
+                        </shortdescription>
+                    </image>
+                </figure>
+                <figure>
+                    <caption>The NOR gate.</caption>
+                    <image source="nor_gate.png" width="100%">
+                        <shortdescription>
+                            The NOR gate resembles the OR gate, but has
+                            a small circle on the output side. This circle
+                            indicates that the output is inverted.
+                        </shortdescription>
+                    </image>
+                </figure>
             </sidebyside>
             <sidebyside>
-                <image source="xor_gate" width="100%">
-                    <shortdescription>
-                        The XOR gate is shaped like the OR gate,
-                        but with an extra line parallel and adjacent to
-                        the concave side. The inputs are on the concave side
-                        of the gate and the output is on the convex side.
-                    </shortdescription>
-                </image>
-                <image source="xnor_gate" width="100%">
-                    <shortdescription>
-                        The XNOR gate resembles the XOR gate, but has
-                        a small circle on the output side. This circle
-                        indicates that the output is inverted.
-                    </shortdescription>
-                </image>
+                <figure>
+                    <caption>The XOR gate.</caption>
+                    <image source="xor_gate.png" width="100%">
+                        <shortdescription>
+                            The XOR gate is shaped like the OR gate,
+                            but with an extra line parallel and adjacent to
+                            the concave side. The inputs are on the concave side
+                            of the gate and the output is on the convex side.
+                        </shortdescription>
+                    </image>
+                </figure>
+                <figure>
+                    <caption>The XNOR gate.</caption>
+                    <image source="xnor_gate.png" width="100%">
+                        <shortdescription>
+                            The XNOR gate resembles the XOR gate, but has
+                            a small circle on the output side. This circle
+                            indicates that the output is inverted.
+                        </shortdescription>
+                    </image>
+                </figure>
             </sidebyside>
         </sbsgroup>
-        <image source="not_gate" width="%">
-            <shortdescription>
-                The NOT gate is shaped like a triangle with a small circle
-                on the output side. This circle indicates that the output
-                is inverted.
-            </shortdescription>
-        </image>
+        <figure>
+            <caption>The NOT gate.</caption>
+            <image source="not_gate.png" width="30%" halign="left">
+                <shortdescription>
+                    The NOT gate is shaped like a triangle with a small circle
+                    on the output side. This circle indicates that the output
+                    is inverted.
+                </shortdescription>
+            </image>
+        </figure>
+        <p>
+            There is only one rule of using these gates. All gate inputs must be
+            connected. The possible values to which they can be connected are
+            the logic values 0 and 1. The output of a gate is determined by the
+            its operator applied to its inputs.
+        </p>
+        <p>
+            In a physical circuit, the logic value <m>0</m> is usually represented
+            by a low voltage like <m>0</m> volts and the logic value <m>1</m> is
+            usually represented by a higher voltage like <m>5</m> volts. In Logisim
+            Evolution, the logic value <m>0</m> is represented by dark green and the
+            logic value <m>1</m> is represented by light green.
+        </p>
+        <activity>
+            <statement>
+                <p>
+                    Install Logisim Evolution on your computer. You can download it
+                    from <url href="https://github.com/logisim-evolution/logisim-evolution/releases" />.
+                    Windows users should choose the <c>x86_64.msi</c> file. Mac users should
+                    choose the <c>dmg</c> file. You will need to install Java if you do not
+                    already have it installed.
+                </p>
+            </statement>
+        </activity>
+        <activity>
+            <introduction>
+                <p>
+                    Open Logisim Evolution. You should see a window with a blank canvas.
+                </p>
+            </introduction>
+            <task>
+                <p>
+                    The quick panel above the canvas contains the basic gates. Click the
+                    AND gate, let go, and mouse onto the canvas.
+                    You should see a gate with two inputs and one
+                    output. You can put it anywhere on the canvas. You can also move it
+                    around later, although that may goof up any wiring you have added.
+                </p>
+            </task>
+            <task>
+                <p>
+                    Add an XOR gate to the canvas. You should see a gate with two inputs
+                    and one output. Put it below and to the right of your AND gate.
+                </p>
+            </task>
+            <task>
+                <p>
+                    If you click the output of the AND gate, you will see a wire
+                    attached to your mouse. If you move your mouse to the input of the
+                    XOR gate, you will see the wire attached to the input. You can only
+                    add one right-angle turn per click. If you click, the wire will stay
+                    where it is. Click the free end of the wire to continue the wiring path
+                    to an input of the XOR gate.
+                </p>
+            </task>
+            <task>
+                <p>
+                    Use the arrow (selection tool) and the delete key to
+                    delete the wire you just added.
+                </p>
+            </task>
+            <task>
+                <p>
+                    In the left panel, open the Wiring folder and add two inputs. Connect
+                    each input to one of the inputs of the AND gate. Branch off these
+                    connections so that each input is also connected to the XOR gate.
+                </p>
+            </task>
+            <task>
+                <p>
+                    In the Input/Output folder, add two LEDS. Connect one to the output
+                    of the AND gate, and the other to the output of the XOR gate. As
+                    connections are completed, the red error wires should turn dark green.
+                    The inputs are set to 0 at first, and this value is represented by
+                    dark green. The outputs should be dark green as well.
+                </p>
+            </task>
+            <conclusion>
+                <p>
+                    When you are done, the circuit should look like this.
+                </p>
+                <figure xml:id="fig-half-adder">
+                    <caption>The completed circuit.</caption>
+                    <image source="half_adder.png" width="75%">
+                        <shortdescription>
+                            The completed circuit. The outputs each connect to
+                            both gates, one at each input. The outputs are to the
+                            right, each connected to the output of one gate.
+                        </shortdescription>
+                    </image>
+                </figure>
+            </conclusion>
+        </activity>
+        <activity>
+            <introduction>
+                <p>
+                    Now you will add some labels. Labels are used to name inputs and
+                    outputs, as well as gates.
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Double-click an input and label it <c>x</c>. Label
+                        the other input <c>y</c>.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Double-click the AND gate and label it <c>AND1</c>.
+                        Label the XOR gate <c>XOR1</c>.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Double-click the output of the AND gate and label it <c>s</c>.
+                        Label the output of the XOR gate <c>c</c>.
+                    </p>
+                </statement>
+            </task>
+            <conclusion>
+                <p>
+                    When you are done, the circuit should look like this.
+                </p>
+                <figure xml:id="fig-half-adder-labeled">
+                    <caption>The completed circuit with labels.</caption>
+                    <image source="half_adder_labeled.png" width="75%">
+                        <shortdescription>
+                            The completed circuit with labels. The labels are
+                            shown in blue. The labels are <c>x</c> and <c>y</c>
+                            for the inputs, <c>AND1</c> and <c>XOR1</c> for the
+                            gates, and <c>s</c> and <c>c</c> for the outputs.
+                        </shortdescription>
+                    </image>
+                </figure>
+            </conclusion>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Use the Poke tool in the quick panel (the hand icon) to
+                    <q>poke</q> the inputs. Click the <c>x</c> input. It should
+                    turn light green. Click the <c>y</c> input. It should turn
+                    light green. As you play with the inputs, observe that the
+                    wires change color to reflect the logic value the carry.
+                </p>
+                <p>
+                    Make a truth table with four columns for <m>x</m>, <m>y</m>,
+                    <m>s</m>, and <m>c</m>. The first two columns should have
+                    the values <m>0</m> and <m>1</m> in alternating order, as we
+                    have seen in class. Use the Poke tool to determine the values
+                    of <m>s</m> and <m>c</m> for each combination of <m>x</m> and
+                    <m>y</m>. Record your results in the table.
+                </p>
+                <table>
+                    <title>Truth table for the circuit.</title>
+                    <tabular>
+                        <row header="yes" bottom="minor">
+                            <cell>x</cell>
+                            <cell>y</cell>
+                            <cell>s</cell>
+                            <cell>c</cell>
+                        </row>
+                        <row>
+                            <cell>0</cell>
+                            <cell>0</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>0</cell>
+                            <cell>1</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>1</cell>
+                            <cell>0</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>1</cell>
+                            <cell>1</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                    </tabular>
+                </table>
+                <p>
+                    This circuit is called a <term>half adder</term>. The <m>s</m>
+                    output (for <q>sum</q>) is the sum of the inputs (remember,
+                    the sum of 1-bit values is also a 1-bit value). Because
+                    <m>1 + 1 = 0</m> in 1-bit arithmetic, the <m>s</m> output
+                    is the XOR of the inputs. The <m>c</m> output (for <q>carry</q>)
+                    is called the <term>carry</term> bit. It is <m>1</m> if the
+                    addition overflows, which is only the case when both inputs are
+                    <m>1</m>. Thus, the <m>c</m> output is the AND of the inputs.
+                </p>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Select your entire circuit using the selection tool (arrow icon).
+                    Copy and paste it. You should see a copy of your circuit appear
+                    on the canvas. Move it below and a little to the right of the original circuit.
+                    Change the labels of the new gates to <c>AND2</c> and <c>XOR2</c>.
+                </p>
+                <p>
+                    Use the tools in the quick panel to construct this circuit.
+                </p>
+                <figure xml:id="fig-full-adder">
+                    <caption>The completed circuit.</caption>
+                    <image source="full_adder.png" width="75%">
+                        <shortdescription>
+                            The full adder circuit is composed of two
+                            linked half adders plus an OR gate.
+                        </shortdescription>
+                    </image>
+                </figure>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Make a truth table for the circuit. The first three columns should
+                    be <m>x</m>, <m>y</m>, and <m>C_{in}</m>. The last two columns should
+                    be <m>s</m> and <m>C_{out}</m>. Use the Poke tool to determine the
+                    values of <m>s</m> and <m>C_{out}</m> for each combination of <m>x</m>,
+                    <m>y</m>, and <m>C_{in}</m>. Record your results in the table.
+                </p>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Thinking about the truth table, explain why this circuit is called
+                    a <term>full adder</term>.
+                </p>
+            </statement>
+        </activity>
     </subsection>
 </section>
