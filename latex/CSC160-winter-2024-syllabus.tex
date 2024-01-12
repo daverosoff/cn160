@@ -1,0 +1,468 @@
+\documentclass[symmetric]{tufte-handout}
+\ifxetex{
+    \usepackage{fontspec}
+}
+\else{
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+}
+\fi
+\usepackage[tufte]{cofi}
+\usepackage{xcolor,epigraph,nicefrac,booktabs,tabularx,fontawesome}
+\usepackage{dcolumn}
+\usepackage[american]{babel}
+\usepackage{lipsum,ifxetex,framed,cleveref}
+%\usepackage[top=1.0in,bottom=1.0in,left=1.2in,right=1.2in]{geometry}
+\frenchspacing
+\NewDocumentCommand{\webwork}{}{\textsf{WeBWorK}}
+% \NewDocumentCommand{\officehours}{}{TF 11:30--12:30 \\
+%                                     W 9:10--10:10 \\
+%                                     R 10:00--11:00 \\
+\NewDocumentCommand{\officehours}{}{TBA \\
+                                    or by appointment}
+\NewDocumentCommand{\Cpp}{}{\texttt{C++}}
+\linespread{1.05}
+\setlength{\epigraphwidth}{0.6\linewidth}
+\renewcommand{\epigraphsize}{\normalsize}
+\setlength{\epigraphrule}{0pt}
+\setlength{\beforeepigraphskip}{0\baselineskip}
+\setlength{\afterepigraphskip}{0\baselineskip}
+
+\RenewDocumentCommand{\textflush}{}{flushright}
+
+% \NewDocumentCommand{\webworkpct}{}{0.15}
+% \NewDocumentCommand{\workshoppct}{}{0.10}
+\NewDocumentCommand{\hwpct}{}{0.50}
+\NewDocumentCommand{\inclasspct}{}{0.30}
+\NewDocumentCommand{\currenteventpct}{}{0.10}
+\NewDocumentCommand{\attendancepct}{}{0.08}
+% \NewDocumentCommand{\quizpct}{}{0.10}
+\NewDocumentCommand{\midtermonepct}{}{0.15}
+\NewDocumentCommand{\midtermtwopct}{}{0.15}
+\NewDocumentCommand{\finalexampct}{}{0.20}
+\NewDocumentCommand{\midtermonedate}{}{\textbf{TBA}}
+\NewDocumentCommand{\midtermtwodate}{}{\textbf{TBA}}
+\NewDocumentCommand{\finalexamdate}{}{\textbf{April 14}}
+\NewDocumentCommand{\midtermoneday}{}{\textbf{TBA}}
+\NewDocumentCommand{\midtermtwoday}{}{\textbf{TBA}}
+\NewDocumentCommand{\finalexamday}{}{\textbf{Wednesday}}
+\NewDocumentCommand{\finalexamtime}{}{\textbf{1:30--4:30pm}}
+
+\title{CSC-160 Introduction to Computer Architecture}
+\date{Winter 2024}
+\author{The College of Idaho}
+% \fancyhf{}
+% \fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\plainauthor}}}%
+% \fancyhead[RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}
+% \fancyhead[LO,RE]{\smallcaps\thedate}
+\begin{document}
+\ifxetex{
+    \setmainfont[Mapping={tex-text},
+        Ligatures={Common},
+        Numbers={OldStyle}]{Iowan Old Style BT Pro}
+    \setsansfont[Mapping={tex-text},
+        Ligatures={Common}]{Corbel}
+    \setmonofont[Mapping={tex-text},
+        Ligatures={Common}]{Inconsolata}
+    \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+    \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+}
+\else
+\fi
+\maketitle
+\begin{fullwidth}
+\epigraph{%
+    Simplicity and elegance are unpopular because they require hard work and
+    discipline to achieve and education to be appreciated.%
+}{E\smallcaps{dsger} D\smallcaps{ijkstra} \\ \emph{Notes on Structured Programming}}
+\end{fullwidth}
+
+\subsection{Quick Reference} \label{ssec:quickreference}
+    \vspace*{-2ex}
+
+    \begin{minipage}[t]{0.38\linewidth}
+        \vspace{0pt}
+        The heart of the course is the problems, done both in class
+        and at home. At-home problem sets are collected approximately weekly.
+        In-class activities need to be done in class and, if missed, made up
+        by arrangement with the instructor.
+        See below for more details.
+    \end{minipage}\marginnote{% Office hours and contact info
+        \begin{description}
+            \item[\faGraduationCap]
+                Dr.\ Dave Rosoff
+            \item[\faHome]
+                Boone Hall 102C
+            \item[\faQuestionCircle\faClockO]
+                \officehours
+            \item[\faEnvelope]
+                \href{mailto:drosoff@collegeofidaho.edu}{drosoff@collegeofidaho.edu}
+            \item[\textcolor{DeepSkyBlue}{\faTwitter}
+            \faGithub\enspace\faStackExchange]
+                \texttt{@daverosoff}
+        \end{description}
+        } \hspace{1em}
+    \begin{minipage}[t]{0.58\linewidth}
+        \vspace{0pt}
+        \centering\allcaps{Grading}\vspace*{1.0ex}
+        % \usepackage{multirow}
+        % \usepackage{booktabs}
+
+        \begin{tabular}{lc}
+        \toprule
+        Type                                                                   & Date/Frequency    \\
+        \midrule
+        Reading quizzes                                                        & 1–2x weekly       \\
+        Homework                                                               & about weekly      \\
+        Quizzes                                                                & about weekly      \\
+        Guided lab activity                                                    & about 2x monthly  \\
+        \begin{tabular}[c]{@{}l@{}}Attendance \& \\Participation \end{tabular} & continual         \\
+        Midterm                                                                &                   \\
+        Final exam                                                             &                   \\
+        \bottomrule
+        \end{tabular}
+
+    \end{minipage} \hspace*{1em}
+
+\subsection{Preface: Learning outcomes}
+
+    This course is designed to provide certain experiences, called ``learning
+    outcomes'', to students who successfully complete it. These outcomes are
+    enumerated in the margin.%
+    \sidenote[][-18ex]{\smallcaps{Learning outcomes:}
+        \begin{compactenum}
+            \item \label{lo:ideas} Recognize and describe fundamental ideas
+            from course content described below.
+            \item \label{lo:examp} Illustrate these ideas with examples and
+            translate them into everyday terminology.
+            \item \label{lo:ident} Identify the main subsystems of a computer
+            and explain how they communicate.
+            \item \label{lo:influ} Give examples of the influence of computer
+            architecture on programming language design.
+            \item \label{lo:design} Design combinational and simple sequential logic circuits to
+            specification.
+            \item \label{lo:stack} Trace function execution in terms of a call stack.
+            \item \label{lo:frame} Explain the use of frame and stack pointers to
+            manage function call environments.
+            \item \label{lo:write} Write effective code comments and documentation.
+            \item \label{lo:discuss} Effectively discuss and solve
+            computing problems in group settings.
+        \end{compactenum}
+    } I explicitly include these outcomes in the syllabus so that it is clear
+    why I have chosen the various course components (each of which is
+    described below.) Each learning outcome is addressed by one or more
+    components of the course. See
+    the \emph{Grading} section below for more information.
+
+\subsection{Introduction}
+
+    Welcome to CSC-160, Introduction to Computer Architecture. I am very
+    pleased to be teaching the course again.
+
+\subsection{Catalog description}
+
+    ``A broad introduction to computing systems beginning with an introduction
+    to digital logic and progressing through other topics including
+    machine-level representation of data and instructions, controller and
+    data-path design, instruction-set considerations, reduced instruction-set
+    computers, and basic pipelining.''
+
+\subsection{Text}
+
+    We'll use several different open resources, including
+    \href{http://bob.cs.sonoma.edu/IntroCompOrg-RPi/intro-co-rpi.html}{Introduction
+    to Computer Organization}, by Bob Plantz (published free online via
+    PreTeXt), course notes provided by the instructor, and other texts and
+    resources as appropriate.
+
+    \newthought{While you are welcome} and encouraged to supplement your
+    assigned reading through such online and physical resources as you like,
+    it's important to realize that there are many philosophies of teaching and
+    learning computer science. You may find resources that seem to adopt a
+    contradictory point of view; this does not invalidate the viewpoint
+    presented by the instructor and you are still expected to adhere to
+    certain guidelines presented in the course and to follow specific
+    instructions when given in problem directions. Doctrinal differences are
+    always valid points of discussion.
+
+\subsection{Grading}
+
+    It is essential to understand from the outset, and not to forget, that
+    your score is not computed as a weighted average.
+
+    I repeat: \emph{Your score is not computed as a weighted average.}
+
+    Once more, for the people in the back:
+    \begin{framed}
+        \begin{center}
+            Y\smallcaps{our} S\smallcaps{core} I\smallcaps{s}
+            N\smallcaps{ot} C\smallcaps{omputed} A\smallcaps{s}
+            A W\smallcaps{eighted} A\smallcaps{verage}
+        \end{center}
+    \end{framed}
+
+    Your course grade will be determined from your assignment grades
+    (homework, quizzes, participation, etc.) according to \cref{table-grades}.
+
+    \begin{fullwidth}
+    \begin{table}\label{table-grades}
+        \centering
+        \begin{tabularx}{\linewidth}{lXXXXXXXXX}
+        \toprule \\
+                              & A    & A-   & B+   & B    & B-   & C+   & C    & C-   & D     \\
+        \midrule \\
+        Homework: M           & 7    & 5    & 1    &      &      &      &      &      &       \\
+        Homework: P           & 2    & 3    & 6    & 6    & 4    & 3    & 2    &      &       \\
+        Homework: N           &      & 1    & 2    & 3    & 4    & 5    & 6    & 7    & 6     \\
+        Homework: RR          &      &      &      &      & 1    & 1    & 1    & 2    &       \\
+        Quiz average          & 92\% & 89\% & 86\% & 82\% & 79\% & 76\% & 72\% & 65\% & 50\%  \\
+        % Quizzes $\geq$ 80\%   & 2    & 3    & 6    & 6    & 4    & 3    & 2    &      &       \\
+        % Quizzes $\geq$ 85\%   &      & 1    & 2    & 3    & 4    & 5    & 6    & 7    & 6     \\
+        Labs                  & 5    & 4    & 3    & 3    & 3    & 2    & 2    & 2    & 1     \\
+        Reflection Statements & 3    & 3    & 3    & 2    & 2    & 2    & 2    & 1    &       \\
+        Attendance            & 85\% & 80\% & 75\% & 70\% & 65\% & 60\% & 55\% & 50\% & 25\%  \\
+        Participation         & 80\% & 76\% & 73\% & 70\% & 67\% & 60\% & 50\% & 35\% & 20\%  \\
+        Final Exam            & 80\% & 80\% & 80\% & 80\% & 80\% & 67\% & 67\% & 60\% & 50\%  \\
+        \bottomrule \\
+        \end{tabularx}
+        \caption{To receive a letter grade, meet or exceed all the thresholds in its column.}
+    \end{table}
+    \end{fullwidth}
+\subsection{Guided lab activities} % (fold)
+\label{sub:workshops}
+
+    I don't really know what to call these. They're long, like labs; they're
+    highly structured, like labs. But there is no hypothesis that is being
+    tested. Some involve the wiring of electronic circuits, so there is a
+    practical element and some dexterity is helpful, as are general flexible
+    thinking of the kind required for troubleshooting and a meticulous nature.
+    For activities done at home, they can be submitted within two weeks of
+    the date they're assigned. Extensions are certainly possible, just ask.
+
+    Experience has taught me that it is very hard to teach or learn about
+    programming concepts through pure lecture. You need to explore them in an
+    active, inquiring way. In an ideal world, perhaps we would all discover
+    all of these experiments completely independently, in the fullness of
+    time, but in the realm of the imperfect we must abide with approximations.
+    So, the activities are structured and your inquiry is guided. Some of them
+    will be done in class, some at home, and some a mix. This technique of
+    active learning is backed by research and sound methodology. I have used
+    it in many classes, both to introduce  new ideas and guide students
+    through examples. The activities and the problem sets are the heart of the
+    course.
+
+% subsection workshops (end)
+
+\subsection{Problem sets}
+
+    Problem sets are collected about once a week. I will report the grades in
+    Canvas. However, the grades on problem sets are not numeric (even if I may
+    have to encode them numerically in Canvas). They are on a discrete scale
+    with marks M for ``Mastered'', P for ``Progressing'', N for ``Novice'',
+    and RR for ``Revise and resubmit''. There is also a mark of NS for
+    ``No submission'' which is normally only given when nothing is handed in
+    and a grade must be recorded. Detailed rubrics describing these marks
+    and specific criteria accompany each problem set.
+
+\subsection{Quizzes}
+
+    To give you another way to assess for yourself how you are keeping up with
+    the course, we will have frequent \emph{pre-class reading quizzes}, which
+    have questions intended to be pretty easy for someone who went to class
+    and read the text with attention. They are taken in Canvas (or \webwork{})
+    before coming to class.
+    % We will also have about 10 \emph{classic quizzes}
+    % with problems derived from the course material. These more traditional
+    % quizzes are open-resource, but I ask that you have no communication about
+    % them except with the instructor, either during or after the time you are
+    % taking the quiz. You may be asked to follow up and explain an answer more
+    % thoroughly, so keep this in mind and think about what questions you might
+    % be asked about your answers.
+
+    You may retake a pre-class quiz
+    % (resp., a classic quiz)
+    up to 10 times
+    %(resp., 4 times)
+    without permission or penalty. Beyond that, please speak with
+    the instructor.
+
+\subsection{Reflection statements}
+
+    At intervals you will be asked to write or otherwise create a short reflection
+    statement. Traditionally I have asked for essays but I welcome submissions
+    in other media. Reflection statements ask for a thoughtful discussion of your
+    work in the course so far and the evolution of your thinking. They are not
+    graded other than for earnest effort and genuine reflection.
+
+% \subsection{Presentations}
+
+%     Each student should attempt to earn 60 \emph{presentation points} during
+%     the semester. Presentations of portfolio problems are worth up to 10
+%     points each. A presentation consists of two or three active presenters who
+%     provide an explanation, a solution, and any justification of the solution
+%     requested by the class.\sidenote{Presentations address learning
+%     outcomes~\ref{lo:present},  \ref{lo:discuss}, \ref{lo:valid},
+%     \ref{lo:synth}, and \ref{lo:generalize}.} I will maintain a list of
+%     problems and their presentation metadata online for your reference.
+
+\subsection{Final exam}
+
+    The class will take a final exam.\sidenote[][0ex]{%
+        % The date of the midterm exam is tentative.
+        % \begin{compactdesc}
+            % \item[Midterm Exam] \midtermoneday, \midtermonedate
+            % \item[Exam 2] \midtermtwoday, \midtermtwodate
+            Final Exam: \finalexamday, \finalexamdate, \finalexamtime.
+            % \item[Final Exam] \finalexamday, \finalexamdate, \finalexamtime
+        % \end{compactdesc}
+    } Unlike the other assignments in the course, the final exam is summative,
+    which means it is mostly intended as a way for you to demonstrate what you
+    have learned. The exam will contain mostly routine questions or problems,
+    but also more challenging or novel problems
+    intended to assess deep learning. They do not involve writing programs
+    from scratch. %During the exam, you may refer freely
+    %to your portfolio.
+    % A missed exam results in an exam grade of zero unless the absence is
+    % arranged well in advance (two weeks suffices). \emph{If arrangements are
+    % not made in advance, I will consider make-ups only with compelling,
+    % documented reasons.} The final exam takes place at the indicated date and
+    % time. It cannot be rescheduled \emph{for any reason}. Make your travel
+    % plans accordingly.
+
+
+\subsection{How to do homework}
+\label{sub:how_to_do_homework}
+
+    % Whenever you are writing a solution to a math problem, it is important to
+    % strive for the clearest exposition you can manage. Good mathematical
+    % writing is essential for anyone who wishes to think clearly about
+    % mathematics. The process of making your ideas and reasoning \emph{clear,
+    % complete, and unambiguously correct} is the most effective amplifier of
+    % mathematical power there is. Hence your solutions should be composed in
+    % brilliant English prose. This means employing accepted scientific usage,
+    % more or less correct grammar and spelling, and above all \emph{complete
+    % sentences}---sprinkled here and there with tangy, delicious equations.
+    % Your solutions should always include big, beautiful diagrams when
+    % appropriate. \emph{Solutions in the popular ``pile-of-equations'' style
+    % with little or no explanatory text will not get much credit.} You must
+    % explain what is happening as the action unfolds.
+
+    % The reason for all this is that the process of such writing and editing
+    % will implant understanding more firmly in your mind. Similar problems
+    % appear on exams. If you dash off a quick and dirty solution it is less
+    % likely you will recall what you did at the appropriate time. Moreover,
+    % acquiring the ability to write this way is a fundamental part of your
+    % mathematical education that will serve you well for the rest of your life,
+    % whether or not you are involved in mathematics.
+
+    I collect your problem sets and grade them each week. I try to comment
+    extensively, but may not always be able to provide as thorough feedback as
+    you would like. Please feel free to come to office hours or make an
+    appointment to discuss your graded homework.%\sidenote[][-15ex]{%
+    %     Do not be dismayed if your early attempts receive low scores.
+    %     Most people do not know how to write mathematically and it is not the kind
+    %     of writing one learns to do in other classes. You may find that you need to
+    %     reëvaluate your ideas of what constitutes a solution.
+    % }
+    Your programs should be clear, complete, and free of typographical
+    errors. Functions and declarations should be commented according to any
+    instructions you are given. %\sidenote[][0ex]{%
+    %     If you are interested in typing your solutions, I encourage you to do so
+    %     using the \href{https://www.overleaf.com/}{Overleaf
+    %     service}. Just dive in, or ask me about it any time.
+    % }
+    I am happy to talk about problems in office hours with you.
+
+    It is an inescapable fact of modern education that the temptation to
+    borrow from sources discovered online is very strong. This is perhaps most
+    true of all in classes about computers, where assignments themselves are
+    necessarily digital files. You are encouraged to use the internet to
+    enhance your understanding and to help you find ideas for strategies to
+    solve problems, but most of the problems I will assign are very well known
+    and appear in many standard texts. If you find a detailed solution to what
+    is evidently the exact problem you have been assigned, \emph{the honorable
+    action is to stop reading}. If you find yourself short on time and are
+    unable to finish the assignment, the temptation to copy and paste can seem
+    irresistible. One always intends the best, to understand the borrowed
+    material later---but all too frequently, later never comes. In this case,
+    \emph{the honorable action is to submit no solution}, or perhaps a partial
+    solution that in some way or other is deficient. I am not interested in
+    reading other people's solutions---other than yours, that is---and
+    depending on the context am inclined to regard such borrowing as
+    plagiarism. Certainly you should never use code that you yourself don't
+    understand at the time of use. The purpose of the assignments is to show
+    you, the learner, what you understand and what you do not \emph{yet}
+    understand. I would much rather see a partial solution that indicates the
+    real extent of your present understanding than a cribbed one that hides
+    what may be missing.
+
+    % \newthought{To cope with some} of the time pressures of life and other
+    % obligations, you are entitled to four \emph{late days} to use on problem
+    % sets at any time during the semester. Use of a late day postpones the due
+    % date of an assignment by one day at no penalty to you. You can use up to
+    % two late days on the same assignment, but they are not transferable. To
+    % use one, just email the instructor with your intention before 2:00 AM on
+    % the due date of the assignment. I will not be inclined to make exceptions for
+    % late requests. If there is a true emergency and your late days simply don't
+    % suffice to complete the required work, I ask that you discuss it with me as
+    % you are able so that you can stay on pace with the class.
+
+% \subsection{A note on studying math}
+
+% By now you have studied enough mathematics to have learned something about how
+% it is that the material passes through your shapely skull and into your soft,
+% wrinkly brain. Nevertheless, you may find that this course is rather more
+% difficult than your previous calculus courses. To really understand it, we
+% will have to dig into subtle distinctions and nuances that no one has asked
+% you to think about before. Part of what I'm here to tell you is that while the
+% material may seem wholly new and unfamiliar, the underlying principles of
+% calculus (what do derivatives \emph{do}? what are integrals \emph{for}?) are
+% immutable.
+
+\subsection{Academic integrity}
+
+I encourage all students to form study groups and collaborate on homework;
+each student is of course individually responsible for their own work.
+
+For assignments that involve writing programs, the above means that while you may discuss
+the broad outlines of strategy with your classmates and work together on solutions, your
+final write-up should be done alone. This ensures that your understanding is genuine and
+lasting. So, when are you allowed to share solutions? If you and another student have
+received marks of N or better on the problem set, you can share your solutions and talk
+about how to improve them. Otherwise, you should see the instructor about how to improve.
+
+Soliciting solutions or parts of solutions from anyone external to the class is counter
+to the educational aims of the course and is a form of academic dishonesty.
+
+Students are expected to complete all graded work in accordance with the
+College Honor Code. Plagiarism, cheating, or borrowing without proper credit
+will not be tolerated.  Violations of academic honesty can result in loss of
+credit on an assignment, failure on an exam, or failure in the course.
+Referrals may be made to the Vice President for Academic Affairs for any party
+involved in academic dishonesty.
+
+\subsection{Accommodations for students with disabilities}
+
+The College of Idaho seeks to provide an educational environment that is
+sensitive to the needs of students with disabilities. The College provides
+reasonable services to enrolled students who have a documented permanent or
+temporary physical, mental or sensory disability that qualifies the student
+for academic accommodations under the Americans with Disabilities Act or
+section 504 of the Rehabilitation Act. If you have, or think you may have, a
+disability that impacts your performance as a student in this class, you are
+encouraged to arrange support services and/or accommodations through the
+\href{http://www.collegeofidaho.edu/campus-life/learning-and-support-services
+/learning-support-disability-services}{Learning Support and Disability
+Services} office located in Hendren Hall (208-459-5683). Disability-related
+adjustments to course expectations can be arranged only through this process
+and accommodations are not retroactively applied.
+
+\flexskip{1}
+
+\begin{fullwidth}
+    \centering {\Huge \allcaps{Good luck this semester!}}
+\end{fullwidth}
+
+\flexskip{1}
+
+\end{document}

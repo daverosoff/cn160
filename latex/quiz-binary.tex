@@ -1,0 +1,106 @@
+% arara: xelatex: {synctex: true, action: nonstopmode}
+% arara: sumatrapdf
+\documentclass[12pt]{exam}
+\usepackage{cofi, multicol}
+\usepackage{fourier, booktabs}
+\frenchspacing
+\firstpageheader{}{}{}
+\runningheader{\textbf{Fall 2023}}
+ {\textbf{Computer Science 350}}
+ {\emph{Page \thepage~of \numpages}}
+\runningheadrule
+\usepackage{parskip}
+\extrawidth{1in}
+\extraheadheight[-0.5in]{0in}
+\extrafootheight{-0.5in}
+\pagestyle{head}
+% \usepackage{tikz}
+% \pgfplotsset{compat=1.12}
+% \input{../../latex/tikzsetup.tex}
+\RenewDocumentCommand{\questionlabel}{}{\fbox{\textbf{Problem \thequestion.}}}
+\pointpoints{pt}{pts}
+\setlength{\columnwidth}{0.4\textwidth}
+\setlength{\columnsep}{2em}
+\begin{document}
+
+% \printanswers
+\addpoints
+
+\noindent
+\textbf{{\large Computer Science 160 \\ Quiz 01}}
+% \hfill Name: \underline{\hspace{0.5in}Answers\hspace{2in}}
+
+\noindent
+January 9, 2024  \hfill Name: \underline{\hspace{3in}}
+
+\noindent \textbf{Instructions}: Perform the calculations and show
+all your work. No calculators! For full credit, show complete work
+without converting to decimal at any point.
+
+Problems 1--5 are in binary.
+\begin{questions}
+
+    \question[2] 11 + 10
+
+    \flexskip{1}
+
+    \question[2] 101 + 11
+
+    \flexskip{1}
+
+    \question[2] 101 + 110
+
+    \flexskip{1}
+
+    \question[2] 1010 + 1011
+
+    \flexskip{1}
+
+    \question[2] 1010101 + 1100111 + 1000101
+
+    \flexskip{1}
+
+    \newpage
+
+    Problems 6--10 are in hexadecimal. For full credit, show complete
+    work without converting to decimal at any point. You are allowed
+    to convert to binary, but I don't necessarily recommend it.
+
+    \begin{tabular}{cccc}
+    \toprule
+    Hex & Binary & Hex & Binary\\
+    \midrule
+    0x0 & 0000 & 0x8 & 1000 \\
+    0x1 & 0001 & 0x9 & 1001 \\
+    0x2 & 0010 & 0xA & 1010 \\
+    0x3 & 0011 & 0xB & 1011 \\
+    0x4 & 0100 & 0xC & 1100 \\
+    0x5 & 0101 & 0xD & 1101 \\
+    0x6 & 0110 & 0xE & 1110 \\
+    0x7 & 0111 & 0xF & 1111 \\
+    \bottomrule
+    \end{tabular}
+
+    \question[2] 0x4 + 0xC
+
+    \flexskip{1}
+
+    \question[2] 0x18 + 0x14
+
+    \flexskip{1}
+
+    \question[2] 0x1A + 0x2E
+
+    \flexskip{1}
+
+    \question[2] 0xAA + 0x55
+
+    \flexskip{1}
+
+    \question[2] 0xA4 + 0xBC
+
+    \flexskip{1}
+
+\end{questions}
+
+\end{document}

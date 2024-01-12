@@ -13,11 +13,11 @@
         <p>
             There are seven basic gates available in Logisim Evolution.
             They are the AND, NAND, OR, NOR, XOR, XNOR, and NOT gates,
-            pictured in
+            pictured in <xref first="figure-and-gate" last="figure-not-gate"/>.
         </p>
         <sbsgroup widths="35% 35%" margins="5% 5%" valign="top">
             <sidebyside>
-                <figure>
+                <figure xml:id="figure-and-gate">
                     <caption>The AND gate.</caption>
                     <image source="and_gate.png" width="100%">
                         <shortdescription>
@@ -86,7 +86,7 @@
                 </figure>
             </sidebyside>
         </sbsgroup>
-        <figure>
+        <figure xml:id="figure-not-gate">
             <caption>The NOT gate.</caption>
             <image source="not_gate.png" width="30%" halign="left">
                 <shortdescription>
@@ -99,7 +99,7 @@
         <p>
             There is only one rule of using these gates. All gate inputs must be
             connected. The possible values to which they can be connected are
-            the logic values 0 and 1. The output of a gate is determined by the
+            the logic values 0 and 1. The output of a gate is determined by
             its operator applied to its inputs.
         </p>
         <p>
