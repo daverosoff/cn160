@@ -283,4 +283,90 @@
       </exercise>
     </exercises>
   </section>
+  <section xml:id="sec-projects">
+    <title>Projects</title>
+    <subsection xml:id="subsec-project-02-bitmasking">
+      <title>Project 02: Bitmasking</title>
+      <subsubsection xml:id="subsubsec-proj-02a">
+        <title>Part A: <c>utils.py</c></title>
+        <p>
+          Now that we are beginning to have more than one file, it's time to
+          start organizing our code. We'll do this by creating a <c>utils.py</c>
+          file and moving our <c>binary_write()</c> function into it.
+          The <c>code.py</c> file will be the main file, and it will import
+          the <c>binary_write()</c> function from the <c>utils.py</c> directory.
+        </p>
+        <p>
+          Use the Mu editor to open a new file on your Pico. Save and name it
+          <c>utils.py</c> (put it in the top-level folder alongside
+          <c>code.py</c>). Then, move (don't copy) the <c>binary_write()</c>
+          function's definition into <c>utils.py</c>. You will also want to include
+          any necessary import statements in <c>utils.py</c>. Now, in the
+          <c>code.py</c> file, add the following line at the top:
+          <cd>
+            <cline>from utils import binary_write</cline>
+          </cd>
+          The meaning of this line is that we are importing the
+          <c>binary_write()</c> function from the <c>utils.py</c> file.
+          The <c>from ... import ...</c> syntax ensures that
+          the short name of the function is available rather than its fully
+          qualified name <c>utils.binary_write()</c>. If we do
+          <c>import utils</c> instead, then we would need to
+          call the function as <c>utils.binary_write()</c>.
+        </p>
+        <p>
+          Just as we learn to separate the work of our programs into functions,
+          instead of piling everything into one big main function, we should
+          also separate our functions into files. This makes it easier to
+          organize our code and to find things when we need to change them.
+        </p>    
+      </subsubsection>
+      <subsubsection xml:id="subsubsec-proj-02b">
+        <title>Part B: Bitmasking</title>
+        <p>
+          Put all the function definitions from <xref ref="exercises-day04"/> into your
+          <c>utils.py</c> file. You will need to add the <c>from ... import ...</c>
+          statements to <c>code.py</c> to make them available.
+        </p>
+      </subsubsection>
+      <subsubsection xml:id="subsubsec-proj-02c">
+        <title>Part C: Animations</title>
+        <p>
+          You can create marquee-style animations by using a loop to turn on
+          and off LEDs in a sequence. For example, if you have four LEDs
+          connected to pins 0, 1, 2, and 3, you can create a <c>kitt</c>
+          animation by turning on the first LED, then the second, then the
+          third, then the fourth, then the third, then the second, then the
+          first, and then repeating the process. You can use the
+          <c>time.sleep()</c> function to pause between
+          turning on and off the LEDs.
+        </p>  
+        <p>
+          Use the <c>binary_write()</c> function to create three different such
+          animations. They shouldn't look too much alike. Each one should be enclosed
+          in a function, as below. Notice there is no <c>while True</c>
+          loop. We want to be able to run it only a few times, which would be
+          impossible if we had an infinite loop. Do not duplicate the example as
+          one of your submissions.
+        </p>
+        <p>
+          You receive credit for Part C if you can show me three working animation
+          cycles (just once through for each is fine) and the code for each uses
+          <c>binary_write()</c> to turn on and off the LEDs. The <c>binary_write()</c>
+          function must be imported from <c>utils.py</c>. Full credit solutions should
+          make use of some of the functions from Part B.
+        </p>
+        <example xml:id="example-animate-kitt">
+          <title>Example: <c>kitt</c> animation</title>
+          <cd>
+            <cline>def animate_kitt():</cline>
+            <cline>    frames = [1, 1 &lt;&lt; 1, 1 &lt;&lt; 2, 1 &lt;&lt; 3, 1 &lt;&lt; 2, 1 &lt;&lt; 1, 1] </cline>
+            <cline>    for f in frames:</cline>
+            <cline>        binary_write(f)</cline>
+            <cline>        time.sleep(0.1)</cline>
+          </cd>
+        </example>
+      </subsubsection>
+    </subsection>
+  </section>
 </chapter>

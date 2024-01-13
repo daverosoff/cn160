@@ -393,9 +393,9 @@
                 <p>
                     Use the Poke tool to test the subcircuit. You should see that
                     it works just like the full adder circuit you built earlier, as
-                    indicated in <xref ref="figure-full-adder-as-subcircuit.png"/>.
+                    indicated in <xref ref="figure-full-adder-as-subcircuit"/>.
                 </p>
-                <figure xml:id="figure-full-adder-as-subcircuit.png">
+                <figure xml:id="figure-full-adder-as-subcircuit">
                     <caption>The full adder as a subcircuit.</caption>
                     <image width="80%" source="full_adder_as_subcircuit.png">
                         <description>The full adder subcircuit is represented
