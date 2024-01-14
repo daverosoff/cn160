@@ -88,7 +88,7 @@
         </sbsgroup>
         <figure xml:id="figure-not-gate">
             <caption>The NOT gate.</caption>
-            <image source="not_gate.png" width="30%" halign="left">
+            <image source="not_gate.png" width="30%">
                 <shortdescription>
                     The NOT gate is shaped like a triangle with a small circle
                     on the output side. This circle indicates that the output
@@ -226,12 +226,15 @@
                 <figure xml:id="fig-half-adder-labeled">
                     <caption>The completed circuit with labels.</caption>
                     <image source="half_adder_labeled.png" width="75%">
-                        <shortdescription>
-                            The completed circuit with labels. The labels are
-                            shown in blue. The labels are <c>x</c> and <c>y</c>
-                            for the inputs, <c>AND1</c> and <c>XOR1</c> for the
-                            gates, and <c>s</c> and <c>c</c> for the outputs.
-                        </shortdescription>
+                        <shortdescription>The completed circuit with labels.</shortdescription>
+                        <description>
+                            <p>
+                                The completed circuit with labels. The labels are
+                                shown in blue. The labels are <c>x</c> and <c>y</c>
+                                for the inputs, <c>AND1</c> and <c>XOR1</c> for the
+                                gates, and <c>s</c> and <c>c</c> for the outputs.
+                            </p>
+                        </description>
                     </image>
                 </figure>
             </conclusion>
@@ -373,9 +376,9 @@
                 <figure xml:id="figure-full-adder-subcircuit">
                     <caption>The full adder as a subcircuit.</caption>
                     <image width="80%" source="full_adder_subcircuit.png">
-                        <description>The full adder subcircuit has had its LEDs
+                        <shortdescription>The full adder subcircuit has had its LEDs
                             replaced with output pins from the quick panel.
-                        </description>
+                        </shortdescription>
                     </image>
                 </figure>
             </statement>
@@ -398,10 +401,10 @@
                 <figure xml:id="figure-full-adder-as-subcircuit">
                     <caption>The full adder as a subcircuit.</caption>
                     <image width="80%" source="full_adder_as_subcircuit.png">
-                        <description>The full adder subcircuit is represented
+                        <shortdescription>The full adder subcircuit is represented
                             as a black box in the main circuit. Its inputs and
                             outputs are connected to pins from the quick panel.
-                        </description>
+                        </shortdescription>
                     </image>
                 </figure>
             </statement>
