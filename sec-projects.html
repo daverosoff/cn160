@@ -119,7 +119,7 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">The Serpent and the Pico</span></a></div>
@@ -149,14 +149,24 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-projects.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Projects</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec-projects.html#subsec-project-02-bitmasking" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Project 02: Bitmasking</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj-02a" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Part A: <code class="code-inline tex2jax_ignore">utils.py</code></span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj-02b" class="internal"><span class="codenumber">2.3.1.2</span> <span class="title">Part B: Bitmasking</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj-02c" class="internal"><span class="codenumber">2.3.1.3</span> <span class="title">Part C: Animations</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-projects.html#subsec-proj-03" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Buttons and Input</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj03-a" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Part A</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj03-b" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">Part B</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj03-c" class="internal"><span class="codenumber">2.3.2.3</span> <span class="title">Part C</span></a></div></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -189,13 +199,67 @@ window.MathJax = {
 <div class="para" id="subsubsec-proj-02c-4">You receive credit for Part C if you can show me three working animation cycles (just once through for each is fine) and the code for each uses <code class="code-inline tex2jax_ignore">binary_write()</code> to turn on and off the LEDs. The <code class="code-inline tex2jax_ignore">binary_write()</code> function must be imported from <code class="code-inline tex2jax_ignore">utils.py</code>. Full credit solutions should make use of some of the functions from Part B.</div>
 <article class="example example-like" id="example-animate-kitt"><h5 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Example: <code class="code-inline tex2jax_ignore">kitt</code> animation.</span>
-</h5>
-<pre class="code-display tex2jax_ignore">def animate_kitt():
+</h5> <div class="para logical" id="example-animate-kitt-2"><pre class="code-display tex2jax_ignore">def animate_kitt():
     frames = [1, 1 &lt;&lt; 1, 1 &lt;&lt; 2, 1 &lt;&lt; 3, 1 &lt;&lt; 2, 1 &lt;&lt; 1, 1] 
     for f in frames:
         binary_write(f)
         time.sleep(0.1)
-</pre></article></section></section></section></div>
+</pre></div></article></section></section><section class="subsection" id="subsec-proj-03"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">Buttons and Input</span>
+</h3>
+<section class="introduction" id="subsec-proj-03-2"><div class="para" id="subsec-proj-03-2-1">In this project, you’ll incorporate input into your circuitry. Make sure Project 02 is completed before you start this one.</div> <div class="para" id="subsec-proj-03-2-2">You will need to remove one LED from your circuit to make room for the button. I have used its GPIO pin for the button, but you can use any pin you like. My concern was a readable diagram.</div> <div class="para" id="subsec-proj-03-2-3">Take care to observe that the button is not wired to the breadboard in the same was as the LEDs. The LEDs receive the high signal from GPIO through the resistor, and then current flows through the LED to ground. The button is wired so that the Pico’s power rail (make sure this is connected to 3.3V on pin 36, not 5V on pin 40 or pin 39) is connected to one leg of the button, and the other leg is connected to GPIO.</div> <div class="para" id="subsec-proj-03-2-4">When the button is open (not pressed), no current flows through the button (it will be connected to ground through the Pico’s internal <em class="emphasis">pull-down resistor</em>). When the button is closed (pressed), current flows from the power rail through the button to GPIO, pulling the GPIO input high. Your code will allow the Pico to detect this high voltage and trigger an action.</div></section><section class="subsubsection" id="subsubsec-proj03-a"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.3.2.1</span><span class="space"> </span><span class="title">Part A</span>
+</h4>
+<div class="para" id="subsubsec-proj03-a-2">Wire your button to the breadboard as shown in the diagram below. <em class="emphasis">Make sure the power rails (red) are connected to 3.3V only! The 5V main power lines will destroy your Pico!</em>
+</div>
+<figure class="figure figure-like" id="figure-pico-with-button-bb"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/7-led-pico-with-button_bb.png" class="contained" alt="The button is wired to the bottom three rows."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>Pico with button for input.</figcaption></figure><div class="para logical" id="subsubsec-proj03-a-4">
+<div class="para">Then you will need to make some changes in how the pins are initialized. Your button pin (GPIO 16 in my diagram) will need to be configured as an input. Because we didn’t connect the button to ground, we need to tell the Pico to use the internal pull-down resistor. This will ensure that the input is low when the button is not pressed. The code below shows how to do this.</div>
+<pre class="code-display tex2jax_ignore">import board
+import digitalio
+import time
+from utils import binary_write
+
+LED_PINS_SETUP = [board.GP16, board.GP17, board.GP18, board.GP19,
+                  board.GP20, board.GP21, board.GP22, board.GP26]
+PINS = [None] * 8
+for i, led_pin in enumerate(LED_PINS_SETUP):
+    PINS[i] = digitalio.DigitalInOut(led_pin)
+    PINS[i].direction = digitalio.Direction.OUTPUT
+
+    PINS[i].value = False
+
+button = PINS[0]
+leds = PINS[1:]
+</pre>
+<div class="para">Without the internal pull-down resistor, the input would be <em class="emphasis">floating</em> when the button is not pressed. This means that it would be neither high nor low, and it would be impossible to tell whether the button was pressed or not. The internal pull-down resistor ensures that the input is low when the button is not pressed. Without this software solution, we would need to add a physical resistor to the circuit connecting the button to ground. The internal pull-down resistor is a convenient alternative and they are ubiquitous in microcontrollers.</div>
+</div></section><section class="subsubsection" id="subsubsec-proj03-b"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.3.2.2</span><span class="space"> </span><span class="title">Part B</span>
+</h4>
+<div class="para" id="subsubsec-proj03-b-2">The buttons are built so that they connect across the vertical groove running down the middle of the breadboard. When the button is connected, it electrically connects the two sides of the groove. When the button is pressed, both pins on the left side of the groove are connected to both pins on the right side of the groove.</div>
+<div class="para logical" id="subsubsec-proj03-b-3">
+<div class="para">Make sure all your Project 02 code is safe somewhere (in another file, not <code class="code-inline tex2jax_ignore">code.py</code>, on your Pico or your laptop) and then add this code to your <code class="code-inline tex2jax_ignore">code.py</code> file:</div>
+<pre class="code-display tex2jax_ignore">while True:
+    if button.value:
+        print("Hello sailor!")
+        time.sleep(0.5)
+</pre>
+<div class="para">In the Serial pane, you should see the output when you press the button. When you have succeeded, play with the delay time in the call to <code class="code-inline tex2jax_ignore">time.sleep()</code>. What happens if you make it too short? What happens if you make it too long? Discuss with the people in your group.</div>
+</div>
+<div class="para" id="subsubsec-proj03-b-4">I will visit each group and check the group off together. Don’t move on to part C until you are checked off. Instead, work on HW 1.</div></section><section class="subsubsection" id="subsubsec-proj03-c"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.3.2.3</span><span class="space"> </span><span class="title">Part C</span>
+</h4>
+<div class="para" id="subsubsec-proj03-c-2">The difficulty with using buttons for input is that the Pico has to be listening for the button press. If the Pico is busy doing something else, it won’t be able to respond to the button press. This is why we used the <code class="code-inline tex2jax_ignore">time.sleep()</code> function in the example above.</div>
+<div class="para logical" id="subsubsec-proj03-c-3">
+<div class="para">Try to adapt your animation code so that your Pico does the following on reset:</div>
+<ol class="lower-roman">
+<li id="subsubsec-proj03-c-3-1-1"><div class="para" id="subsubsec-proj03-c-3-1-1-1">Display a short “ready” sequence, like flashing all the LEDs on and off three times.</div></li>
+<li id="subsubsec-proj03-c-3-1-2"><div class="para" id="subsubsec-proj03-c-3-1-2-1">Wait for the button to be pressed.</div></li>
+<li id="subsubsec-proj03-c-3-1-3"><div class="para" id="subsubsec-proj03-c-3-1-3-1">Display the next animation three times.</div></li>
+<li id="subsubsec-proj03-c-3-1-4"><div class="para" id="subsubsec-proj03-c-3-1-4-1">Go to step 2.</div></li>
+</ol>
+<div class="para">If you press the button while the animation is running, what happens? Is that what you expected, or what a typical user would expect? Discuss with the people in your group.</div>
+</div></section></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-assignment-day04.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
