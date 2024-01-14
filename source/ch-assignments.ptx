@@ -370,5 +370,153 @@
         </example>
       </subsubsection>
     </subsection>
+    <subsection xml:id="subsec-proj-03">
+      <title>Buttons and Input</title>
+      <introduction>
+        <p>
+          In this project, you'll incorporate input into your circuitry. Make sure
+          Project 02 is completed before you start this one.
+        </p>
+        <p>
+          You will need to remove one LED from your circuit to make room for the
+          button. I have used its GPIO pin for the button, but you can use any pin
+          you like. My concern was a readable diagram.
+        </p>
+        <p>
+          Take care to observe that
+          the button is not wired to the breadboard in the same was as the LEDs.
+          The LEDs receive the high signal from GPIO through the resistor, and
+          then current flows through the LED to ground. The button is wired
+          so that the Pico's power rail (make sure this is connected to 3.3V
+          on pin 36, not 5V on pin 40 or pin 39) is connected to one leg
+          of the button, and the other leg is connected to GPIO.
+        </p>
+        <p>
+          When the button is open (not pressed), no current flows through the
+          button (it will be connected to ground through the Pico's internal
+          <em>pull-down resistor</em>). When the button is closed (pressed),
+          current flows from the power rail through the button to GPIO, pulling
+          the GPIO input high. Your code will allow the Pico to detect this
+          high voltage and trigger an action.
+        </p>
+      </introduction>
+      <subsubsection xml:id="subsubsec-proj03-a">
+        <title>Part A</title>
+        <p>
+          Wire your button to the breadboard as shown in the diagram below.
+          <em>Make sure the power rails (red) are connected to 3.3V only!
+            The 5V main power lines will destroy your Pico!</em>
+        </p>
+        <figure xml:id="figure-pico-with-button-bb">
+          <caption>Pico with button for input.</caption>
+          <image source="7-led-pico-with-button_bb.png" width="30%">
+            <shortdescription>
+              The button is wired to the bottom three rows.
+            </shortdescription>
+          </image>
+        </figure>
+        <p>
+          Then you will need to make some changes in how the pins are initialized.
+          Your button pin (GPIO 16 in my diagram) will need to be configured
+          as an input. Because we didn't connect the button to ground, we need
+          to tell the Pico to use the internal pull-down resistor. This will
+          ensure that the input is low when the button is not pressed. The code
+          below shows how to do this.
+          <cd>
+            <cline>import board</cline>
+            <cline>import digitalio</cline>
+            <cline>import time</cline>
+            <cline>from utils import binary_write</cline>
+            <cline></cline>
+            <cline>LED_PINS_SETUP = [board.GP16, board.GP17, board.GP18, board.GP19,</cline>
+            <cline>                  board.GP20, board.GP21, board.GP22, board.GP26]</cline>
+            <cline>PINS = [None] * 8</cline>
+            <cline>for i, led_pin in enumerate(LED_PINS_SETUP):</cline>
+            <cline>    PINS[i] = digitalio.DigitalInOut(led_pin)</cline>
+            <cline>    PINS[i].direction = digitalio.Direction.OUTPUT</cline>
+            <cline></cline>
+            <cline>    PINS[i].value = False</cline>
+            <cline></cline>
+            <cline>button = PINS[0]</cline>
+            <cline>leds = PINS[1:]</cline>
+          </cd>
+          Without the internal pull-down resistor, the input would be <em>floating</em>
+          when the button is not pressed. This means that it would be neither high
+          nor low, and it would be impossible to tell whether the button was pressed
+          or not. The internal pull-down resistor ensures that the input is low
+          when the button is not pressed. Without this software solution,
+          we would need to add a physical resistor to the circuit connecting the
+          button to ground. The internal pull-down resistor is a convenient
+          alternative and they are ubiquitous in microcontrollers.
+        </p>
+      </subsubsection>
+      <subsubsection xml:id="subsubsec-proj03-b">
+        <title>Part B</title>
+        <p>
+          The buttons are built so that they connect across the vertical groove
+          running down the middle of the breadboard. When the button is connected,
+          it electrically connects the two sides of the groove. When the button
+          is pressed, both pins on the left side of the groove are connected to
+          both pins on the right side of the groove.
+        </p>
+        <p>
+          Make sure all your Project 02 code is safe somewhere (in another file,
+          not <c>code.py</c>, on your Pico or your laptop) and then add this code
+          to your <c>code.py</c> file:
+          <cd>
+            <cline>while True:</cline>
+            <cline>    if button.value:</cline>
+            <cline>        print("Hello sailor!")</cline>
+            <cline>        time.sleep(0.5)</cline>
+          </cd>
+          In the Serial pane, you should see the output when you press the button.
+          When you have succeeded, play with the delay time in the call to <c>time.sleep()</c>.
+          What happens if you make it too short? What happens if you make it too long?
+          Discuss with the people in your group.
+        </p>
+        <p>
+          I will visit each group and check the group off together. Don't move on to
+          part C until you are checked off. Instead, work on HW 1.
+        </p>
+      </subsubsection>
+      <subsubsection xml:id="subsubsec-proj03-c">
+        <title>Part C</title>
+        <p>
+          The difficulty with using buttons for input is that the Pico has to be listening for
+          the button press. If the Pico is busy doing something else, it won't be able to
+          respond to the button press. This is why we used the <c>time.sleep()</c> function
+          in the example above.
+        </p>
+        <p>
+          Try to adapt your animation code so that your Pico does the following on reset:
+          <ol marker="i)">
+            <li>
+              <p>
+                Display a short <q>ready</q> sequence, like flashing all the LEDs
+                on and off three times.
+              </p>
+            </li>
+            <li>
+              <p>
+                Wait for the button to be pressed.
+              </p>
+            </li>
+            <li>
+              <p>
+                Display the next animation three times.
+              </p>
+            </li>
+            <li>
+              <p>
+                Go to step 2.
+              </p>
+            </li>
+          </ol>
+          If you press the button while the animation is running, what happens?
+          Is that what you expected, or what a typical user would expect? Discuss
+          with the people in your group.
+        </p>
+      </subsubsection>
+    </subsection>
   </section>
 </chapter>
