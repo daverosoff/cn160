@@ -319,7 +319,7 @@
           instead of piling everything into one big main function, we should
           also separate our functions into files. This makes it easier to
           organize our code and to find things when we need to change them.
-        </p>    
+        </p>
       </subsubsection>
       <subsubsection xml:id="subsubsec-proj-02b">
         <title>Part B: Bitmasking</title>
@@ -340,7 +340,7 @@
           first, and then repeating the process. You can use the
           <c>time.sleep()</c> function to pause between
           turning on and off the LEDs.
-        </p>  
+        </p>
         <p>
           Use the <c>binary_write()</c> function to create three different such
           animations. They shouldn't look too much alike. Each one should be enclosed
@@ -358,13 +358,15 @@
         </p>
         <example xml:id="example-animate-kitt">
           <title>Example: <c>kitt</c> animation</title>
-          <cd>
-            <cline>def animate_kitt():</cline>
-            <cline>    frames = [1, 1 &lt;&lt; 1, 1 &lt;&lt; 2, 1 &lt;&lt; 3, 1 &lt;&lt; 2, 1 &lt;&lt; 1, 1] </cline>
-            <cline>    for f in frames:</cline>
-            <cline>        binary_write(f)</cline>
-            <cline>        time.sleep(0.1)</cline>
-          </cd>
+          <p>
+            <cd>
+              <cline>def animate_kitt():</cline>
+              <cline>    frames = [1, 1 &lt;&lt; 1, 1 &lt;&lt; 2, 1 &lt;&lt; 3, 1 &lt;&lt; 2, 1 &lt;&lt; 1, 1] </cline>
+              <cline>    for f in frames:</cline>
+              <cline>        binary_write(f)</cline>
+              <cline>        time.sleep(0.1)</cline>
+            </cd>
+          </p>
         </example>
       </subsubsection>
     </subsection>
