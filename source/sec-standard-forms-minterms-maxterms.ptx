@@ -323,7 +323,7 @@
                             <cell>0</cell>
                             <cell>1</cell>
                         </row>
-                        <row>
+                        <row bottom="minor">
                             <cell>0</cell>
                             <cell>0</cell>
                             <cell>1</cell>
@@ -351,7 +351,7 @@
                             <cell>0</cell>
                             <cell>0</cell>
                         </row>
-                        <row>
+                        <row bottom="minor">
                             <cell>0</cell>
                             <cell>1</cell>
                             <cell>1</cell>
@@ -379,7 +379,7 @@
                             <cell>0</cell>
                             <cell>0</cell>
                         </row>
-                        <row>
+                        <row bottom="minor">
                             <cell>1</cell>
                             <cell>0</cell>
                             <cell>1</cell>
