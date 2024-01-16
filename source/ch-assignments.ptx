@@ -371,7 +371,7 @@
       </subsubsection>
     </subsection>
     <subsection xml:id="subsec-proj-03">
-      <title>Buttons and Input</title>
+      <title>Project 03: Buttons and Input</title>
       <introduction>
         <p>
           In this project, you'll incorporate input into your circuitry. Make sure
@@ -518,5 +518,56 @@
         </p>
       </subsubsection>
     </subsection>
+  </section>
+  <section xml:id="sec-homework">
+    <title>Homework</title>
+    <subsection xml:id="subsec-hw1">
+      <title>Homework 1</title>
+      <p>Due Thursday, January 18 at 6:00 PM</p>
+      <exercises>
+        <exercise>
+          <introduction>
+            <p>
+              Let <m>X</m> and <m>Y</m> be unsigned 2-bit integers,
+              and write <m>X = x_1 x_0</m> and <m>Y = y_1 y_0</m>. For
+              example, if <m>x_1 = 1</m> and <m>x_0 = 0</m>, then
+              <m>X = 2</m>. Similarly, if <m>y_1 = y_0 = 1</m>, then
+              <m>Y = 3</m>. In this problem, think of <m>x_0</m>,
+              <m>x_1</m>, <m>y_0</m>, and <m>y_1</m> as inputs to a
+              digital circuit.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                Write a boolean expression (using AND, OR, NOT operations
+                on the input variables <m>x_0</m>,
+              <m>x_1</m>, <m>y_0</m>, and <m>y_1</m>) for the condition
+              <m>X \gt Y</m>. (So, for example, if <m>X = 2</m> and <m>Y = 3</m>,
+              then the formula should evaluate to FALSE.)
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Write a truth table for your formula.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Using the theory of minterms and maxterms, implement your
+                formula as a digital circuit and upload it to Canvas as
+                <c>prob01.circ</c>.
+              </p>
+            </statement>
+          </task>
+        </exercise>
+      </exercises>
+
+    </subsection>
+
   </section>
 </chapter>
