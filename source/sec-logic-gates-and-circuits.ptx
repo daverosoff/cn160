@@ -239,6 +239,10 @@
                 </figure>
             </conclusion>
         </activity>
+    </subsection>
+    <subsection xml:id="subsec-adder-circuits">
+        <title>Adder circuits: The beginning of digital arithmetic</title>
+        <shorttitle>Adder circuits</shorttitle>
         <activity>
             <statement>
                 <p>
@@ -424,9 +428,38 @@
                     To finish the 4-bit adder, connect the carry-out output
                     of each adder to the carry-in input of the next adder.
                     This is called a <term>ripple carry</term> adder.
-                    When you are done, the circuit should look like this.
+                    When you are done, the circuit should look like <xref ref="figure-4-bit-adder"/>.
+                    This circuit is called a <term>4-bit ripple carry adder</term>.
+                    This version is different from what I showed earlier in class,
+                    in that it features 8 separate input bits instead of two 4-bit
+                    inputs. You will have a chance to build the other variation in
+                    homework.
+                </p>
+                <figure xml:id="figure-4-bit-adder">
+                    <caption>The 4-bit adder.</caption>
+                    <image source="4-bit-adder.png" width="90%">
+                        <shortdescription>Each c_out is connected to the
+                            next c_in. The last c_out goes to a C output,
+                            for unsigned integer overflow. The last two c_outs
+                            go to an XOR gate, whose output is the V output.
+                        </shortdescription>
+                    </image>
+                </figure>
+            </statement>
+        </activity>
+        <activity>
+            <statement>
+                <p>
+                    Experiment with the 4-bit adder. Can you figure out what
+                    the V output signifies?
                 </p>
             </statement>
+            <hint>
+                <p>
+                    The V output is only relevant when considering the two
+                    4-bit inputs as <em>signed</em> integers.
+                </p>
+            </hint>
         </activity>
     </subsection>
 </section>
