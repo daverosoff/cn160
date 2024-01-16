@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard forms: minterms and maxterms</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on Architecture">
+<meta property="book:author" content="Dave Rosoff">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_green_blue.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="dwrcn160" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Notes on Architecture</span></a></h1>
+<p class="byline">Dave Rosoff</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-logic-gates-and-circuits.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-title.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-assignments.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+   \newcommand{\Z}{\mathbb Z}
+   \newcommand{\Q}{\mathbb Q}
+   \newcommand{\R}{\mathbb R}
+   \newcommand{\neg}{{\sim}}
+   \newcommand{\barvee}{\mathbin{\overline{\vee}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">The Serpent and the Pico</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Binary and Exploding Dots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-binary-boolean-operators.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Binary boolean operators</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bitwise-operators.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Bitwise operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bitwise-operators.html#subsection-bitmasking" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Bitmasking</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-logic-gates-and-circuits.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Logic gates and circuits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logic-gates-and-circuits.html#subsec-the-basic-gates" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Basic Gates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logic-gates-and-circuits.html#subsec-adder-circuits" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Adder circuits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-standard-forms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Standard forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-standard-forms.html#subsec-minterm-canonical-form" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Minterm canonical form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-standard-forms.html#subsec-maxterms" class="internal"><span class="codenumber">1.5.2</span> <span class="title">The maxterm canonical form</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="sec-assignments.html" class="internal"><span class="codenumber">2</span> <span class="title">Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="assignments-day00.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Problems for Monday, Jan 8</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="assignments-day00.html#exercises-day00" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-assignment-day04.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Problems for Thursday, January 11</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-assignment-day04.html#exercises-day04" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projects.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Projects</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-projects.html#subsec-project-02-bitmasking" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Project 02: Bitmasking</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj-02a" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Part A: <code class="code-inline tex2jax_ignore">utils.py</code></span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj-02b" class="internal"><span class="codenumber">2.3.1.2</span> <span class="title">Part B: Bitmasking</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj-02c" class="internal"><span class="codenumber">2.3.1.3</span> <span class="title">Part C: Animations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-projects.html#subsec-proj-03" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Buttons and Input</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj03-a" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Part A</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj03-b" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">Part B</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-projects.html#subsubsec-proj03-c" class="internal"><span class="codenumber">2.3.2.3</span> <span class="title">Part C</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-standard-forms"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Standard forms: minterms and maxterms</span>
+</h2>
+<section class="introduction" id="sec-standard-forms-3"><div class="para" id="sec-standard-forms-3-1">In this section we will introduce two standard forms for Boolean functions: the <dfn class="terminology">minterm</dfn> and the <dfn class="terminology">maxterm</dfn>. Every boolean function can be represented as a sum of minterms or as a product of maxterms. Each of these representations leads directly to a circuit.</div> <div class="para logical" id="sec-standard-forms-3-2">
+<div class="para">Consider the expression</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table-minterms-three-vars.html">
+\begin{equation*}
+\bar{x} y z + x \bar{y} z\text{.}
+\end{equation*}
+</div>
+<div class="para">If we list out the barred and unbarred versions of all the variables that appear in the expression, we get the following:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table-minterms-three-vars.html">
+\begin{equation*}
+x, \bar{x}, y, \bar{y}, z, \bar{z}\text{.}
+\end{equation*}
+</div>
+<div class="para">These occur in complementary pairs: for any choice of logical values of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(z\text{,}\)</span> exactly one of the members of each pair is 1 and the other is 0. <a href="" class="xref" data-knowl="./knowl/xref/table-minterms-three-vars.html" title="Table 1.5.1: Values of the literals">Table 1.5.1</a> summarizes the situation.</div>
+</div> <figure class="table table-like" id="table-minterms-three-vars"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5.1<span class="period">.</span></span><span class="space"> </span>Values of the literals</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines">minterm</th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(z\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_0 = \bar{x} \cdot \bar{y} \cdot \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_1 = \bar{x} \cdot \bar{y} \cdot z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_2 = \bar{x} \cdot y \cdot \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_3 = \bar{x} \cdot y \cdot z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_4 = x \cdot \bar{y} \cdot \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_5 = x \cdot \bar{y} \cdot z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_6 = x \cdot y \cdot \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(m_7 = x \cdot y \cdot z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure> <div class="para" id="sec-standard-forms-3-4">Each of the rows in the table is called a <dfn class="terminology">minterm</dfn>. The name comes from the fact that each row is a product of literals (variables or their negations), and the product of literals is called a <dfn class="terminology">term</dfn>. The term is called a minterm because it is 1 for the combination of inputs that is listed in the row, and 0 for all other combinations. The minterm is called <dfn class="terminology">canonical</dfn> because it is the simplest possible expression for the function.</div></section><section class="subsection" id="subsec-minterm-canonical-form"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="space"> </span><span class="title">Minterm canonical form</span>
+</h3>
+<div class="para" id="subsec-minterm-canonical-form-2">Look again at <a href="" class="xref" data-knowl="./knowl/xref/table-minterms-three-vars.html" title="Table 1.5.1: Values of the literals">Table 1.5.1</a>. Notice that each minterm is labeled by the integer representation of the combination of inputs that makes it 1. For example, <span class="process-math">\(m_5\)</span> is 1 when <span class="process-math">\(x = 1\text{,}\)</span> <span class="process-math">\(y = 0\text{,}\)</span> and <span class="process-math">\(z = 1\text{,}\)</span> and this combination of inputs, that is, the binary number <span class="process-math">\(101\text{,}\)</span> is the integer 5. The minterm <span class="process-math">\(m_7\)</span> is 1 when <span class="process-math">\(x = 1\text{,}\)</span> <span class="process-math">\(y = 1\text{,}\)</span> and <span class="process-math">\(z = 1\text{,}\)</span> and this combination of inputs, that is, the binary number <span class="process-math">\(111\text{,}\)</span> is the integer 7.</div>
+<div class="para" id="subsec-minterm-canonical-form-3">Given any truth table for a 3-variable function, we can write down the minterm canonical form for the function by adding the minterms that are 1 in the truth table. For example, <a href="" class="xref" data-knowl="./knowl/xref/table-truth-tab-3-vars.html" title="Table 1.5.2: Sample truth table">Table 1.5.2</a> corresponds to the minterm canonical form <span class="process-math">\(m_1 + m_3 + m_5\text{,}\)</span> because minterms <span class="process-math">\(m_1\text{,}\)</span> <span class="process-math">\(m_3\text{,}\)</span> and <span class="process-math">\(m_5\)</span> are the only ones that are 1 in the truth table.</div>
+<figure class="table table-like" id="table-truth-tab-3-vars"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5.2<span class="period">.</span></span><span class="space"> </span>Sample truth table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(z\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(f\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+</table></div></figure><div class="para" id="subsec-minterm-canonical-form-5">To represent the minterm form as a circuit, we remember that multiplication is AND and addition is OR. So the circuit for <span class="process-math">\(m_1 + m_3 + m_5\)</span> is as pictured in <a href="" class="xref" data-knowl="./knowl/xref/figure-minterm-135.html" title="Figure 1.5.3">Figure 1.5.3</a>.</div>
+<figure class="figure figure-like" id="figure-minterm-135"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/minterms-1-3-5.png" class="contained" alt="The inputs each pass through an inverter. Appropriate combinations of the inputs and their inversions are ANDed together, and the results are ORed together."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.3<span class="period">.</span></span><span class="space"> </span>Circuit for <span class="process-math">\(m_1 + m_3 + m_5\)</span></figcaption></figure><article class="activity project-like" id="subsec-minterm-canonical-form-7"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-minterm-canonical-form-7-1-1">Use Logisim to build the circuit in <a href="" class="xref" data-knowl="./knowl/xref/figure-minterm-135.html" title="Figure 1.5.3">Figure 1.5.3</a>, and verify that it has the truth table in <a href="" class="xref" data-knowl="./knowl/xref/table-truth-tab-3-vars.html" title="Table 1.5.2: Sample truth table">Table 1.5.2</a>.</div></article><article class="activity project-like" id="subsec-minterm-canonical-form-8"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-minterm-canonical-form-8-1-1">Write down the minterm canonical form for the function <span class="process-math">\(g\)</span> whose truth table is given in <a href="" class="xref" data-knowl="./knowl/xref/table-truth-tab-3-vars-another.html" title="Table 1.5.4: Truth table with 3 variables">Table 1.5.4</a>.</div> <figure class="table table-like" id="table-truth-tab-3-vars-another"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5.4<span class="period">.</span></span><span class="space"> </span>Truth table with 3 variables</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(z\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(g\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure></article><article class="activity project-like" id="subsec-minterm-canonical-form-9"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-minterm-canonical-form-9-1-1">Use Logisim to build the circuit for the function <span class="process-math">\(g\)</span> whose minterm canonical form you wrote down in the previous activity, and verify that it has the truth table in <a href="" class="xref" data-knowl="./knowl/xref/table-truth-tab-3-vars-another.html" title="Table 1.5.4: Truth table with 3 variables">Table 1.5.4</a>.</div></article><div class="para" id="subsec-minterm-canonical-form-10">When there are more variables, just put them in an order and write down all the minterms. There will be <span class="process-math">\(2^n\)</span> minterms for a function of <span class="process-math">\(n\)</span> variables. For example, for a function of 4 variables, there will be 16 minterms.</div>
+<article class="activity project-like" id="subsec-minterm-canonical-form-11"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-minterm-canonical-form-11-1-1">Write down the table of all 16 minterms for variables <span class="process-math">\(w\text{,}\)</span> <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> (in that order).</div></article><article class="activity project-like" id="subsec-minterm-canonical-form-12"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-minterm-canonical-form-12-1-1">Write down the minterm canonical form for the function <span class="process-math">\(h\)</span> whose truth table is given in <a href="" class="xref" data-knowl="./knowl/xref/table-truth-tab-4-vars.html" title="Table 1.5.5: Truth table with 4 variables">Table 1.5.5</a>.</div> <figure class="table table-like" id="table-truth-tab-4-vars"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5.5<span class="period">.</span></span><span class="space"> </span>Truth table with 4 variables</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(w\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(z\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(h\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure></article><article class="activity project-like" id="subsec-minterm-canonical-form-13"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-minterm-canonical-form-13-1-1">Use Logisim to build the circuit for the function <span class="process-math">\(h\)</span> whose minterm canonical form you wrote down in the previous activity, and verify that it has the truth table in <a href="" class="xref" data-knowl="./knowl/xref/table-truth-tab-4-vars.html" title="Table 1.5.5: Truth table with 4 variables">Table 1.5.5</a>.</div></article><div class="para" id="subsec-minterm-canonical-form-14">Expressions that are sums of minterms are called <dfn class="terminology">sums of products</dfn>, or <dfn class="terminology">SOP</dfn> expressions. The circuit corresponding to an SOP expression is called a <dfn class="terminology">sum of products circuit</dfn>.</div>
+<div class="para" id="subsec-minterm-canonical-form-15">In the next subsection, we will introduce the dual of the minterm canonical form, called the <dfn class="terminology">maxterm canonical form</dfn>. It is useful to know both forms, because sometimes one is easier to work with than the other. One may be easier to build as a circuit than the other, involving fewer gates.</div></section><section class="subsection" id="subsec-maxterms"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">The maxterm canonical form</span>
+</h3>
+<div class="para" id="subsec-maxterms-2">The <dfn class="terminology">maxterm canonical form</dfn> is the dual of the minterm canonical form. The dual of a function is obtained by interchanging AND and OR, and 0 and 1. So the dual of the minterm <span class="process-math">\(m_1\)</span> is the maxterm <span class="process-math">\(M_1\text{,}\)</span> which is <span class="process-math">\(x + y + \bar{z}\text{.}\)</span> The dual of the minterm canonical form <span class="process-math">\(m_1 + m_3 + m_5\)</span> is the maxterm canonical form <span class="process-math">\(M_1 \cdot M_3 \cdot M_5\text{.}\)</span>
+</div>
+<div class="para" id="subsec-maxterms-3">The maxterm <span class="process-math">\(M_1\)</span> is 0 when <span class="process-math">\(x = 0\text{,}\)</span> <span class="process-math">\(y = 0\text{,}\)</span> and <span class="process-math">\(z = 1\text{,}\)</span> and this combination of inputs, that is, the binary number <span class="process-math">\(001\text{,}\)</span> is the integer 1. The maxterm <span class="process-math">\(M_3\)</span> is 0 when <span class="process-math">\(x = 0\text{,}\)</span> <span class="process-math">\(y = 1\text{,}\)</span> and <span class="process-math">\(z = 1\text{,}\)</span> and this combination of inputs, that is, the binary number <span class="process-math">\(011\text{,}\)</span> is the integer 3. The maxterm <span class="process-math">\(M_5\)</span> is 1 when <span class="process-math">\(x = 1\text{,}\)</span> <span class="process-math">\(y = 0\text{,}\)</span> and <span class="process-math">\(z = 1\text{,}\)</span> and this combination of inputs, that is, the binary number <span class="process-math">\(101\text{,}\)</span> is the integer 5. <a href="" class="xref" data-knowl="./knowl/xref/table-maxterms-three-vars.html" title="Table 1.5.7: Values of the literals">Table 1.5.7</a> summarizes the situation.</div>
+<article class="warning remark-like" id="subsec-maxterms-4"><h4 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-maxterms-4-1">Notice that the maxterms are labeled by the integers that make them 0, not 1. This is the opposite of the situation with minterms.</div></article><figure class="table table-like" id="table-maxterms-three-vars"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5.7<span class="period">.</span></span><span class="space"> </span>Values of the literals</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines">maxterm</th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(z\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_0 = x + y + z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_1 = x + y + \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_2 = x + \bar{y} + z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_3 = x + \bar{y} + \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_4 = \bar{x} + y + z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_5 = \bar{x} + y + \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_6 = \bar{x} + \bar{y} + z\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(M_7 = \bar{x} + \bar{y} + \bar{z}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-logic-gates-and-circuits.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-assignments.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

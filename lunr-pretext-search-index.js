@@ -340,7 +340,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Logic gates and circuits",
-  "body": " Logic gates and circuits   In this section we will begin to represent logic diagrammatically with gates. This will allow us to build circuits that perform complex logical operations.    The Basic Gates  There are seven basic gates available in Logisim Evolution. They are the AND, NAND, OR, NOR, XOR, XNOR, and NOT gates, pictured in .     The AND gate.   The AND gate is shaped like a capital letter D. The inputs are on the left side of the gate and the output is on the right curved side.     The NAND gate.   The NAND gate resembles the AND gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The OR gate.   The OR gate is shaped like a boomerang, oriented with its tips at the top and bottom, and concave side on the left. The inputs are on the concave side of the gate and the output is on the convex side.     The NOR gate.   The NOR gate resembles the OR gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The XOR gate.   The XOR gate is shaped like the OR gate, but with an extra line parallel and adjacent to the concave side. The inputs are on the concave side of the gate and the output is on the convex side.     The XNOR gate.   The XNOR gate resembles the XOR gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The NOT gate.   The NOT gate is shaped like a triangle with a small circle on the output side. This circle indicates that the output is inverted.    There is only one rule of using these gates. All gate inputs must be connected. The possible values to which they can be connected are the logic values 0 and 1. The output of a gate is determined by its operator applied to its inputs.  In a physical circuit, the logic value is usually represented by a low voltage like volts and the logic value is usually represented by a higher voltage like volts. In Logisim Evolution, the logic value is represented by dark green and the logic value is represented by light green.    Install Logisim Evolution on your computer. You can download it from . Windows users should choose the x86.msi file. Mac users should choose the dmg file.      Open Logisim Evolution. You should see a window with a blank canvas.   The quick panel above the canvas contains the basic gates. Click the AND gate, let go, and mouse onto the canvas. You should see a gate with two inputs and one output. You can put it anywhere on the canvas. You can also move it around later, although that may goof up any wiring you have added.  Add an XOR gate to the canvas. You should see a gate with two inputs and one output. Put it below and to the right of your AND gate.  If you click the output of the AND gate, you will see a wire attached to your mouse. If you move your mouse to the input of the XOR gate, you will see the wire attached to the input. You can only add one right-angle turn per click. If you click, the wire will stay where it is. Click the free end of the wire to continue the wiring path to an input of the XOR gate.  Use the arrow (selection tool) and the delete key to delete the wire you just added.  In the left panel, open the Wiring folder and add two Pins. Connect each Pin to one of the inputs of the AND gate. Branch off these connections so that each Pin is also connected to the XOR gate.  In the Input\/Output folder, add two LEDS. Connect one to the output of the AND gate, and the other to the output of the XOR gate. As connections are completed, the red error wires should turn dark green. The inputs are set to 0 at first, and this value is represented by dark green. The outputs should be dark green as well.   When you are done, the circuit should look like this.   The completed circuit.   The completed circuit. The outputs each connect to both gates, one at each input. The outputs are to the right, each connected to the output of one gate.        Now you will add some labels. Labels are used to name inputs and outputs, as well as gates.    Double-click an input and label it x . Label the other input y .    Double-click the AND gate and label it AND1 . Label the XOR gate XOR1 .    Double-click the output of the AND gate and label it s . Label the output of the XOR gate c .    When you are done, the circuit should look like this.   The completed circuit with labels.   The completed circuit with labels.   The completed circuit with labels. The labels are shown in blue. The labels are x and y for the inputs, AND1 and XOR1 for the gates, and s and c for the outputs.         Use the Poke tool in the quick panel (the hand icon) to poke the inputs. Click the x input. It should turn light green. Click the y input. It should turn light green. As you play with the inputs, observe that the wires change color to reflect the logic value they carry.  Make a truth table with four columns for , , , and . The first two columns should have the values and in alternating order, as we have seen in class. Use the Poke tool to determine the values of and for each combination of and . Record your results in the table.   Truth table for the circuit.    x  y  s  c    0  0      0  1      1  0      1  1       This circuit is called a half adder . The output (for sum ) is the sum of the inputs (remember, the sum of 1-bit values is also a 1-bit value). Because in 1-bit arithmetic, the output is the XOR of the inputs. The output (for carry ) is called the carry bit. It is if the addition overflows, which is only the case when both inputs are . Thus, the output is the AND of the inputs.      Select your entire circuit using the selection tool (arrow icon). Copy and paste it. You should see a copy of your circuit appear on the canvas. Move it below and a little to the right of the original circuit. Change the labels of the new gates to AND2 and XOR2 .  Use the tools in the quick panel to construct this circuit.   The completed circuit.   The full adder circuit is composed of two linked half adders plus an OR gate.        Make a truth table for the circuit. The first three columns should be , , and . The last two columns should be and . Use the Poke tool to determine the values of and for each combination of , , and . Record your results in the table.      Thinking about the truth table, explain why this circuit is called a full adder .    The full adder (made of two half adders plus an OR gate) actually adds 3 bits. The input is the carry bit from the previous addition. The output is the carry bit for the next addition. The output is the (1-bit) sum of the three bits.      Use the Project...Add Circuit menu item to add a subcircuit to your project. Name it Adder1Bit . Select your entire full adder circuit and cut it from the Main circuit. Double-click the name Adder1Bit in the left pane to open the subcircuit. Paste the full adder circuit into the newly opened blank canvas. At this point it is probably a good idea to save your project. Call it adder.circ .  For your subcircuit to work properly, we need to remove the LED indicators and replace them with real outputs. You can use Pins for this purpose. You will need to alter their attributes in the left pane, so that they are output pins instead of input pins. Alternatively, you can use the quick panel to add outputs. Both input and output pins are represented on the quick panel. When you are done, the subcircuit should look like below.   The full adder as a subcircuit.   The full adder subcircuit has had its LEDs replaced with output pins from the quick panel.        If you return to the Main circuit, you should see that the canvas is blank again (if you followed the directions above). Click the Adder1Bit subcircuit in the left pane. You should be able to add a block diagram for the full adder to the canvas. That is, it has inputs on the left and outputs on the right, but the gates are not visible.  Use the Poke tool to test the subcircuit. You should see that it works just like the full adder circuit you built earlier, as indicated in .   The full adder as a subcircuit.   The full adder subcircuit is represented as a black box in the main circuit. Its inputs and outputs are connected to pins from the quick panel.        Use more subcircuits to build a 4-bit adder. You will need four Adder1Bit subcircuits. You will also need to add a Pin for each input and output. Label the inputs , , , and . Label the outputs , , , and . Wire the carry-in input of the 0th adder to a constant 0, and wire the carry-out output of the last adder to an LED.  To finish the 4-bit adder, connect the carry-out output of each adder to the carry-in input of the next adder. This is called a ripple carry adder. When you are done, the circuit should look like this.     "
+  "body": " Logic gates and circuits   In this section we will begin to represent logic diagrammatically with gates. This will allow us to build circuits that perform complex logical operations.    The Basic Gates  There are seven basic gates available in Logisim Evolution. They are the AND, NAND, OR, NOR, XOR, XNOR, and NOT gates, pictured in .     The AND gate.   The AND gate is shaped like a capital letter D. The inputs are on the left side of the gate and the output is on the right curved side.     The NAND gate.   The NAND gate resembles the AND gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The OR gate.   The OR gate is shaped like a boomerang, oriented with its tips at the top and bottom, and concave side on the left. The inputs are on the concave side of the gate and the output is on the convex side.     The NOR gate.   The NOR gate resembles the OR gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The XOR gate.   The XOR gate is shaped like the OR gate, but with an extra line parallel and adjacent to the concave side. The inputs are on the concave side of the gate and the output is on the convex side.     The XNOR gate.   The XNOR gate resembles the XOR gate, but has a small circle on the output side. This circle indicates that the output is inverted.       The NOT gate.   The NOT gate is shaped like a triangle with a small circle on the output side. This circle indicates that the output is inverted.    There is only one rule of using these gates. All gate inputs must be connected. The possible values to which they can be connected are the logic values 0 and 1. The output of a gate is determined by its operator applied to its inputs.  In a physical circuit, the logic value is usually represented by a low voltage like volts and the logic value is usually represented by a higher voltage like volts. In Logisim Evolution, the logic value is represented by dark green and the logic value is represented by light green.    Install Logisim Evolution on your computer. You can download it from . Windows users should choose the x86.msi file. Mac users should choose the dmg file.      Open Logisim Evolution. You should see a window with a blank canvas.   The quick panel above the canvas contains the basic gates. Click the AND gate, let go, and mouse onto the canvas. You should see a gate with two inputs and one output. You can put it anywhere on the canvas. You can also move it around later, although that may goof up any wiring you have added.  Add an XOR gate to the canvas. You should see a gate with two inputs and one output. Put it below and to the right of your AND gate.  If you click the output of the AND gate, you will see a wire attached to your mouse. If you move your mouse to the input of the XOR gate, you will see the wire attached to the input. You can only add one right-angle turn per click. If you click, the wire will stay where it is. Click the free end of the wire to continue the wiring path to an input of the XOR gate.  Use the arrow (selection tool) and the delete key to delete the wire you just added.  In the left panel, open the Wiring folder and add two Pins. Connect each Pin to one of the inputs of the AND gate. Branch off these connections so that each Pin is also connected to the XOR gate.  In the Input\/Output folder, add two LEDS. Connect one to the output of the AND gate, and the other to the output of the XOR gate. As connections are completed, the red error wires should turn dark green. The inputs are set to 0 at first, and this value is represented by dark green. The outputs should be dark green as well.   When you are done, the circuit should look like this.   The completed circuit.   The completed circuit. The outputs each connect to both gates, one at each input. The outputs are to the right, each connected to the output of one gate.        Now you will add some labels. Labels are used to name inputs and outputs, as well as gates.    Double-click an input and label it x . Label the other input y .    Double-click the AND gate and label it AND1 . Label the XOR gate XOR1 .    Double-click the output of the AND gate and label it s . Label the output of the XOR gate c .    When you are done, the circuit should look like this.   The completed circuit with labels.   The completed circuit with labels.   The completed circuit with labels. The labels are shown in blue. The labels are x and y for the inputs, AND1 and XOR1 for the gates, and s and c for the outputs.         Adder circuits: The beginning of digital arithmetic  Adder circuits    Use the Poke tool in the quick panel (the hand icon) to poke the inputs. Click the x input. It should turn light green. Click the y input. It should turn light green. As you play with the inputs, observe that the wires change color to reflect the logic value they carry.  Make a truth table with four columns for , , , and . The first two columns should have the values and in alternating order, as we have seen in class. Use the Poke tool to determine the values of and for each combination of and . Record your results in the table.   Truth table for the circuit.    x  y  s  c    0  0      0  1      1  0      1  1       This circuit is called a half adder . The output (for sum ) is the sum of the inputs (remember, the sum of 1-bit values is also a 1-bit value). Because in 1-bit arithmetic, the output is the XOR of the inputs. The output (for carry ) is called the carry bit. It is if the addition overflows, which is only the case when both inputs are . Thus, the output is the AND of the inputs.      Select your entire circuit using the selection tool (arrow icon). Copy and paste it. You should see a copy of your circuit appear on the canvas. Move it below and a little to the right of the original circuit. Change the labels of the new gates to AND2 and XOR2 .  Use the tools in the quick panel to construct this circuit.   The completed circuit.   The full adder circuit is composed of two linked half adders plus an OR gate.        Make a truth table for the circuit. The first three columns should be , , and . The last two columns should be and . Use the Poke tool to determine the values of and for each combination of , , and . Record your results in the table.      Thinking about the truth table, explain why this circuit is called a full adder .    The full adder (made of two half adders plus an OR gate) actually adds 3 bits. The input is the carry bit from the previous addition. The output is the carry bit for the next addition. The output is the (1-bit) sum of the three bits.      Use the Project...Add Circuit menu item to add a subcircuit to your project. Name it Adder1Bit . Select your entire full adder circuit and cut it from the Main circuit. Double-click the name Adder1Bit in the left pane to open the subcircuit. Paste the full adder circuit into the newly opened blank canvas. At this point it is probably a good idea to save your project. Call it adder.circ .  For your subcircuit to work properly, we need to remove the LED indicators and replace them with real outputs. You can use Pins for this purpose. You will need to alter their attributes in the left pane, so that they are output pins instead of input pins. Alternatively, you can use the quick panel to add outputs. Both input and output pins are represented on the quick panel. When you are done, the subcircuit should look like below.   The full adder as a subcircuit.   The full adder subcircuit has had its LEDs replaced with output pins from the quick panel.        If you return to the Main circuit, you should see that the canvas is blank again (if you followed the directions above). Click the Adder1Bit subcircuit in the left pane. You should be able to add a block diagram for the full adder to the canvas. That is, it has inputs on the left and outputs on the right, but the gates are not visible.  Use the Poke tool to test the subcircuit. You should see that it works just like the full adder circuit you built earlier, as indicated in .   The full adder as a subcircuit.   The full adder subcircuit is represented as a black box in the main circuit. Its inputs and outputs are connected to pins from the quick panel.        Use more subcircuits to build a 4-bit adder. You will need four Adder1Bit subcircuits. You will also need to add a Pin for each input and output. Label the inputs , , , and . Label the outputs , , , and . Wire the carry-in input of the 0th adder to a constant 0, and wire the carry-out output of the last adder to an LED.  To finish the 4-bit adder, connect the carry-out output of each adder to the carry-in input of the next adder. This is called a ripple carry adder. When you are done, the circuit should look like . This circuit is called a 4-bit ripple carry adder . This version is different from what I showed earlier in class, in that it features 8 separate input bits instead of two 4-bit inputs. You will have a chance to build the other variation in homework.   The 4-bit adder.   Each c_out is connected to the next c_in. The last c_out goes to a C output, for unsigned integer overflow. The last two c_outs go to an XOR gate, whose output is the V output.        Experiment with the 4-bit adder. Can you figure out what the V output signifies?    The V output is only relevant when considering the two 4-bit inputs as signed integers.     "
 },
 {
   "id": "figure-and-gate",
@@ -433,67 +433,229 @@ var ptx_lunr_docs = [
   "body": "  Now you will add some labels. Labels are used to name inputs and outputs, as well as gates.    Double-click an input and label it x . Label the other input y .    Double-click the AND gate and label it AND1 . Label the XOR gate XOR1 .    Double-click the output of the AND gate and label it s . Label the output of the XOR gate c .    When you are done, the circuit should look like this.   The completed circuit with labels.   The completed circuit with labels.   The completed circuit with labels. The labels are shown in blue. The labels are x and y for the inputs, AND1 and XOR1 for the gates, and s and c for the outputs.      "
 },
 {
-  "id": "subsec-the-basic-gates-10",
+  "id": "subsec-adder-circuits-3",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-10",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-3",
   "type": "Activity",
   "number": "1.4.4",
   "title": "",
   "body": "  Use the Poke tool in the quick panel (the hand icon) to poke the inputs. Click the x input. It should turn light green. Click the y input. It should turn light green. As you play with the inputs, observe that the wires change color to reflect the logic value they carry.  Make a truth table with four columns for , , , and . The first two columns should have the values and in alternating order, as we have seen in class. Use the Poke tool to determine the values of and for each combination of and . Record your results in the table.   Truth table for the circuit.    x  y  s  c    0  0      0  1      1  0      1  1       This circuit is called a half adder . The output (for sum ) is the sum of the inputs (remember, the sum of 1-bit values is also a 1-bit value). Because in 1-bit arithmetic, the output is the XOR of the inputs. The output (for carry ) is called the carry bit. It is if the addition overflows, which is only the case when both inputs are . Thus, the output is the AND of the inputs.   "
 },
 {
-  "id": "subsec-the-basic-gates-11",
+  "id": "subsec-adder-circuits-4",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-11",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-4",
   "type": "Activity",
   "number": "1.4.5",
   "title": "",
   "body": "  Select your entire circuit using the selection tool (arrow icon). Copy and paste it. You should see a copy of your circuit appear on the canvas. Move it below and a little to the right of the original circuit. Change the labels of the new gates to AND2 and XOR2 .  Use the tools in the quick panel to construct this circuit.   The completed circuit.   The full adder circuit is composed of two linked half adders plus an OR gate.     "
 },
 {
-  "id": "subsec-the-basic-gates-12",
+  "id": "subsec-adder-circuits-5",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-12",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-5",
   "type": "Activity",
   "number": "1.4.6",
   "title": "",
   "body": "  Make a truth table for the circuit. The first three columns should be , , and . The last two columns should be and . Use the Poke tool to determine the values of and for each combination of , , and . Record your results in the table.   "
 },
 {
-  "id": "subsec-the-basic-gates-13",
+  "id": "subsec-adder-circuits-6",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-13",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-6",
   "type": "Activity",
   "number": "1.4.7",
   "title": "",
   "body": "  Thinking about the truth table, explain why this circuit is called a full adder .    The full adder (made of two half adders plus an OR gate) actually adds 3 bits. The input is the carry bit from the previous addition. The output is the carry bit for the next addition. The output is the (1-bit) sum of the three bits.   "
 },
 {
-  "id": "subsec-the-basic-gates-14",
+  "id": "subsec-adder-circuits-7",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-14",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-7",
   "type": "Activity",
   "number": "1.4.8",
   "title": "",
   "body": "  Use the Project...Add Circuit menu item to add a subcircuit to your project. Name it Adder1Bit . Select your entire full adder circuit and cut it from the Main circuit. Double-click the name Adder1Bit in the left pane to open the subcircuit. Paste the full adder circuit into the newly opened blank canvas. At this point it is probably a good idea to save your project. Call it adder.circ .  For your subcircuit to work properly, we need to remove the LED indicators and replace them with real outputs. You can use Pins for this purpose. You will need to alter their attributes in the left pane, so that they are output pins instead of input pins. Alternatively, you can use the quick panel to add outputs. Both input and output pins are represented on the quick panel. When you are done, the subcircuit should look like below.   The full adder as a subcircuit.   The full adder subcircuit has had its LEDs replaced with output pins from the quick panel.     "
 },
 {
-  "id": "subsec-the-basic-gates-15",
+  "id": "subsec-adder-circuits-8",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-15",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-8",
   "type": "Activity",
   "number": "1.4.9",
   "title": "",
   "body": "  If you return to the Main circuit, you should see that the canvas is blank again (if you followed the directions above). Click the Adder1Bit subcircuit in the left pane. You should be able to add a block diagram for the full adder to the canvas. That is, it has inputs on the left and outputs on the right, but the gates are not visible.  Use the Poke tool to test the subcircuit. You should see that it works just like the full adder circuit you built earlier, as indicated in .   The full adder as a subcircuit.   The full adder subcircuit is represented as a black box in the main circuit. Its inputs and outputs are connected to pins from the quick panel.     "
 },
 {
-  "id": "subsec-the-basic-gates-16",
+  "id": "subsec-adder-circuits-9",
   "level": "2",
-  "url": "sec-logic-gates-and-circuits.html#subsec-the-basic-gates-16",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-9",
   "type": "Activity",
   "number": "1.4.10",
   "title": "",
-  "body": "  Use more subcircuits to build a 4-bit adder. You will need four Adder1Bit subcircuits. You will also need to add a Pin for each input and output. Label the inputs , , , and . Label the outputs , , , and . Wire the carry-in input of the 0th adder to a constant 0, and wire the carry-out output of the last adder to an LED.  To finish the 4-bit adder, connect the carry-out output of each adder to the carry-in input of the next adder. This is called a ripple carry adder. When you are done, the circuit should look like this.   "
+  "body": "  Use more subcircuits to build a 4-bit adder. You will need four Adder1Bit subcircuits. You will also need to add a Pin for each input and output. Label the inputs , , , and . Label the outputs , , , and . Wire the carry-in input of the 0th adder to a constant 0, and wire the carry-out output of the last adder to an LED.  To finish the 4-bit adder, connect the carry-out output of each adder to the carry-in input of the next adder. This is called a ripple carry adder. When you are done, the circuit should look like . This circuit is called a 4-bit ripple carry adder . This version is different from what I showed earlier in class, in that it features 8 separate input bits instead of two 4-bit inputs. You will have a chance to build the other variation in homework.   The 4-bit adder.   Each c_out is connected to the next c_in. The last c_out goes to a C output, for unsigned integer overflow. The last two c_outs go to an XOR gate, whose output is the V output.     "
+},
+{
+  "id": "subsec-adder-circuits-10",
+  "level": "2",
+  "url": "sec-logic-gates-and-circuits.html#subsec-adder-circuits-10",
+  "type": "Activity",
+  "number": "1.4.11",
+  "title": "",
+  "body": "  Experiment with the 4-bit adder. Can you figure out what the V output signifies?    The V output is only relevant when considering the two 4-bit inputs as signed integers.   "
+},
+{
+  "id": "sec-standard-forms",
+  "level": "1",
+  "url": "sec-standard-forms.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Standard forms: minterms and maxterms",
+  "body": " Standard forms: minterms and maxterms  Standard forms   In this section we will introduce two standard forms for Boolean functions: the minterm and the maxterm . Every boolean function can be represented as a sum of minterms or as a product of maxterms. Each of these representations leads directly to a circuit.  Consider the expression . If we list out the barred and unbarred versions of all the variables that appear in the expression, we get the following: . These occur in complementary pairs: for any choice of logical values of , , , exactly one of the members of each pair is 1 and the other is 0. summarizes the situation.   Values of the literals    minterm        0  0  0     0  0  1     0  1  0     0  1  1     1  0  0     1  0  1     1  1  0     1  1  1     Each of the rows in the table is called a minterm . The name comes from the fact that each row is a product of literals (variables or their negations), and the product of literals is called a term . The term is called a minterm because it is 1 for the combination of inputs that is listed in the row, and 0 for all other combinations. The minterm is called canonical because it is the simplest possible expression for the function.    Minterm canonical form  Look again at . Notice that each minterm is labeled by the integer representation of the combination of inputs that makes it 1. For example, is 1 when , , and , and this combination of inputs, that is, the binary number , is the integer 5. The minterm is 1 when , , and , and this combination of inputs, that is, the binary number , is the integer 7.  Given any truth table for a 3-variable function, we can write down the minterm canonical form for the function by adding the minterms that are 1 in the truth table. For example, corresponds to the minterm canonical form , because minterms , , and are the only ones that are 1 in the truth table.   Sample truth table          0  0  0  0    0  0  1  1    0  1  0  0    0  1  1  1    1  0  0  0    1  0  1  1    1  1  0  0    1  1  1  0     To represent the minterm form as a circuit, we remember that multiplication is AND and addition is OR. So the circuit for is as pictured in .   Circuit for   The inputs each pass through an inverter. Appropriate combinations of the inputs and their inversions are ANDed together, and the results are ORed together.      Use Logisim to build the circuit in , and verify that it has the truth table in .      Write down the minterm canonical form for the function whose truth table is given in .   Truth table with 3 variables          0  0  0  1    0  0  1  0    0  1  0  1    0  1  1  1    1  0  0  0    1  0  1  1    1  1  0  0    1  1  1  1         Use Logisim to build the circuit for the function whose minterm canonical form you wrote down in the previous activity, and verify that it has the truth table in .    When there are more variables, just put them in an order and write down all the minterms. There will be minterms for a function of variables. For example, for a function of 4 variables, there will be 16 minterms.    Write down the table of all 16 minterms for variables , , , and (in that order).      Write down the minterm canonical form for the function whose truth table is given in .   Truth table with 4 variables           0  0  0  0  1    0  0  0  1  0    0  0  1  0  1    0  0  1  1  1    0  1  0  0  0    0  1  0  1  1    0  1  1  0  0    0  1  1  1  1    1  0  0  0  0    1  0  0  1  1    1  0  1  0  0    1  0  1  1  1    1  1  0  0  0    1  1  0  1  1    1  1  1  0  0    1  1  1  1  1         Use Logisim to build the circuit for the function whose minterm canonical form you wrote down in the previous activity, and verify that it has the truth table in .    Expressions that are sums of minterms are called sums of products , or SOP expressions. The circuit corresponding to an SOP expression is called a sum of products circuit .  In the next subsection, we will introduce the dual of the minterm canonical form, called the maxterm canonical form . It is useful to know both forms, because sometimes one is easier to work with than the other. One may be easier to build as a circuit than the other, involving fewer gates.    The maxterm canonical form  The maxterm canonical form is the dual of the minterm canonical form. The dual of a function is obtained by interchanging AND and OR, and 0 and 1. So the dual of the minterm is the maxterm , which is . The dual of the minterm canonical form is the maxterm canonical form .  The maxterm is 0 when , , and , and this combination of inputs, that is, the binary number , is the integer 1. The maxterm is 0 when , , and , and this combination of inputs, that is, the binary number , is the integer 3. The maxterm is 1 when , , and , and this combination of inputs, that is, the binary number , is the integer 5. summarizes the situation.   Notice that the maxterms are labeled by the integers that make them 0, not 1. This is the opposite of the situation with minterms.    Values of the literals    maxterm        0  0  0     0  0  1     0  1  0     0  1  1     1  0  0     1  0  1     1  1  0     1  1  1      "
+},
+{
+  "id": "sec-standard-forms-3-1",
+  "level": "2",
+  "url": "sec-standard-forms.html#sec-standard-forms-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "minterm maxterm "
+},
+{
+  "id": "table-minterms-three-vars",
+  "level": "2",
+  "url": "sec-standard-forms.html#table-minterms-three-vars",
+  "type": "Table",
+  "number": "1.5.1",
+  "title": "Values of the literals",
+  "body": " Values of the literals    minterm        0  0  0     0  0  1     0  1  0     0  1  1     1  0  0     1  0  1     1  1  0     1  1  1    "
+},
+{
+  "id": "sec-standard-forms-3-4",
+  "level": "2",
+  "url": "sec-standard-forms.html#sec-standard-forms-3-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "minterm term canonical "
+},
+{
+  "id": "table-truth-tab-3-vars",
+  "level": "2",
+  "url": "sec-standard-forms.html#table-truth-tab-3-vars",
+  "type": "Table",
+  "number": "1.5.2",
+  "title": "Sample truth table",
+  "body": " Sample truth table          0  0  0  0    0  0  1  1    0  1  0  0    0  1  1  1    1  0  0  0    1  0  1  1    1  1  0  0    1  1  1  0    "
+},
+{
+  "id": "figure-minterm-135",
+  "level": "2",
+  "url": "sec-standard-forms.html#figure-minterm-135",
+  "type": "Figure",
+  "number": "1.5.3",
+  "title": "",
+  "body": " Circuit for   The inputs each pass through an inverter. Appropriate combinations of the inputs and their inversions are ANDed together, and the results are ORed together.   "
+},
+{
+  "id": "subsec-minterm-canonical-form-7",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-7",
+  "type": "Activity",
+  "number": "1.5.1",
+  "title": "",
+  "body": "  Use Logisim to build the circuit in , and verify that it has the truth table in .   "
+},
+{
+  "id": "subsec-minterm-canonical-form-8",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-8",
+  "type": "Activity",
+  "number": "1.5.2",
+  "title": "",
+  "body": "  Write down the minterm canonical form for the function whose truth table is given in .   Truth table with 3 variables          0  0  0  1    0  0  1  0    0  1  0  1    0  1  1  1    1  0  0  0    1  0  1  1    1  1  0  0    1  1  1  1      "
+},
+{
+  "id": "subsec-minterm-canonical-form-9",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-9",
+  "type": "Activity",
+  "number": "1.5.3",
+  "title": "",
+  "body": "  Use Logisim to build the circuit for the function whose minterm canonical form you wrote down in the previous activity, and verify that it has the truth table in .   "
+},
+{
+  "id": "subsec-minterm-canonical-form-11",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-11",
+  "type": "Activity",
+  "number": "1.5.4",
+  "title": "",
+  "body": "  Write down the table of all 16 minterms for variables , , , and (in that order).   "
+},
+{
+  "id": "subsec-minterm-canonical-form-12",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-12",
+  "type": "Activity",
+  "number": "1.5.5",
+  "title": "",
+  "body": "  Write down the minterm canonical form for the function whose truth table is given in .   Truth table with 4 variables           0  0  0  0  1    0  0  0  1  0    0  0  1  0  1    0  0  1  1  1    0  1  0  0  0    0  1  0  1  1    0  1  1  0  0    0  1  1  1  1    1  0  0  0  0    1  0  0  1  1    1  0  1  0  0    1  0  1  1  1    1  1  0  0  0    1  1  0  1  1    1  1  1  0  0    1  1  1  1  1      "
+},
+{
+  "id": "subsec-minterm-canonical-form-13",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-13",
+  "type": "Activity",
+  "number": "1.5.6",
+  "title": "",
+  "body": "  Use Logisim to build the circuit for the function whose minterm canonical form you wrote down in the previous activity, and verify that it has the truth table in .   "
+},
+{
+  "id": "subsec-minterm-canonical-form-14",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-14",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "sums of products SOP sum of products circuit "
+},
+{
+  "id": "subsec-minterm-canonical-form-15",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-minterm-canonical-form-15",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "maxterm canonical form "
+},
+{
+  "id": "subsec-maxterms-2",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-maxterms-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "maxterm canonical form "
+},
+{
+  "id": "subsec-maxterms-4",
+  "level": "2",
+  "url": "sec-standard-forms.html#subsec-maxterms-4",
+  "type": "Warning",
+  "number": "1.5.6",
+  "title": "",
+  "body": " Notice that the maxterms are labeled by the integers that make them 0, not 1. This is the opposite of the situation with minterms.  "
+},
+{
+  "id": "table-maxterms-three-vars",
+  "level": "2",
+  "url": "sec-standard-forms.html#table-maxterms-three-vars",
+  "type": "Table",
+  "number": "1.5.7",
+  "title": "Values of the literals",
+  "body": " Values of the literals    maxterm        0  0  0     0  0  1     0  1  0     0  1  1     1  0  0     1  0  1     1  1  0     1  1  1    "
 },
 {
   "id": "assignments-day00",
