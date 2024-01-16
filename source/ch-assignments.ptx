@@ -409,7 +409,7 @@
         </p>
         <figure xml:id="figure-pico-with-button-bb">
           <caption>Pico with button for input.</caption>
-          <image source="7-led-pico-with-button_bb.png" width="30%">
+          <image source="7-led-pico-with-button_bb_fix.png" width="30%">
             <shortdescription>
               The button is wired to the bottom three rows.
             </shortdescription>
@@ -434,7 +434,8 @@
             <cline>for i, led_pin in enumerate(LED_PINS_SETUP):</cline>
             <cline>    PINS[i] = digitalio.DigitalInOut(led_pin)</cline>
             <cline>    PINS[i].direction = digitalio.Direction.OUTPUT</cline>
-            <cline></cline>
+            <cline>    if i == 0:</cline>
+            <cline>        PINS[i].switch_to_input(pull=digitalio.Pull.DOWN)</cline>
             <cline>    PINS[i].value = False</cline>
             <cline></cline>
             <cline>button = PINS[0]</cline>
