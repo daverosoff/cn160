@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-standard-forms">
+    <title>Standard forms: minterms and maxterms</title>
+    <shorttitle>Standard forms</shorttitle>
+    <introduction>
+        <p>
+            In this section we will introduce two standard forms for Boolean
+            functions: the <term>minterm</term> and the <term>maxterm</term>.
+            Every boolean function can be represented as a sum of minterms or
+            as a product of maxterms. Each of these representations leads
+            directly to a circuit.
+        </p>
+        <p>
+            Consider the expression <me>
+                \bar{x} y z + x \bar{y} z
+            </me>.
+            If we list out the barred and unbarred versions of all the
+            variables that appear in the expression, we get the following:
+            <me>
+                x, \bar{x}, y, \bar{y}, z, \bar{z}
+            </me>.
+            These occur in complementary pairs: for any choice of logical
+            values of <m>x</m>, <m>y</m>, <m>z</m>, exactly one of the
+            members of each pair is 1 and the other is 0. The table
+            summarizes the situation.
+        </p>
+        <table>
+            <title>Values of the literals</title>
+            <tabular halign="center">
+                <row header="yes" bottom="minor">
+                    <cell>minterm</cell>
+                    <cell><m>x</m></cell>
+                    <cell><m>y</m></cell>
+                    <cell><m>z</m></cell>
+                </row>
+                <row>
+                    <cell><m>m_0 = \bar{x} \bar{y} \bar{z}</m></cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                </row>
+                <row>
+                    <cell><m>m_1 = \bar{x} \bar{y} z</m></cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>1</cell>
+                </row>
+                <row>
+                    <cell><m>m_2 = \bar{x} y \bar{z}</m></cell>
+                    <cell>0</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                </row>
+                <row>
+                    <cell><m>m_3 = \bar{x} y z</m></cell>
+                    <cell>0</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                </row>
+                <row>
+                    <cell><m>m_4 = x \bar{y} \bar{z}</m></cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                </row>
+                <row>
+                    <cell><m>m_5 = x \bar{y} z</m></cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>1</cell>
+                </row>
+                <row>
+                    <cell><m>m_6 = x y \bar{z}</m></cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                </row>
+                <row>
+                    <cell><m>m_7 = x y z</m></cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                </row>
+            </tabular>
+        </table>
+    </introduction>
+</section>
