@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-the-c-sdk-and-assembly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>The C SDK and assembly</title>
+    <introduction>
+        <p>
+            The Raspberry Pi foundation provides an excellent <term>software 
+            development kit</term>, or SDK. The SDK is a library of C functions
+            that facilitate application development on the Pico. In that regard,
+            it is a bit like CircuitPython. The difference is that CircuitPython
+            runs in an interpreter that the Pico itself hosts. 
+            Different Pico peripherals, or more advanced code for fancier
+            CircuitPython boards, may require more CircuitPython libraries,
+            and these have to be provided to the Pico board for it to run such code.
+            Any definitions required at runtime have to be available this way.
+        </p>
+        <p>
+            In contrast, C code is compiled into machine code (ARM assembly) that
+            the Pico can run directly. The machine code is a sequence of instructions
+            encoded as bit patterns. The Pico can run these instructions directly,
+            if the bit patterns are stored in its memory. The C SDK provides a
+            library of functions that can be called from C code, and that are
+            compiled into machine code. The machine code is stored in the Pico's
+            memory, and the Pico can run it directly. No interpreter or libraries
+            are required at runtime. Thus, software written in C can be more
+            efficient than software written in CircuitPython. This efficiency is
+            realized both in terms of speed and in terms of memory usage.
+        </p>
+        <p>
+            Moreover, advanced boards often have facilities that cannot be used,
+            or can only partially be used, from CircuitPython. For example, the
+            Pico has a <term>programmable input/output</term>, or <term>PIO</term>,
+            that can be used to implement custom hardware interfaces. The PIO
+            is not fully accessible from CircuitPython. Other typical exceptions
+            include most interrupt facilities, and some features of asynchronous
+            or concurrent programming. These features are available from C.
+        </p>
+        <p>
+            The machine code is difficult to read directly, because it is encoded
+            in bit patterns. However, there is a human-readable form of this machine
+            code, called assembly language. The assembly is equivalent to the
+            compiled machine code, but it is easier to read and understand. Every
+            CS student should have some understanding of machine code and assembly,
+            because the way it all works has had a profound influence on the
+            design of many popular high-level languages, including Python.
+        </p>
+        <p>
+            In this chapter, we introduce the C SDK and assembly. We will use
+            the C SDK to write some simple programs, and we will study the
+            form of assembly programming in order to write some very simple
+            assembly code. For the most part, we will make free use of the 
+            SDK to simplify our lives. It is challenging for even experience
+            programmers to write assembly code, and we will not attempt to
+            do so in any serious way. You may never write another line of
+            assembly after this, but your appreciation of the work done for
+            you by the authors of compilers, interpreters, and so on, will
+            last a lifetime. Moreover it is often helpful to be able to read
+            assembly code during debugging.
+        </p>
+        <p>
+            The days when human programmers could write more efficient code
+            than compilers are past, but still within living memory. However,
+            today's compilers would really be hard to beat. Folks who write
+            assembly today do it for the love of the game. There are even
+            literal games featuring assembly programming, for example
+            Shenzhen IO from Zachtronics (available on Steam, e.g.).
+        </p>
+    </introduction>
+    <section xml:id="sec-using-the-sdk-on-codespaces">
+        <title>Using the SDK on Codespaces</title>
+        <p>
+            Visit the <url href="https://github.com/daverosoff/pico-c-sandbox">Pico C
+            Sandbox</url> and fork the repository. Then, create a new Codespace
+            from your fork. This will take a few minutes, and then you will see
+            a VS Code window in your browser. Find the Terminal tab and open it.
+            You should see a <term>prompt</term> that looks like this:
+            <cd>
+                <cline>@your-github-name /workspaces/pico-c-sandbox (main) $ </cline>
+            </cd>
+            The prompt indicates the console is waiting for a command. To save room
+            we compress the prompt to just the <c>$</c> character. You will type everything
+            after the <c>$</c> character on the same line. The text you type appears
+            in a boldface font. The text the console prints in response appears in
+            a normal font. The console prints a blank line after each command.
+        </p>
+        <p>
+            Run the following commands, pressing Enter after you type each one:
+            <console prompt="$ ">
+                <input>git clone https://github.com/raspberrypi/pico-sdk.git pico/pico-sdk</input>
+                <output>Cloning into 'pico/pico-sdk'...</output>
+                <input>git clone https://github.com/raspberrypi/pico-examples.git pico/pico-examples</input>
+                <output>Cloning into 'pico/pico-examples'...</output>
+                <input>cd pico/pico-sdk</input>
+                <output/>
+                <input>git submodule update --init</input>
+                <output>(a lot of output)</output>
+                <input>cd ../..</input>
+                <output/>
+                <input>sudo apt update</input>
+                <output>(a lot of output)</output>
+                <input>sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential</input>
+                <output>(a lot of output)</output>
+            </console>
+        </p>
+        <p>
+            These commands install the compiler itself, the SDK, and some example code. Most of them produce a
+            lot of output, which we have omitted here. The <c>cd</c> command changes the current directory to
+            the one specified. The <c>sudo</c> command runs the following command as the superuser, which is
+            required to install software. The <c>apt</c> command is the package manager for Debian Linux, which
+            we are running in this Codespace.
+        </p>
+        <p>
+            Now, use <c>F1</c> key to bring up the Command Palette. This is the best way to run
+            commands in VS Code. Type <c>CMake</c> and select <c>CMake: Configure</c> from the list of
+            commands that appears. If you are asked to select a kit, choose <c>gcc-arm-none-eabi</c>.
+            This will take a few minutes, and you will see a lot of output in the console. When it is
+            done, you will see a message like this:
+            <console prompt="$ ">
+                <output>Configuring done</output>
+                <output>Generating done</output>
+                <output>Build files have been written to: /workspaces/pico-c-sandbox/build</output>
+            </console>
+            You will also see some activity in the status bar at the bottom of the window indicating
+            that CMake is doing its configuring. 
+        </p>
+        <p>
+            When the configuring is done, you are ready to compile and run some code!
+        </p>
+    </section>
+
+</chapter>

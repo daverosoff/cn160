@@ -13,7 +13,7 @@
 
     <!-- Include chapters -->
     <xi:include href="./ch-the-serpent-and-the-pico.ptx" />
-
+    <xi:include href="./ch-the-c-sdk-and-assembly.ptx" />
     <xi:include href="./ch-assignments.ptx" />
 
 
