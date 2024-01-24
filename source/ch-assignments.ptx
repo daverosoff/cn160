@@ -756,7 +756,7 @@
         <exercise>
           <statement>
             <p>
-              In this problem, you will design a 2-bit register with
+              In this problem, you will design a 2-bit (clocked) register with
               JK flip-flops. The register should have two inputs,
               <m>X_0</m> and <m>X_1</m>, and two outputs, <m>Q_0</m>
               and <m>Q_1</m>. When the clock input is <m>0</m>, the
@@ -764,40 +764,227 @@
               input changes from <m>0</m> to <m>1</m>, the register
               should load the values of <m>X_0</m> and <m>X_1</m>
               (meaning those should be the values of <m>Q_0</m> and
-              <m>Q_1</m> after the clock changes from <m>0</m> to 
+              <m>Q_1</m> after the clock changes from <m>0</m> to
               <m>1</m>).
             </p>
             <p>
-              Use the following state diagram to design your circuit.
+              The state diagram is easier to describe than it is to draw.
+              There are four states, 0, 1, 2, and 3. When the input is
+              <m>X</m>, the next state is <m>X</m>, regardless of the
+              current state. Here is a table summarizing the situation:
             </p>
-            <figure xml:id="figure-hw2-ex1-register-state-dia">
-              <caption>Fix</caption>
-              <image>
+            <tabular halign="center">
+
+              <row header="yes" bottom="minor">
+                <cell><m>X</m></cell>
+                <cell>current state</cell>
+                <cell>next state</cell>
+              </row>
+              <row>
+                <cell>0</cell>
+                <cell>0</cell>
+                <cell>0</cell>
+              </row>
+              <row>
+                <cell>0</cell>
+                <cell>1</cell>
+                <cell>0</cell>
+              </row>
+              <row>
+                <cell>0</cell>
+                <cell>2</cell>
+                <cell>0</cell>
+              </row>
+              <row bottom="minor">
+                <cell>0</cell>
+                <cell>3</cell>
+                <cell>0</cell>
+              </row>
+              <row>
+                <cell>1</cell>
+                <cell>0</cell>
+                <cell>1</cell>
+              </row>
+              <row>
+                <cell>1</cell>
+                <cell>1</cell>
+                <cell>1</cell>
+              </row>
+              <row>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>1</cell>
+              </row>
+              <row bottom="minor">
+                <cell>1</cell>
+                <cell>3</cell>
+                <cell>1</cell>
+              </row>
+              <row>
+                <cell>2</cell>
+                <cell>0</cell>
+                <cell>2</cell>
+              </row>
+              <row>
+                <cell>2</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+              </row>
+              <row>
+                <cell>2</cell>
+                <cell>2</cell>
+                <cell>2</cell>
+              </row>
+              <row bottom="minor">
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>2</cell>
+              </row>
+              <row>
+                <cell>3</cell>
+                <cell>0</cell>
+                <cell>3</cell>
+              </row>
+              <row>
+                <cell>3</cell>
+                <cell>1</cell>
+                <cell>3</cell>
+              </row>
+              <row>
+                <cell>3</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+              </row>
+              <row>
+                <cell>3</cell>
+                <cell>3</cell>
+                <cell>3</cell>
+              </row>
+            </tabular>
+            <p>
+              As in class, you should organize your calculation and
+              design in the following steps.
+            </p>
+            <ol marker="1.">
+              <li>
+                <p>
+                  Encode the states and inputs as binary numbers.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Rewrite the state transition table using your
+                  binary encoding.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The current state is the value of the output.
+                  Each output bit will be connected to a flip-flop.
+                  Add appropriate columns to the state transition
+                  table for the flip-flops.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fill in the new columns based on the transition
+                  diagrams for the flip-flops you selected. We used
+                  JK flip-flops in class and it is fine to stick with
+                  those. Using anything else will require a bit more
+                  creativity and engineering problem-solving from you.
+                  Not every flip-flop is appropriate for every circuit.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Create K-maps for each of the flip-flop columns you
+                  added.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Write the boolean expressions for the next state
+                  of each flip-flop.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Implement the circuit in Logisim and save it in
+                  a file named <c>prob01.circ</c>.
+                </p>
+              </li>
+            </ol>
+            <!-- <figure xml:id="figure-hw2-ex1-register-state-dia">
+              <caption>Fix</caption> -->
+              <!-- <image width="50%">
                 <latex-image>
                   \begin{tikzpicture}[on grid, scale=0.5]
                     \node[state] (q00) {$00$};
-                    \node[state, right=of q00] (q01) {$01$};
-                    \node[state, below=of q00] (q10) {$10$};
-                    \node[state, below=of q01] (q11) {$11$};
+                    \node[state, below right=of q00] (q11) {$11$};
+                    \node[state, above right=of q11] (q01) {$01$};
+                    \node[state, below=of q11] (q10) {$10$};
                     \path[->]
-                      (q00) edge[loop above] node {$00$} (q00)
+                      (q00) edge[loop left] node {$00$} (q00)
                       edge[bend left] node {$01$} (q01)
                       edge[bend left] node {$10$} (q10)
-                      edge node {$11$} (q11)
-                      <!-- (q01) edge[loop above] node {$01$} (q01)
-                      edge[bend left] node {$00$} (q00)
-                      edge node {$10$} (q10)
                       edge[bend left] node {$11$} (q11)
-                      (q10) edge[loop below] node {$10$} (q10)
+                      (q01) edge[loop right] node {$01$} (q01)
                       edge[bend left] node {$00$} (q00)
+                      edge[bend left] node {$10$} (q10)
                       edge[bend left] node {$11$} (q11)
-                      edge node {$01$} (q01) -->
+                      (q10) edge[loop left] node {$10$} (q10)
+                      edge[bend left, bend angle=80] node {$00$} (q00)
+                      edge[bend left] node {$11$} (q11)
+                      edge[bend left] node {$01$} (q01)
+                      (q11) edge[loop right] node {$11$} (q11)
+                      edge[bend left] node {$00$} (q00)
+                      edge[bend left] node {$01$} (q01)
+                      edge[bend left] node {$10$} (q10)
                     ;
                   \end{tikzpicture}
                 </latex-image>
-              </image>
-            </figure>
+              </image> -->
+            <!-- </figure> -->
           </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              Design a clocked circuit with one (non-clock) input bit.
+              There will be one bit of output. Draw the
+              state diagram according to the following:
+              <ol marker="A.">
+                <li>
+                  <p>
+                    When three or more consecutive inputs have been 0, the output should be 1.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    When three or more consecutive inputs have been 1, the output should be 1.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Otherwise, the output should be 0.
+                  </p>
+                </li>
+              </ol>
+              As in problem 1, you can use any flip-flops you like.
+              Use the same procedure outlined in the
+              previous problem.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              You can do this with five states. The circuit will start in
+              state A and never return to it. Assume the output is 0 when
+              we are in state A (because we haven't yet had a chance to
+              see three consecutive inputs). Note that you may find a
+              more efficient (fewer states) solution; I only worked out
+              one possibility.
+            </p>
+          </hint>
         </exercise>
       </exercises>
     </subsection>
