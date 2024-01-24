@@ -4,11 +4,11 @@
     <title>The C SDK and assembly</title>
     <introduction>
         <p>
-            The Raspberry Pi foundation provides an excellent <term>software 
+            The Raspberry Pi foundation provides an excellent <term>software
             development kit</term>, or SDK. The SDK is a library of C functions
             that facilitate application development on the Pico. In that regard,
             it is a bit like CircuitPython. The difference is that CircuitPython
-            runs in an interpreter that the Pico itself hosts. 
+            runs in an interpreter that the Pico itself hosts.
             Different Pico peripherals, or more advanced code for fancier
             CircuitPython boards, may require more CircuitPython libraries,
             and these have to be provided to the Pico board for it to run such code.
@@ -48,7 +48,7 @@
             In this chapter, we introduce the C SDK and assembly. We will use
             the C SDK to write some simple programs, and we will study the
             form of assembly programming in order to write some very simple
-            assembly code. For the most part, we will make free use of the 
+            assembly code. For the most part, we will make free use of the
             SDK to simplify our lives. It is challenging for even experience
             programmers to write assembly code, and we will not attempt to
             do so in any serious way. You may never write another line of
@@ -68,6 +68,11 @@
     </introduction>
     <section xml:id="sec-using-the-sdk-on-codespaces">
         <title>Using the SDK on Codespaces</title>
+        <p>
+            Before you begin: copy any files you want to save from your
+            Pi Pico to a safe location on your laptop (like the Downloads
+            folder). They may be preserved, but we shouldn't count on it.
+        </p>
         <p>
             Visit the <url href="https://github.com/daverosoff/pico-c-sandbox">Pico C
             Sandbox</url> and fork the repository. Then, create a new Codespace
@@ -121,7 +126,7 @@
                 <output>Build files have been written to: /workspaces/pico-c-sandbox/build</output>
             </console>
             You will also see some activity in the status bar at the bottom of the window indicating
-            that CMake is doing its configuring. 
+            that CMake is doing its configuring.
         </p>
         <p>
             When the configuring is done, you are ready to compile and run some code!
