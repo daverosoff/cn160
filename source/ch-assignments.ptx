@@ -757,8 +757,8 @@
           <statement>
             <p>
               In this problem, you will design a 2-bit (clocked) register with
-              JK flip-flops. The register should have two inputs,
-              <m>X_0</m> and <m>X_1</m>, and two outputs, <m>Q_0</m>
+              JK flip-flops. The register should have two bits of input,
+              <m>X_0</m> and <m>X_1</m>, and two bits of output, <m>Q_0</m>
               and <m>Q_1</m>. When the clock input is <m>0</m>, the
               register should hold its current value. When the clock
               input changes from <m>0</m> to <m>1</m>, the register
