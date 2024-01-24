@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Serpent and the Pico</title>
+<title>The C SDK and assembly</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="frontmatter-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-name.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-standard-forms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-using-the-sdk-on-codespaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
    \newcommand{\Z}{\mathbb Z}
    \newcommand{\Q}{\mathbb Q}
    \newcommand{\R}{\mathbb R}
@@ -121,7 +121,7 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">The Serpent and the Pico</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Binary and Exploding Dots</span></a></div></li>
@@ -146,7 +146,7 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter active">
 <div class="toc-title-box"><a href="ch-the-c-sdk-and-assembly.html" class="internal"><span class="codenumber">2</span> <span class="title">The C SDK and assembly</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-using-the-sdk-on-codespaces.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using the SDK on Codespaces</span></a></div></li></ul>
 </li>
@@ -199,18 +199,12 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-chapter-title"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">The Serpent and the Pico</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-the-c-sdk-and-assembly"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">2</span><span class="space"> </span><span class="title">The C SDK and assembly</span>
 </h2>
-<section class="introduction" id="ch-chapter-title-2"><div class="para" id="ch-chapter-title-2-1">The first unit of our course is an introduction to the Raspberry Pi Pico microcontroller and some basic concepts in binary arithmetic and Boolean algebra.</div></section><nav class="summary-links"><ul>
-<li><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Binary and Exploding Dots</span></a></li>
-<li><a href="sec-binary-boolean-operators.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Binary boolean operators</span></a></li>
-<li><a href="sec-bitwise-operators.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Bitwise operators</span></a></li>
-<li><a href="sec-logic-gates-and-circuits.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Logic gates and circuits</span></a></li>
-<li><a href="sec-standard-forms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Standard forms</span></a></li>
-</ul></nav></section></div>
+<section class="introduction" id="ch-the-c-sdk-and-assembly-2"><div class="para" id="ch-the-c-sdk-and-assembly-2-1">The Raspberry Pi foundation provides an excellent <dfn class="terminology">software development kit</dfn>, or SDK. The SDK is a library of C functions that facilitate application development on the Pico. In that regard, it is a bit like CircuitPython. The difference is that CircuitPython runs in an interpreter that the Pico itself hosts. Different Pico peripherals, or more advanced code for fancier CircuitPython boards, may require more CircuitPython libraries, and these have to be provided to the Pico board for it to run such code. Any definitions required at runtime have to be available this way.</div> <div class="para" id="ch-the-c-sdk-and-assembly-2-2">In contrast, C code is compiled into machine code (ARM assembly) that the Pico can run directly. The machine code is a sequence of instructions encoded as bit patterns. The Pico can run these instructions directly, if the bit patterns are stored in its memory. The C SDK provides a library of functions that can be called from C code, and that are compiled into machine code. The machine code is stored in the Pico’s memory, and the Pico can run it directly. No interpreter or libraries are required at runtime. Thus, software written in C can be more efficient than software written in CircuitPython. This efficiency is realized both in terms of speed and in terms of memory usage.</div> <div class="para" id="ch-the-c-sdk-and-assembly-2-3">Moreover, advanced boards often have facilities that cannot be used, or can only partially be used, from CircuitPython. For example, the Pico has a <dfn class="terminology">programmable input/output</dfn>, or <dfn class="terminology">PIO</dfn>, that can be used to implement custom hardware interfaces. The PIO is not fully accessible from CircuitPython. Other typical exceptions include most interrupt facilities, and some features of asynchronous or concurrent programming. These features are available from C.</div> <div class="para" id="ch-the-c-sdk-and-assembly-2-4">The machine code is difficult to read directly, because it is encoded in bit patterns. However, there is a human-readable form of this machine code, called assembly language. The assembly is equivalent to the compiled machine code, but it is easier to read and understand. Every CS student should have some understanding of machine code and assembly, because the way it all works has had a profound influence on the design of many popular high-level languages, including Python.</div> <div class="para" id="ch-the-c-sdk-and-assembly-2-5">In this chapter, we introduce the C SDK and assembly. We will use the C SDK to write some simple programs, and we will study the form of assembly programming in order to write some very simple assembly code. For the most part, we will make free use of the SDK to simplify our lives. It is challenging for even experience programmers to write assembly code, and we will not attempt to do so in any serious way. You may never write another line of assembly after this, but your appreciation of the work done for you by the authors of compilers, interpreters, and so on, will last a lifetime. Moreover it is often helpful to be able to read assembly code during debugging.</div> <div class="para" id="ch-the-c-sdk-and-assembly-2-6">The days when human programmers could write more efficient code than compilers are past, but still within living memory. However, today’s compilers would really be hard to beat. Folks who write assembly today do it for the love of the game. There are even literal games featuring assembly programming, for example Shenzhen IO from Zachtronics (available on Steam, e.g.).</div></section><nav class="summary-links"><ul><li><a href="sec-using-the-sdk-on-codespaces.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using the SDK on Codespaces</span></a></li></ul></nav></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="frontmatter-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-name.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-standard-forms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-using-the-sdk-on-codespaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -730,11 +730,29 @@ var ptx_lunr_docs = [
   "body": "  When is the minterm canonical form simpler than the maxterm canonical form, and vice versa?   "
 },
 {
+  "id": "sec-using-the-sdk-on-codespaces",
+  "level": "1",
+  "url": "sec-using-the-sdk-on-codespaces.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Using the SDK on Codespaces",
+  "body": " Using the SDK on Codespaces  Visit the Pico C Sandbox and fork the repository. Then, create a new Codespace from your fork. This will take a few minutes, and then you will see a VS Code window in your browser. Find the Terminal tab and open it. You should see a prompt that looks like this:  @your-github-name \/workspaces\/pico-c-sandbox (main) $  The prompt indicates the console is waiting for a command. To save room we compress the prompt to just the $ character. You will type everything after the $ character on the same line. The text you type appears in a boldface font. The text the console prints in response appears in a normal font. The console prints a blank line after each command.  Run the following commands, pressing Enter after you type each one:  git clone https:\/\/github.com\/raspberrypi\/pico-sdk.git pico\/pico-sdk  Cloning into 'pico\/pico-sdk'...  git clone https:\/\/github.com\/raspberrypi\/pico-examples.git pico\/pico-examples  Cloning into 'pico\/pico-examples'...  cd pico\/pico-sdk   git submodule update --init  (a lot of output)  cd ..\/..   sudo apt update  (a lot of output)  sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential  (a lot of output)    These commands install the compiler itself, the SDK, and some example code. Most of them produce a lot of output, which we have omitted here. The cd command changes the current directory to the one specified. The sudo command runs the following command as the superuser, which is required to install software. The apt command is the package manager for Debian Linux, which we are running in this Codespace.  Now, use F1 key to bring up the Command Palette. This is the best way to run commands in VS Code. Type CMake and select CMake: Configure from the list of commands that appears. If you are asked to select a kit, choose gcc-arm-none-eabi . This will take a few minutes, and you will see a lot of output in the console. When it is done, you will see a message like this:  Configuring done  Generating done  Build files have been written to: \/workspaces\/pico-c-sandbox\/build  You will also see some activity in the status bar at the bottom of the window indicating that CMake is doing its configuring.  When the configuring is done, you are ready to compile and run some code!  "
+},
+{
+  "id": "sec-using-the-sdk-on-codespaces-2",
+  "level": "2",
+  "url": "sec-using-the-sdk-on-codespaces.html#sec-using-the-sdk-on-codespaces-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "prompt "
+},
+{
   "id": "assignments-day00",
   "level": "1",
   "url": "assignments-day00.html",
   "type": "Section",
-  "number": "2.1",
+  "number": "3.1",
   "title": "Problems for Monday, Jan 8",
   "body": " Problems for Monday, Jan 8  Make sure you can solve all of these problems. Similar ones will appear on the midterm. As always in courses at this level, solve means to give complete supporting reasoning or justification, not just the answer. In this case you should include the details of your calculation, however you do it.    For each problem below, interpret the summands as binary-encoded integers and find the sum without converting the summands to decimal. Express all your answers in binary, and for each problem, show a complete record of your reasoning. This could be a collection of machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.   Add the following binary numbers:   11000.   Perform the binary addition:   100111.   Add the binary numbers:   11111.   Compute the sum:   Perform binary addition:   Add the binary values:   Compute the sum of:   Add the binary numbers:   Perform binary addition:   Add the binary values:    For each problem below, interpret the summands as hexadecimal-encoded integers and find the sum without converting the summands to decimal. (You are allowed to convert them to binary, but I don't necessarily recommend it.) Express all your answers in hex, and for each problem, show a complete record of your reasoning. This could be a collection of or machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.   Add the hexadecimal values:       Perform the sum:       Compute the sum:       Perform the sum:   Add the hexadecimal numbers:       Compute the sum:   Add the hexadecimal values:       Add the hexadecimal numbers:   Compute the sum:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:    "
 },
@@ -743,7 +761,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "assignments-day00.html#exercises-day00-1",
   "type": "Exercise",
-  "number": "2.1.1",
+  "number": "3.1.1",
   "title": "",
   "body": " For each problem below, interpret the summands as binary-encoded integers and find the sum without converting the summands to decimal. Express all your answers in binary, and for each problem, show a complete record of your reasoning. This could be a collection of machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.   Add the following binary numbers:   11000.   Perform the binary addition:   100111.   Add the binary numbers:   11111.   Compute the sum:   Perform binary addition:   Add the binary values:   Compute the sum of:   Add the binary numbers:   Perform binary addition:   Add the binary values:  "
 },
@@ -752,7 +770,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "assignments-day00.html#exercises-day00-2",
   "type": "Exercise",
-  "number": "2.1.2",
+  "number": "3.1.2",
   "title": "",
   "body": " For each problem below, interpret the summands as hexadecimal-encoded integers and find the sum without converting the summands to decimal. (You are allowed to convert them to binary, but I don't necessarily recommend it.) Express all your answers in hex, and for each problem, show a complete record of your reasoning. This could be a collection of or machines as in the videos we saw in class, a pencil-and-paper addition with carries, or anything else that shows me how you came up with your answer.   Add the hexadecimal values:       Perform the sum:       Compute the sum:       Perform the sum:   Add the hexadecimal numbers:       Compute the sum:   Add the hexadecimal values:       Add the hexadecimal numbers:   Compute the sum:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:   Add the hexadecimal numbers:  "
 },
@@ -761,7 +779,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-assignment-day04.html",
   "type": "Section",
-  "number": "2.2",
+  "number": "3.2",
   "title": "Problems for Thursday, January 11",
   "body": " Problems for Thursday, January 11  Work on these problems in groups of 2 3 while the instructor catches up on grading projects 00 and 01. For Python coding problems, you can save more files on your Pico (make sure not to overwrite code.py ). Use the Serial console in Mu editor to see the output of your programs.    Write a function is_even(x) that takes a single integer argument x and returns True if the argument is even and False otherwise. You may assume that the argument is a nonnegative integer (do not validate within your function). You may not use the % operator. Only use bitwise operators and equality comparison.    Write a function bit_is_set(x, n) that takes two integer arguments x and n and returns True if the n th bit of x is set and False otherwise. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.    Write a function set_bit(x, n) that takes two integer arguments x and n and returns the value of x with the n th bit set. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.    Write a function clear_bit(x, n) that takes two integer arguments x and n and returns the value of x with the n th bit cleared. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.    Write a function toggle_bit(x, n) that takes two integer arguments x and n and returns the value of x with the n th bit toggled. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.    "
 },
@@ -770,7 +788,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-assignment-day04.html#exercises-day04-1",
   "type": "Exercise",
-  "number": "2.2.1",
+  "number": "3.2.1",
   "title": "",
   "body": " Write a function is_even(x) that takes a single integer argument x and returns True if the argument is even and False otherwise. You may assume that the argument is a nonnegative integer (do not validate within your function). You may not use the % operator. Only use bitwise operators and equality comparison.  "
 },
@@ -779,7 +797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-assignment-day04.html#exercises-day04-2",
   "type": "Exercise",
-  "number": "2.2.2",
+  "number": "3.2.2",
   "title": "",
   "body": " Write a function bit_is_set(x, n) that takes two integer arguments x and n and returns True if the n th bit of x is set and False otherwise. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.  "
 },
@@ -788,7 +806,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-assignment-day04.html#exercises-day04-3",
   "type": "Exercise",
-  "number": "2.2.3",
+  "number": "3.2.3",
   "title": "",
   "body": " Write a function set_bit(x, n) that takes two integer arguments x and n and returns the value of x with the n th bit set. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.  "
 },
@@ -797,7 +815,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-assignment-day04.html#exercises-day04-4",
   "type": "Exercise",
-  "number": "2.2.4",
+  "number": "3.2.4",
   "title": "",
   "body": " Write a function clear_bit(x, n) that takes two integer arguments x and n and returns the value of x with the n th bit cleared. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.  "
 },
@@ -806,7 +824,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-assignment-day04.html#exercises-day04-5",
   "type": "Exercise",
-  "number": "2.2.5",
+  "number": "3.2.5",
   "title": "",
   "body": " Write a function toggle_bit(x, n) that takes two integer arguments x and n and returns the value of x with the n th bit toggled. You may assume that the arguments are nonnegative integers (do not validate within your function). You may not use the % operator or any loops or conditionals. Only use bitwise operators and equality comparison.  "
 },
@@ -815,7 +833,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-projects.html",
   "type": "Section",
-  "number": "2.3",
+  "number": "3.3",
   "title": "Projects",
   "body": " Projects   Project 02: Bitmasking   Part A: utils.py  Now that we are beginning to have more than one file, it's time to start organizing our code. We'll do this by creating a utils.py file and moving our binary_write() function into it. The code.py file will be the main file, and it will import the binary_write() function from the utils.py directory.  Use the Mu editor to open a new file on your Pico. Save and name it utils.py (put it in the top-level folder alongside code.py ). Then, move (don't copy) the binary_write() function's definition into utils.py . You will also want to include any necessary import statements in utils.py . Now, in the code.py file, add the following line at the top:  from utils import binary_write  The meaning of this line is that we are importing the binary_write() function from the utils.py file. The from ... import ... syntax ensures that the short name of the function is available rather than its fully qualified name utils.binary_write() . If we do import utils instead, then we would need to call the function as utils.binary_write() .  Just as we learn to separate the work of our programs into functions, instead of piling everything into one big main function, we should also separate our functions into files. This makes it easier to organize our code and to find things when we need to change them.    Part B: Bitmasking  Put all the function definitions from into your utils.py file. You will need to add the from ... import ... statements to code.py to make them available.    Part C: Animations  You can create marquee-style animations by using a loop to turn on and off LEDs in a sequence. For example, if you have four LEDs connected to pins 0, 1, 2, and 3, you can create a kitt animation by turning on the first LED, then the second, then the third, then the fourth, then the third, then the second, then the first, and then repeating the process. You can use the time.sleep() function to pause between turning on and off the LEDs.  Use the binary_write() function to create three different such animations. They shouldn't look too much alike. Each one should be enclosed in a function, as below. Notice there is no while True loop. We want to be able to run it only a few times, which would be impossible if we had an infinite loop. Do not duplicate the example as one of your submissions.  You receive credit for Part C if you can show me three working animation cycles (just once through for each is fine) and the code for each uses binary_write() to turn on and off the LEDs. The binary_write() function must be imported from utils.py . Full credit solutions should make use of some of the functions from Part B.   Example: kitt animation    def animate_kitt():  frames = [1, 1 << 1, 1 << 2, 1 << 3, 1 << 2, 1 << 1, 1]  for f in frames:  binary_write(f)  time.sleep(0.1)        Project 03: Buttons and Input   In this project, you'll incorporate input into your circuitry. Make sure Project 02 is completed before you start this one.  You will need to remove one LED from your circuit to make room for the button. I have used its GPIO pin for the button, but you can use any pin you like. My concern was a readable diagram.  Take care to observe that the button is not wired to the breadboard in the same was as the LEDs. The LEDs receive the high signal from GPIO through the resistor, and then current flows through the LED to ground. The button is wired so that the Pico's power rail (make sure this is connected to 3.3V on pin 36, not 5V on pin 40 or pin 39) is connected to one leg of the button, and the other leg is connected to GPIO.  When the button is open (not pressed), no current flows through the button (it will be connected to ground through the Pico's internal pull-down resistor ). When the button is closed (pressed), current flows from the power rail through the button to GPIO, pulling the GPIO input high. Your code will allow the Pico to detect this high voltage and trigger an action.    Part A  Wire your button to the breadboard as shown in the diagram below. Make sure the power rails (red) are connected to 3.3V only! The 5V main power lines will destroy your Pico!    Pico with button for input.   The button is wired to the bottom three rows.    Then you will need to make some changes in how the pins are initialized. Your button pin (GPIO 16 in my diagram) will need to be configured as an input. Because we didn't connect the button to ground, we need to tell the Pico to use the internal pull-down resistor. This will ensure that the input is low when the button is not pressed. The code below shows how to do this.  import board  import digitalio  import time  from utils import binary_write   LED_PINS_SETUP = [board.GP16, board.GP17, board.GP18, board.GP19,  board.GP20, board.GP21, board.GP22, board.GP26]  PINS = [None] * 8  for i, led_pin in enumerate(LED_PINS_SETUP):  PINS[i] = digitalio.DigitalInOut(led_pin)  PINS[i].direction = digitalio.Direction.OUTPUT  if i == 0:  PINS[i].switch_to_input(pull=digitalio.Pull.DOWN)  PINS[i].value = False   button = PINS[0]  leds = PINS[1:]  Without the internal pull-down resistor, the input would be floating when the button is not pressed. This means that it would be neither high nor low, and it would be impossible to tell whether the button was pressed or not. The internal pull-down resistor ensures that the input is low when the button is not pressed. Without this software solution, we would need to add a physical resistor to the circuit connecting the button to ground. The internal pull-down resistor is a convenient alternative and they are ubiquitous in microcontrollers.    Part B  The buttons are built so that they connect across the vertical groove running down the middle of the breadboard. When the button is connected, it electrically connects the two sides of the groove. When the button is pressed, both pins on the left side of the groove are connected to both pins on the right side of the groove.  Make sure all your Project 02 code is safe somewhere (in another file, not code.py , on your Pico or your laptop) and then add this code to your code.py file:  while True:  if button.value:  print(\"Hello sailor!\")  time.sleep(0.5)  In the Serial pane, you should see the output when you press the button. When you have succeeded, play with the delay time in the call to time.sleep() . What happens if you make it too short? What happens if you make it too long? Discuss with the people in your group.  I will visit each group and check the group off together. Don't move on to part C until you are checked off. Instead, work on HW 1.    Part C  The difficulty with using buttons for input is that the Pico has to be listening for the button press. If the Pico is busy doing something else, it won't be able to respond to the button press. This is why we used the time.sleep() function in the example above.  Try to adapt your animation code so that your Pico does the following on reset:   Display a short ready sequence, like flashing all the LEDs on and off three times.    Wait for the button to be pressed.    Display the next animation three times.    Go to step 2.   If you press the button while the animation is running, what happens? Is that what you expected, or what a typical user would expect? Discuss with the people in your group.    "
 },
@@ -824,7 +842,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-projects.html#example-animate-kitt",
   "type": "Example",
-  "number": "2.3.1",
+  "number": "3.3.1",
   "title": "Example: <code class=\"code-inline tex2jax_ignore\">kitt<\/code> animation.",
   "body": " Example: kitt animation    def animate_kitt():  frames = [1, 1 << 1, 1 << 2, 1 << 3, 1 << 2, 1 << 1, 1]  for f in frames:  binary_write(f)  time.sleep(0.1)    "
 },
@@ -833,7 +851,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-projects.html#figure-pico-with-button-bb",
   "type": "Figure",
-  "number": "2.3.2",
+  "number": "3.3.2",
   "title": "",
   "body": " Pico with button for input.   The button is wired to the bottom three rows.   "
 },
@@ -842,16 +860,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-homework.html",
   "type": "Section",
-  "number": "2.4",
+  "number": "3.4",
   "title": "Homework",
-  "body": " Homework   Homework 1  You are free to talk with others about the problems, but all the work you submit must be completely your own.    Let and be unsigned 2-bit integers, and write and . For example, if and , then . Similarly, if , then . In this problem, think of , , , and as inputs to a digital circuit.   Write a boolean expression (using AND, OR, NOT operations on the input variables , , , and ) for the condition . (So, for example, if and , then the formula should evaluate to FALSE.)   Write a truth table for your formula.   Using the theory of minterms and maxterms, implement your formula as a digital circuit and save it in Logisim with filename prob01.circ .    In this exercise, you will design a logic circuit in Logisim to drive two 7-segment displays from a 4-bit input. We will use 2's complement arithmetic to handle negative numbers and create a circuit that can display any integer in the range to . In a later exercise you combine these with adders to create a circuit that can add two 4-bit signed integers and display the result.  Recall that in 2's complement arithmetic on 4-bit integers, bit patterns 0000 through 0111 represent the integers through , and bit patterns 1000 through 1111 represent the integers through . The bit pattern 1000 represents , 1001 represents , and so on up to 1111 representing .  As we saw in class, there are two advantages of this system over the more obvious sign-magnitude system (where the leading bit simply acts like a minus sign). First, there is only one representation of zero, and second, the circuit for addition is exactly the same as for unsigned integers. You will verify this during the course of this exercise.   shows a 7-segment display circuit in Logisim, with a 3-bit input connected to a 7-segment decoder that drives the display. The decoder is a subcircuit you will design and implement using truth tables and minterms and maxterms. The decoder has 7 outputs, through , that individually drive the segments of the display. The display has 8 pins, numbered 0 through 7, that are connected to the decoder outputs.    Pin labels.   (for accessibility)     Segment labels.   (for accessibility)      The completed decoder.   (for accessibility)    The outputs of your decoder should correspond to the labeled segments in . The decoder should be designed so that it decodes the binary word and shows the value on the display.  That is, when , the input is , and the display shows ; when and , the input is , and the display shows ; and so on. The completed circuit should look like .  Save your work in a file named prob02.circ .    In a new Logisim file, build another decoder, this time with a 4-bit input and 8 single-bit outputs. This decoder should also go in a subcircuit, named TWOSCOMP . In the main circuit, connect a 4-bit input pin to your decoder and connect the outputs to two 7-segment displays. Your task is to design the decoder so that it displays the 2's complement representation of the input integer.  For example, if the input is , then the decoder should display . If the input is , then the decoder should display . If the input is , then the decoder should display . The decoder should display all the integers in the range to , as illustrated in and .    Positive integers.   (for accessibility)     Negative integers.   (for accessibility)     Save your work in a file named prob03.circ .    Construct a circuit using three of your TWOSCOMP controllers from the previous problem and six 7-segment display to show a 2's complement addition. You will need the 4-bit adder subcircuit from Project 04 (on Canvas). The adder subcircuit here is the small box with the sign. You can use the built-in Adder component from the Arithmetic menu, but only single-bit adders: implement your own 4-bit ripple carry adder.  The completed circuit should resemble .   2's complement adder.   (for accessibility)    Save your work in a file named prob04.circ .    If you Poke in (hand tool) various values in your circuit from the previous problem, you will notice the result is not always correct. Chapter 3 in Plantz discusses fixed-width addition errors in detail. In this problem, your task is to add an error-detecting circuit to your 4-bit signed adder from the previous problem.  The error-detecting circuit should have three inputs and a single output that is if the result of the addition is incorrect and otherwise. The error-detecting circuit should be implemented as a subcircuit named ERROR . The completed circuit should resemble .   2's complement adder with error detection.   (for accessibility)    Save your work in a file named prob05.circ .     "
+  "body": " Homework   Homework 1  You are free to talk with others about the problems, but all the work you submit must be completely your own.    Let and be unsigned 2-bit integers, and write and . For example, if and , then . Similarly, if , then . In this problem, think of , , , and as inputs to a digital circuit.   Write a boolean expression (using AND, OR, NOT operations on the input variables , , , and ) for the condition . (So, for example, if and , then the formula should evaluate to FALSE.)   Write a truth table for your formula.   Using the theory of minterms and maxterms, implement your formula as a digital circuit and save it in Logisim with filename prob01.circ .    In this exercise, you will design a logic circuit in Logisim to drive two 7-segment displays from a 4-bit input. We will use 2's complement arithmetic to handle negative numbers and create a circuit that can display any integer in the range to . In a later exercise you combine these with adders to create a circuit that can add two 4-bit signed integers and display the result.  Recall that in 2's complement arithmetic on 4-bit integers, bit patterns 0000 through 0111 represent the integers through , and bit patterns 1000 through 1111 represent the integers through . The bit pattern 1000 represents , 1001 represents , and so on up to 1111 representing .  As we saw in class, there are two advantages of this system over the more obvious sign-magnitude system (where the leading bit simply acts like a minus sign). First, there is only one representation of zero, and second, the circuit for addition is exactly the same as for unsigned integers. You will verify this during the course of this exercise.   shows a 7-segment display circuit in Logisim, with a 3-bit input connected to a 7-segment decoder that drives the display. The decoder is a subcircuit you will design and implement using truth tables and minterms and maxterms. The decoder has 7 outputs, through , that individually drive the segments of the display. The display has 8 pins, numbered 0 through 7, that are connected to the decoder outputs.    Pin labels.   (for accessibility)     Segment labels.   (for accessibility)      The completed decoder.   (for accessibility)    The outputs of your decoder should correspond to the labeled segments in . The decoder should be designed so that it decodes the binary word and shows the value on the display.  That is, when , the input is , and the display shows ; when and , the input is , and the display shows ; and so on. The completed circuit should look like .  Save your work in a file named prob02.circ .    In a new Logisim file, build another decoder, this time with a 4-bit input and 8 single-bit outputs. This decoder should also go in a subcircuit, named TWOSCOMP . In the main circuit, connect a 4-bit input pin to your decoder and connect the outputs to two 7-segment displays. Your task is to design the decoder so that it displays the 2's complement representation of the input integer.  For example, if the input is , then the decoder should display . If the input is , then the decoder should display . If the input is , then the decoder should display . The decoder should display all the integers in the range to , as illustrated in and .    Positive integers.   (for accessibility)     Negative integers.   (for accessibility)     Save your work in a file named prob03.circ .    Construct a circuit using three of your TWOSCOMP controllers from the previous problem and six 7-segment display to show a 2's complement addition. You will need the 4-bit adder subcircuit from Project 04 (on Canvas). The adder subcircuit here is the small box with the sign. You can use the built-in Adder component from the Arithmetic menu, but only single-bit adders: implement your own 4-bit ripple carry adder.  The completed circuit should resemble .   2's complement adder.   (for accessibility)    Save your work in a file named prob04.circ .    If you Poke in (hand tool) various values in your circuit from the previous problem, you will notice the result is not always correct. Chapter 3 in Plantz discusses fixed-width addition errors in detail. In this problem, your task is to add an error-detecting circuit to your 4-bit signed adder from the previous problem.  The error-detecting circuit should have three inputs and a single output that is if the result of the addition is incorrect and otherwise. The error-detecting circuit should be implemented as a subcircuit named ERROR . The completed circuit should resemble .   2's complement adder with error detection.   (for accessibility)    Save your work in a file named prob05.circ .      Homework 2  You are free to talk with others about the problems, but all the work you submit must be completely your own.    In this problem, you will design a 2-bit (clocked) register with JK flip-flops. The register should have two inputs, and , and two outputs, and . When the clock input is , the register should hold its current value. When the clock input changes from to , the register should load the values of and (meaning those should be the values of and after the clock changes from to ).  The state diagram is easier to describe than it is to draw. There are four states, 0, 1, 2, and 3. When the input is , the next state is , regardless of the current state. Here is a table summarizing the situation:     current state  next state    0  0  0    0  1  0    0  2  0    0  3  0    1  0  1    1  1  1    1  2  1    1  3  1    2  0  2    2  1  2    2  2  2    2  3  2    3  0  3    3  1  3    3  2  3    3  3  3    As in class, you should organize your calculation and design in the following steps.    Encode the states and inputs as binary numbers.    Rewrite the state transition table using your binary encoding.    The current state is the value of the output. Each output bit will be connected to a flip-flop. Add appropriate columns to the state transition table for the flip-flops.    Fill in the new columns based on the transition diagrams for the flip-flops you selected. We used JK flip-flops in class and it is fine to stick with those. Using anything else will require a bit more creativity and engineering problem-solving from you. Not every flip-flop is appropriate for every circuit.    Create K-maps for each of the flip-flop columns you added.    Write the boolean expressions for the next state of each flip-flop.    Implement the circuit in Logisim and save it in a file named prob01.circ .         Design a clocked circuit with one (non-clock) input bit. There will be one bit of output. Draw the state diagram according to the following:   When three or more consecutive inputs have been 0, the output should be 1.    When three or more consecutive inputs have been 1, the output should be 1.    Otherwise, the output should be 0.   As in problem 1, you can use any flip-flops you like. Use the same procedure outlined in the previous problem.   You can do this with five states. The circuit will start in state A and never return to it. Assume the output is 0 when we are in state A (because we haven't yet had a chance to see three consecutive inputs). Note that you may find a more efficient (fewer states) solution; I only worked out one possibility.     "
 },
 {
   "id": "subsec-hw1-3-1",
   "level": "2",
   "url": "sec-homework.html#subsec-hw1-3-1",
   "type": "Exercise",
-  "number": "2.4.1.1",
+  "number": "3.4.1.1",
   "title": "",
   "body": " Let and be unsigned 2-bit integers, and write and . For example, if and , then . Similarly, if , then . In this problem, think of , , , and as inputs to a digital circuit.   Write a boolean expression (using AND, OR, NOT operations on the input variables , , , and ) for the condition . (So, for example, if and , then the formula should evaluate to FALSE.)   Write a truth table for your formula.   Using the theory of minterms and maxterms, implement your formula as a digital circuit and save it in Logisim with filename prob01.circ .  "
 },
@@ -860,7 +878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-homework.html#subsec-hw1-3-2",
   "type": "Exercise",
-  "number": "2.4.1.2",
+  "number": "3.4.1.2",
   "title": "",
   "body": " In this exercise, you will design a logic circuit in Logisim to drive two 7-segment displays from a 4-bit input. We will use 2's complement arithmetic to handle negative numbers and create a circuit that can display any integer in the range to . In a later exercise you combine these with adders to create a circuit that can add two 4-bit signed integers and display the result.  Recall that in 2's complement arithmetic on 4-bit integers, bit patterns 0000 through 0111 represent the integers through , and bit patterns 1000 through 1111 represent the integers through . The bit pattern 1000 represents , 1001 represents , and so on up to 1111 representing .  As we saw in class, there are two advantages of this system over the more obvious sign-magnitude system (where the leading bit simply acts like a minus sign). First, there is only one representation of zero, and second, the circuit for addition is exactly the same as for unsigned integers. You will verify this during the course of this exercise.   shows a 7-segment display circuit in Logisim, with a 3-bit input connected to a 7-segment decoder that drives the display. The decoder is a subcircuit you will design and implement using truth tables and minterms and maxterms. The decoder has 7 outputs, through , that individually drive the segments of the display. The display has 8 pins, numbered 0 through 7, that are connected to the decoder outputs.    Pin labels.   (for accessibility)     Segment labels.   (for accessibility)      The completed decoder.   (for accessibility)    The outputs of your decoder should correspond to the labeled segments in . The decoder should be designed so that it decodes the binary word and shows the value on the display.  That is, when , the input is , and the display shows ; when and , the input is , and the display shows ; and so on. The completed circuit should look like .  Save your work in a file named prob02.circ .  "
 },
@@ -869,7 +887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-homework.html#subsec-hw1-3-3",
   "type": "Exercise",
-  "number": "2.4.1.3",
+  "number": "3.4.1.3",
   "title": "",
   "body": " In a new Logisim file, build another decoder, this time with a 4-bit input and 8 single-bit outputs. This decoder should also go in a subcircuit, named TWOSCOMP . In the main circuit, connect a 4-bit input pin to your decoder and connect the outputs to two 7-segment displays. Your task is to design the decoder so that it displays the 2's complement representation of the input integer.  For example, if the input is , then the decoder should display . If the input is , then the decoder should display . If the input is , then the decoder should display . The decoder should display all the integers in the range to , as illustrated in and .    Positive integers.   (for accessibility)     Negative integers.   (for accessibility)     Save your work in a file named prob03.circ .  "
 },
@@ -878,7 +896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-homework.html#subsec-hw1-3-4",
   "type": "Exercise",
-  "number": "2.4.1.4",
+  "number": "3.4.1.4",
   "title": "",
   "body": " Construct a circuit using three of your TWOSCOMP controllers from the previous problem and six 7-segment display to show a 2's complement addition. You will need the 4-bit adder subcircuit from Project 04 (on Canvas). The adder subcircuit here is the small box with the sign. You can use the built-in Adder component from the Arithmetic menu, but only single-bit adders: implement your own 4-bit ripple carry adder.  The completed circuit should resemble .   2's complement adder.   (for accessibility)    Save your work in a file named prob04.circ .  "
 },
@@ -887,9 +905,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-homework.html#subsec-hw1-3-5",
   "type": "Exercise",
-  "number": "2.4.1.5",
+  "number": "3.4.1.5",
   "title": "",
   "body": " If you Poke in (hand tool) various values in your circuit from the previous problem, you will notice the result is not always correct. Chapter 3 in Plantz discusses fixed-width addition errors in detail. In this problem, your task is to add an error-detecting circuit to your 4-bit signed adder from the previous problem.  The error-detecting circuit should have three inputs and a single output that is if the result of the addition is incorrect and otherwise. The error-detecting circuit should be implemented as a subcircuit named ERROR . The completed circuit should resemble .   2's complement adder with error detection.   (for accessibility)    Save your work in a file named prob05.circ .  "
+},
+{
+  "id": "exercises-hw2-1",
+  "level": "2",
+  "url": "sec-homework.html#exercises-hw2-1",
+  "type": "Exercise",
+  "number": "3.4.2.1",
+  "title": "",
+  "body": " In this problem, you will design a 2-bit (clocked) register with JK flip-flops. The register should have two inputs, and , and two outputs, and . When the clock input is , the register should hold its current value. When the clock input changes from to , the register should load the values of and (meaning those should be the values of and after the clock changes from to ).  The state diagram is easier to describe than it is to draw. There are four states, 0, 1, 2, and 3. When the input is , the next state is , regardless of the current state. Here is a table summarizing the situation:     current state  next state    0  0  0    0  1  0    0  2  0    0  3  0    1  0  1    1  1  1    1  2  1    1  3  1    2  0  2    2  1  2    2  2  2    2  3  2    3  0  3    3  1  3    3  2  3    3  3  3    As in class, you should organize your calculation and design in the following steps.    Encode the states and inputs as binary numbers.    Rewrite the state transition table using your binary encoding.    The current state is the value of the output. Each output bit will be connected to a flip-flop. Add appropriate columns to the state transition table for the flip-flops.    Fill in the new columns based on the transition diagrams for the flip-flops you selected. We used JK flip-flops in class and it is fine to stick with those. Using anything else will require a bit more creativity and engineering problem-solving from you. Not every flip-flop is appropriate for every circuit.    Create K-maps for each of the flip-flop columns you added.    Write the boolean expressions for the next state of each flip-flop.    Implement the circuit in Logisim and save it in a file named prob01.circ .       "
+},
+{
+  "id": "exercises-hw2-2",
+  "level": "2",
+  "url": "sec-homework.html#exercises-hw2-2",
+  "type": "Exercise",
+  "number": "3.4.2.2",
+  "title": "",
+  "body": " Design a clocked circuit with one (non-clock) input bit. There will be one bit of output. Draw the state diagram according to the following:   When three or more consecutive inputs have been 0, the output should be 1.    When three or more consecutive inputs have been 1, the output should be 1.    Otherwise, the output should be 0.   As in problem 1, you can use any flip-flops you like. Use the same procedure outlined in the previous problem.   You can do this with five states. The circuit will start in state A and never return to it. Assume the output is 0 when we are in state A (because we haven't yet had a chance to see three consecutive inputs). Note that you may find a more efficient (fewer states) solution; I only worked out one possibility.  "
 },
 {
   "id": "backmatter-2",
