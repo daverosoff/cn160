@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-the-c-sdk-and-assembly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-the-c-sdk-and-assembly.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-assignments.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-the-c-sdk-and-assembly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-the-c-sdk-and-assembly.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-compiling-and-running-c-code.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
    \newcommand{\Z}{\mathbb Z}
    \newcommand{\Q}{\mathbb Q}
    \newcommand{\R}{\mathbb R}
@@ -148,7 +148,10 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-the-c-sdk-and-assembly.html" class="internal"><span class="codenumber">2</span> <span class="title">The C SDK and assembly</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-using-the-sdk-on-codespaces.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using the SDK on Codespaces</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-using-the-sdk-on-codespaces.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using the SDK on Codespaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-compiling-and-running-c-code.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compiling and running C code</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="sec-assignments.html" class="internal"><span class="codenumber">3</span> <span class="title">Assignments</span></a></div>
@@ -202,13 +205,17 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-using-the-sdk-on-codespaces"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Using the SDK on Codespaces</span>
 </h2>
-<div class="para logical" id="sec-using-the-sdk-on-codespaces-2">
-<div class="para">Visit the <a class="external" href="https://github.com/daverosoff/pico-c-sandbox" target="_blank">Pico C Sandbox</a><a class="xref" id="sec-using-the-sdk-on-codespaces-2-2" href="" data-knowl="./knowl/fn/sec-using-the-sdk-on-codespaces-2-2.html" title="Footnote 2.1.1"><sup> 1 </sup></a> and fork the repository. Then, create a new Codespace from your fork. This will take a few minutes, and then you will see a VS Code window in your browser. Find the Terminal tab and open it. You should see a <dfn class="terminology">prompt</dfn> that looks like this:</div>
+<div class="para" id="sec-using-the-sdk-on-codespaces-2">Before you begin: copy any files you want to save from your Pi Pico to a safe location on your laptop (like the Downloads folder). They may be preserved, but we shouldn’t count on it.</div>
+<div class="para logical" id="sec-using-the-sdk-on-codespaces-3"><ol class="decimal">
+<li id="sec-using-the-sdk-on-codespaces-3-1-1"><div class="para" id="sec-using-the-sdk-on-codespaces-3-1-1-1">Visit the <a class="external" href="https://github.com/daverosoff/pico-c-sandbox" target="_blank">Pico C Sandbox</a><a class="xref" id="sec-using-the-sdk-on-codespaces-3-1-1-1-2" href="" data-knowl="./knowl/fn/sec-using-the-sdk-on-codespaces-3-1-1-1-2.html" title="Footnote 2.1.1"><sup> 1 </sup></a> and fork the repository. <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/github-fork-repo.png" class="contained" alt="The fork button is in the upper right part of the Github repository page."></div>
+</div></li>
+<li id="sec-using-the-sdk-on-codespaces-3-1-2"><div class="para logical" id="sec-using-the-sdk-on-codespaces-3-1-2-1">
+<div class="para">After the fork process is complete, you should be able to visit your fork. This is a copy of my <code class="code-inline tex2jax_ignore">pico-c-sandbox</code> repo that belongs to you. Make sure that the title of the page is <code class="code-inline tex2jax_ignore">&lt;your-github-name&gt;/pico-c-sandbox</code> and click the big green Code button. Then, use the Codespaces tab to “create a new Codespace on main” from your fork. This will take a few minutes, and then you will see a VS Code window in your browser. Find the Terminal tab and open it. You should see a <dfn class="terminology">prompt</dfn> that looks like this:</div>
 <pre class="code-display tex2jax_ignore">@your-github-name /workspaces/pico-c-sandbox (main) $ 
 </pre>
 <div class="para">The prompt indicates the console is waiting for a command. To save room we compress the prompt to just the <code class="code-inline tex2jax_ignore">$</code> character. You will type everything after the <code class="code-inline tex2jax_ignore">$</code> character on the same line. The text you type appears in a boldface font. The text the console prints in response appears in a normal font. The console prints a blank line after each command.</div>
-</div>
-<div class="para" id="sec-using-the-sdk-on-codespaces-3">Run the following commands, pressing Enter after you type each one: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="console"><span class="prompt unselectable">$ </span><b>git clone https://github.com/raspberrypi/pico-sdk.git pico/pico-sdk
+</div></li>
+<li id="sec-using-the-sdk-on-codespaces-3-1-3"><div class="para" id="sec-using-the-sdk-on-codespaces-3-1-3-1">Run the following commands, pressing Enter after you type each one: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="console"><span class="prompt unselectable">$ </span><b>git clone https://github.com/raspberrypi/pico-sdk.git pico/pico-sdk
 </b>Cloning into 'pico/pico-sdk'...
 <span class="prompt unselectable">$ </span><b>git clone https://github.com/raspberrypi/pico-examples.git pico/pico-examples
 </b>Cloning into 'pico/pico-examples'...
@@ -223,15 +230,16 @@ window.MathJax = {
 <span class="prompt unselectable">$ </span><b>sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
 </b>(a lot of output)
 </pre></div>
-</div>
-<div class="para" id="sec-using-the-sdk-on-codespaces-4">These commands install the compiler itself, the SDK, and some example code. Most of them produce a lot of output, which we have omitted here. The <code class="code-inline tex2jax_ignore">cd</code> command changes the current directory to the one specified. The <code class="code-inline tex2jax_ignore">sudo</code> command runs the following command as the superuser, which is required to install software. The <code class="code-inline tex2jax_ignore">apt</code> command is the package manager for Debian Linux, which we are running in this Codespace.</div>
-<div class="para" id="sec-using-the-sdk-on-codespaces-5">Now, use <code class="code-inline tex2jax_ignore">F1</code> key to bring up the Command Palette. This is the best way to run commands in VS Code. Type <code class="code-inline tex2jax_ignore">CMake</code> and select <code class="code-inline tex2jax_ignore">CMake: Configure</code> from the list of commands that appears. If you are asked to select a kit, choose <code class="code-inline tex2jax_ignore">gcc-arm-none-eabi</code>. This will take a few minutes, and you will see a lot of output in the console. When it is done, you will see a message like this: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="console">Configuring done
+</div></li>
+<li id="sec-using-the-sdk-on-codespaces-3-1-4"><div class="para" id="sec-using-the-sdk-on-codespaces-3-1-4-1">These commands install the compiler itself, the SDK, and some example code. Most of them produce a lot of output, which we have omitted here. The <code class="code-inline tex2jax_ignore">cd</code> command changes the current directory to the one specified. The <code class="code-inline tex2jax_ignore">sudo</code> command runs the following command as the superuser, which is required to install software. The <code class="code-inline tex2jax_ignore">apt</code> command is the package manager for Debian Linux, which we are running in this Codespace.</div></li>
+<li id="sec-using-the-sdk-on-codespaces-3-1-5"><div class="para" id="sec-using-the-sdk-on-codespaces-3-1-5-1">Now, use <code class="code-inline tex2jax_ignore">F1</code> key to bring up the Command Palette. This is the best way to run commands in VS Code. Type <code class="code-inline tex2jax_ignore">CMake</code> and select <code class="code-inline tex2jax_ignore">CMake: Configure</code> from the list of commands that appears. If you are asked to select a kit, choose <code class="code-inline tex2jax_ignore">gcc-arm-none-eabi</code>. This will take a few minutes, and you will see a lot of output in the console. When it is done, you will see a message like this: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="console">Configuring done
 Generating done
 Build files have been written to: /workspaces/pico-c-sandbox/build
-</pre></div> You will also see some activity in the status bar at the bottom of the window indicating that CMake is doing its configuring.</div>
-<div class="para" id="sec-using-the-sdk-on-codespaces-6">When the configuring is done, you are ready to compile and run some code!</div></section></div>
+</pre></div> You will also see some activity in the status bar at the bottom of the window indicating that CMake is doing its configuring.</div></li>
+</ol></div>
+<div class="para" id="sec-using-the-sdk-on-codespaces-4">When the configuring is done, you are ready to compile and run some code!</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-the-c-sdk-and-assembly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-assignments.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-the-c-sdk-and-assembly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-compiling-and-running-c-code.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
