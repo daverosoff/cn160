@@ -29,7 +29,19 @@
 
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
-  <latex-image-preamble> \usepackage{tikz, pgfplots} \usetikzlibrary{positioning,matrix,arrows} \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} \usetikzlibrary{decorations.markings} </latex-image-preamble>
+  <latex-image-preamble>\usepackage{tikz, pgfplots} \usetikzlibrary{automata,positioning,matrix,arrows} \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} \usetikzlibrary{decorations.markings}
+    \tikzset{node distance=3.0cm, % Minimum distance between two nodes. Change if necessary.
+      every state/.style={ % Sets the properties for each state
+      semithick,
+      fill=gray!20},
+      initial text={}, % No label on start arrow
+      double distance=2pt, % Adjust appearance of accept states
+      every edge/.style={ % Sets the properties for each transition
+      draw,
+      ->,>=stealth', % Makes edges directed with bold arrowheads
+      auto,
+      semithick}}
+  </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
