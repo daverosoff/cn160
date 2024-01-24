@@ -59,7 +59,7 @@
                 notes.
             </p>
             <p>
-                The bitwise NOT operator is written <m>\neg</m>. It is a unary operator,
+                The bitwise NOT operator is written <m>\negg</m>. It is a unary operator,
                 meaning that it takes a single operand. The operand must be a
                 bit pattern, and the result is a bit pattern of the same length.
             </p>
@@ -127,7 +127,7 @@
                     <row header="yes" bottom="minor">
                         <cell><m>x</m></cell>
                         <cell><m>y</m></cell>
-                        <cell><m>\neg x</m></cell>
+                        <cell><m>\negg x</m></cell>
                         <cell><m>x \&amp; y</m></cell>
                         <cell><m>x | y</m></cell>
                         <cell><m>x \textrm{\^{}} y</m></cell>

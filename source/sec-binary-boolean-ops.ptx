@@ -240,11 +240,11 @@
     <p>
         Instead of introducing symbols for NOR, NAND, and XNOR, we can
         make use of symbols for a unary NOT operator as described in class.
-        We will write <m>\neg x</m> for <m>\text{NOT } x</m>, and we will
+        We will write <m>\negg x</m> for <m>\text{NOT } x</m>, and we will
         also use the overbar to negate a boolean expression. So, for example,
-        <m>\neg x = \overline{x}</m>, and
+        <m>\negg x = \overline{x}</m>, and
         <me>
-            \overline{x \wedge y} = \neg (x \wedge y) = \text{NOT } (x \wedge y)
+            \overline{x \wedge y} = \negg (x \wedge y) = \text{NOT } (x \wedge y)
         </me>
         and all three expressions are synonymous.
     </p>
@@ -342,7 +342,7 @@
         <task xml:id="task-nor-not">
             <statement>
                 <p>
-                    Use a single NOR operator to express <m>\neg x</m>.
+                    Use a single NOR operator to express <m>\negg x</m>.
                 </p>
             </statement>
             <hint>
@@ -353,7 +353,7 @@
             </hint>
             <answer>
                 <p>
-                    <m>\neg x = x \text{ NOR } x</m>.
+                    <m>\negg x = x \text{ NOR } x</m>.
                 </p>
             </answer>
         </task>
@@ -403,7 +403,7 @@
             In doing <xref ref="activity-nor-is-universal"/>, you showed
             that the NOR operator is a <term>universal gate</term>.
             This means that any boolean function can be expressed using only NORs.
-            To spell it out, we used NORs to express <m>\neg x</m>, <m>x \wedge y</m>,
+            To spell it out, we used NORs to express <m>\negg x</m>, <m>x \wedge y</m>,
             <m>x \vee y</m>, and <m>x \veebar y</m>. The remaining operators, NAND
             and XNOR, can be expressed in terms of these four. This shows that
             all six binary boolean operators (that is, those represented in
