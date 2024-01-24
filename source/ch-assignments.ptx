@@ -784,14 +784,15 @@
                       edge[bend left] node {$01$} (q01)
                       edge[bend left] node {$10$} (q10)
                       edge node {$11$} (q11)
-                      (q01) edge[loop above] node {$01$} (q01)
+                      <!-- (q01) edge[loop above] node {$01$} (q01)
                       edge[bend left] node {$00$} (q00)
                       edge node {$10$} (q10)
                       edge[bend left] node {$11$} (q11)
                       (q10) edge[loop below] node {$10$} (q10)
                       edge[bend left] node {$00$} (q00)
                       edge[bend left] node {$11$} (q11)
-                      edge node {$01$} (q01);
+                      edge node {$01$} (q01) -->
+                    ;
                   \end{tikzpicture}
                 </latex-image>
               </image>
