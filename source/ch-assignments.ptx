@@ -774,15 +774,24 @@
               <caption>Fix</caption>
               <image>
                 <latex-image>
-                  \begin{tikzpicture}[->,>=stealth,auto,node distance=2cm]
-                    \node (q00) {$00$};
-                    \node[right=of q00] (q01) {$01$};
-                    \node[below=of q00] (q10) {$10$};
-                    \node[below=of q01] (q11) {$11$};
-                    \draw[->] (q00) edge[loop above] node[above] {$00$} (q00)
-                                    edge[bend left] node[above] {$01$} (q01)
-                                    edge[bend left] node[left] {$10$} (q10)
-                                    edge node[left] {$11$} (q11);
+                  \begin{tikzpicture}[on grid, scale=0.5]
+                    \node[state] (q00) {$00$};
+                    \node[state, right=of q00] (q01) {$01$};
+                    \node[state, below=of q00] (q10) {$10$};
+                    \node[state, below=of q01] (q11) {$11$};
+                    \path[->]
+                      (q00) edge[loop above] node {$00$} (q00)
+                      edge[bend left] node {$01$} (q01)
+                      edge[bend left] node {$10$} (q10)
+                      edge node {$11$} (q11)
+                      (q01) edge[loop above] node {$01$} (q01)
+                      edge[bend left] node {$00$} (q00)
+                      edge node {$10$} (q10)
+                      edge[bend left] node {$11$} (q11)
+                      (q10) edge[loop below] node {$10$} (q10)
+                      edge[bend left] node {$00$} (q00)
+                      edge[bend left] node {$11$} (q11)
+                      edge node {$01$} (q01);
                   \end{tikzpicture}
                 </latex-image>
               </image>
