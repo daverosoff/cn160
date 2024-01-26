@@ -187,7 +187,7 @@
                         the dropdown list. If you select <c>CMake: Build</c> instead, it will
                         try to compile all the targets in the <c>pico-examples</c> directory, which will take
                         a long time. If you are asked to select <c>CMakeLists.txt</c> file, you need to press
-                        Escape and use the Command Palette to r1un 
+                        Escape and use the Command Palette to r1un
                         the <c>CMake: Configure</c> command and choose <c>gcc 9.2.1 (arm-none-eabi)</c> before
                         running <c>CMake: Build Target</c> again.
                     </p>
@@ -201,7 +201,7 @@
                         is invoked by the compiler, which is invoked by CMake, which is invoked by VS Code.
                     </p>
                     <p>
-                        On subsequent runs, the compiler will only compile the parts that have changed, 
+                        On subsequent runs, the compiler will only compile the parts that have changed,
                         and the linker will only link the parts that have changed, which
                         is why the compile is so much faster the second time.
                     </p>
@@ -221,7 +221,7 @@
                         Plug your Pico into your laptop using a USB cable <em>while holding down the
                         white boot-select button on the Pico board</em>. Only let go of the button
                         once the board is plugged in. You should see a new drive
-                        appear in your file explorer (not the Explorer pane in VS Code). 
+                        appear in your file explorer (not the Explorer pane in VS Code).
                         It should be called <c>RPI-RP2</c>. Drag the
                         UF2 file from the file explorer to the <c>RPI-RP2</c> drive. This will copy
                         the file to the Pico. The Pico will automatically reboot and run the program.
@@ -246,7 +246,7 @@
         <p>
             You will need to repeat the steps of downloading the UF2, rebooting your Pico
             with the white button held down, and transferring the file every time you want
-            to make a change. If this seems cumbersome in comparison to CircuitPython, 
+            to make a change. If this seems cumbersome in comparison to CircuitPython,
             well, it is. But remember, you are changing the entire firmware of the board.
         </p>
         <p>
@@ -258,5 +258,25 @@
             way of knowing when the <c>blink.c</c> file has changed. So we have to do it
             manually.
         </p>
+        <exercises xml:id="exercises-led-activities-c">
+            <exercise>
+                <statement>
+                    <p>
+                        Research how to use the GPIO pins with the SDK. The on-board LED
+                        is actually controlled by a GPIO pin 25. So you shouldn't have to
+                        change much to get your external LEDs to blink one by one.
+                    </p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        Setting all the pins at once might be more challenging. You will
+                        need to make use of
+                    </p>
+                </statement>
+            </exercise>
+
+        </exercises>
     </section>
 </chapter>
