@@ -49,7 +49,7 @@
             the C SDK to write some simple programs, and we will study the
             form of assembly programming in order to write some very simple
             assembly code. For the most part, we will make free use of the
-            SDK to simplify our lives. It is challenging for even experience
+            SDK to simplify our lives. It is challenging for even experienced
             programmers to write assembly code, and we will not attempt to
             do so in any serious way. You may never write another line of
             assembly after this, but your appreciation of the work done for
@@ -73,15 +73,18 @@
             Pi Pico to a safe location on your laptop (like the Downloads
             folder). They may be preserved, but we shouldn't count on it.
         </p>
+        <figure>
+            <caption>Github's Fork button.</caption>
+            <image source="github-fork-repo.png" width="90%">
+                <shortdescription>The fork button is in the upper right part of the Github repository page.</shortdescription>
+            </image>
+        </figure>
         <p>
             <ol marker="1.">
                 <li>
                     <p>
                         Visit the <url href="https://github.com/daverosoff/pico-c-sandbox">Pico C
                         Sandbox</url> and fork the repository.
-                        <image source="github-fork-repo.png" width="90%">
-                            <description>The fork button is in the upper right part of the Github repository page.</description>
-                        </image>
                     </p>
                 </li>
                 <li>
