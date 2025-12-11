@@ -263,7 +263,7 @@
                 <statement>
                     <p>
                         Research how to use the GPIO pins with the SDK. The on-board LED
-                        is actually controlled by a GPIO pin 25. So you shouldn't have to
+                        is actually controlled by a GPIO pin, pin 25. So you shouldn't have to
                         change much to get your external LEDs to blink one by one.
                     </p>
                 </statement>
@@ -271,8 +271,11 @@
             <exercise>
                 <statement>
                     <p>
-                        Setting all the pins at once might be more challenging. You will
-                        need to make use of
+                        To recreate your animations, you will be best served using the
+                        <c>gpio_set_mask</c> and <c>gpio_clr_mask</c> functions. These
+                        functions take a bitmask as an argument. The bits that are set
+                        to 1 in the bitmask are set or cleared, respectively, in the
+                        GPIO register. The bits that are 0 in the bitmask are not changed.
                     </p>
                 </statement>
             </exercise>
